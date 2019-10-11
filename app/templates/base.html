@@ -1,0 +1,82 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="{% static 'img/favicon.png' %}">
+  <title>Recipe App EDC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+<body style="background-color:#FFFF; width: 100%; height: 100%; margin: 0px; padding: 0px; overflow-x: hidden; " >
+  <nav class="navbar navbar-inverse navbar-fixed-top"  style="position: fixed; top:0px;width: 100%;border-radius:0%;background-color:#ff8566;border-style: none">
+
+      <div class="navbar-header">
+
+          <a href="/" class="navbar-brand" style="font-size: 400px;top: 0px"><img src="{% static 'img/icon.png' %}" alt="App - logo" style="width:252px; height:90px; border: 1px solid #2222;border-radius:5%;background-color:#FFFF" width="252" height="90"></a>
+      </div>
+      <div class="container-fluid" style="width: 100%">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="" ><span title="Home" class="glyphicon glyphicon-home" style="color: white"></span></a></li>
+           <li><a href=""><span title="Manual" class="glyphicon glyphicon-book" style="color: white"></span></a></li>
+
+        </ul>
+
+      </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <div class="row" style="min-height: 60vh">
+    <div class="col-md-11">
+      <div class="container" style="margin-top: 5%">
+        <div>
+          {% if failed %}
+            <div class ="alert alert-danger" role="alert">
+              {{message}}
+            </div>
+          {% elif success %}
+            <div class ="alert alert-success" role="alert">
+              {{message}}
+            </div>
+          {% endif %}
+        </div>
+        {% block content %} {% endblock %}
+
+      </div>
+    </div>
+    <div class ="col-sm-1">
+      <div class="row" style = "height:10vh">
+        <div id="notify1"></div>
+      </div>
+      <div class="row" style = "height:10vh">
+        <div id="notify2"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer style="height: 150px; width: 100%; margin-top: 10%; bottom: 0%; position: relative; background-color: #000000">
+    <div class="row row-no-gutters">
+      <div class="col-md-4" style="color:white;bottom:-100px;width: 70%">
+        <p><small>&copy; EDC 2019 </small></p>
+      </div>
+      <div class="col-md-4 text-right" style="bottom:-50px;width: 22%" >
+        <a href="https://www.ua.pt" target="_blank"><img  src="{% static 'img/Universidade-de-Aveiro.png' %}" alt=""  width="35%" height="35%"></a>
+      </div>
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
