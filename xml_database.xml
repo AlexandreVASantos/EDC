@@ -1,0 +1,1720 @@
+
+<receitas>
+	<receita>
+		<nome>Minchi com Ovo Estrelado</nome>
+		<categorias>	
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Carne</tipo>
+			<tipo>Ovos</tipo>
+		</tipos>
+		<data>23-04-2018</data>
+		<autores>
+			<nome_autor>Cátia Goarmon</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>400</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Carne de vaca picada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>400</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Carne de porco picada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Cebola grande picada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Dentes de alho picados</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>Colheres de sopa</unidade>
+				<nome_i>Molho de soja</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>folha</unidade>
+				<nome_i>Louro</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>Colher de chá</unidade>
+				<nome_i>Açucar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pimenta</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>400</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Batata frita aos cubos</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>5</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>20</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/278483.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Num fio de azeite, refogue 1 cebola. Acrescente 2 dentes de alho e 1 folha de louro, 400g de carne de porco e 400g de carne de vaca. Tempere com sal e pimenta</passo>
+			<passo>Junte ainda 1 colher de açúcar e 4 colheres de sopa de molho de soja espesso.</passo>
+			<passo>Estrele 4 ovos em azeite.</passo>
+			<passo>Acompanhe a carne com batatas fritas aos cubinhos e com os ovos estrelados por cima.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Madalenas de Baunilha e Mel</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>	
+		<tipos>
+			<tipo>Bolachas</tipo>
+			<tipo>Bolos</tipo>
+		</tipos>
+		<data>17-08-2018</data>
+		<autores>
+			<nome_autor>Francisco Moreira</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>65</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Mel</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>125</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Farinha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>60</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar em pó</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>5</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Fermento em pó</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Sal fino</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>vagem</unidade>
+				<nome_i>Baunilha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>25</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Leite meio gordo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Manteiga sem sal derretida</nome_i>
+			</ingrediente>
+			
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>1</tempo>
+			<unidade>dia</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>8</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>1</tempo>
+			<unidade>dia</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273196.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Leve um tacho ao lume com 1 vagem de baunilha aberta, 25g de leite e 100g de manteiga. Deixe derreter e desligue o lume.</passo>
+			<passo>Bata 3 ovos com 65g de mel.</passo>
+			<passo>Peneire 125g de farinha e 60g de açúcar em pó. Junte 5g de fermento e 2g de sal. Envolva os secos no preparado anterior.</passo>
+			<passo>Misture bem e adicione a infusão de baunilha.</passo>
+			<passo>Coloque película aderente em contato com a massa e leve ao frigorífico durante 24h.</passo>
+			<passo>Coloque a massa num saco de pasteleiro e verta a massa em formas de madalenas untadas com spray de óleo.</passo>
+			<passo>Leve ao forno a 180º durante 8 minutos.</passo>
+		</descriçao>
+	</receita>
+
+	<receita>
+		<nome>Bebinca de Leite</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Pudim</tipo>
+		</tipos>
+		<data>07-03-2017</data>
+		<autores>
+			<nome_autor>Cátia Goarmon</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Amido de milho</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>750</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite frio</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>700</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite de coco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>360</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>6</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Gemas de ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Limão</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Manteiga para untar</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>20</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>35</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/278470.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Num tacho misture 750ml de leite com 100g de amido de milho. Acrescente 700ml de leite de coco, 360g de açúcar, casca de limão e deixe ferver. Desligue o lume.</passo>
+			<passo>Passe 6 gemas por um passador e tempere-as com o preparado. Devolva ao tacho.</passo>
+			<passo>Retire o limão e verta numa forma. Leve ao forno 20 minutos a 180ºC.</passo>
+			<passo>A bebinca de leite está pronta a servir!</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Pudins Flan Japoneses</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Pudim</tipo>
+			<tipo>Sem Glúten</tipo>
+		</tipos>
+		<data>27-06-2019</data>
+		<autores>
+			<nome_autor>Francisco Moreira</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>360</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>500</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Leite meio gordo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>6</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Gemas de ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>vagem</unidade>
+				<nome_i>Baunilha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Água quente</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>55</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273634.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Ferva 500g de leite meio-gordo com 120g de açúcar, desligue o lume e faça uma infusão com sementes e a vagem de baunilha.</passo>
+			<passo>À parte, caramelize 240g de açúcar. Distribua o caramelo por quatro formas de pudins.</passo>
+			<passo>Bata ligeiramente 4 ovos e junte-os ao leite. Retire a vagem de baunilha, verta o preparado pelas formas e leve ao forno em banho-maria, a 150C, durante 30 minutos. </passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Gelatina de Tangerina, Salada de Frutas e Granizado de Hortelã</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Fruta</tipo>
+			<tipo>Vegan</tipo>
+			<tipo>Sem Glúten</tipo>
+		</tipos>
+		<data>10-11-2018</data>
+		<autores>
+			<nome_autor>Francisco Moreira</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>550</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Água</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>155</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Run Branco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>25</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Hortelã</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>250</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Sumo de tangerina</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Ágar-Ágar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>pau</unidade>
+				<nome_i>Canela</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>vagem</unidade>
+				<nome_i>Baunilha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Kiwi</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>metade</unidade>
+				<nome_i>Manga</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>metade</unidade>
+				<nome_i>Ananás</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Maçã pink lady</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Maracujá</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Folhas de hortelã</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>55</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/234078.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Salada de frutas:</passo>
+			<passo>Leve ao lume um tacho com 1 vagem de baunilha aberta, 500ml de água e 1 pau de canela. </passo>
+			<passo> Corte 2 kiwis, 1/2 manga, 1 maçã pink lady,1 ananás e 1 maracujá.</passo>
+			<passo>Verta a calda de baunilha sobre a salada, misture bem, cubra com película aderente e reserve no frigorífico.</passo>
+			<passo>Granizado:</passo>
+			<passo>Leve ao lume um tacho com 500ml de água, 80g de açúcar e hortelã picada a gosto.</passo>
+			<passo>Deixe ferver e adicione 50g de rum branco.</passo>
+			<passo>Leve ao congelador por 2 horas. </passo>
+			<passo>Gelatina:</passo>
+			<passo> Misture 25g de açúcar com 2g de agar. </passo>
+			<passo>Adicione 125g de sumo de tangerina e leve num tacho ao lume. </passo>
+			<passo>Deixe ferver e acrescente 125g de sumo de tangerina. </passo>
+			<passo>Divida por copos e leve ao frigorífico.</passo>
+			<passo>Coloque em cada copo, por cima da gelatina, uma porção de salada de frutas e o granizado raspado.</passo>
+			<passo>Decore com folhas de hortelã.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Omelete Cheia Mexicana</nome>
+		<categorias>
+			<categoria>Pequeno Almoço</categoria>
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Mexicano</tipo>
+		</tipos>
+		<data>15-01-2015</data>
+		<autores>
+			<nome_autor>Jamie Oliver</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Abacate maduro</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Limas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>15</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Coentros frescos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>Colheres de sopa</unidade>
+				<nome_i>Iogurte natural</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Cebola</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Cenoura</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/2</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Alface branca</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>8</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>60</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Queijo Cheddar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Pimentão vermelho</nome_i>
+			</ingrediente>
+			
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>5</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229312.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Coloque o abacate numa trituradora, deitando fora a pele e o caroço. Esprema 2 limas para o interior, adicione os talos de coentros, adicione o iogurte e um salpico de azeite, misture até ficar suave e tempere a gosto</passo>
+			<passo>Descasque a cebola e a cenoura. Idealmente num robot de cozinha ou usando um ralador e boa habilidade com faca, triture a cebola e a cenoura e corte, finamente, a alface. Corte, muito finamente, o pimentão à mão e coloque tudo numa taça grande. Junte a maioria das folhas de coentros, verta o tempero de abacate e misture. Prove e tempere a gosto, se for necessário. Bata os ovos todos juntos numa taça, com um salpico de água para aliviar e uma pitada de sal e pimenta.</passo>
+			<passo>Coloque uma frigideira grande antiaderente em lume médio. Assim que ficar quente, adicione um salpico e azeite e, seguidamente, um quarto da mistura dos ovos. Mexa bem o conteúdo da frigideira, rale um quarto do queijo por cima e deixe-o derreter e deixe a omelete cozinhar gentilmente, sem a deixar colorir, para ficar suave, sedosa e macia, durante 2 minutos, apenas cozinhando de um lado. Deslize-a para um prato e coloque um quarto da mistura do abacate no centro e enrole. Sirva com uma fatia de lima e umas folhas extra de coentros. Repita com o resto dos ingredientes, servindo-os à medida que vai avançando. </passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Carbonara de cavala fumada</nome>
+		<categorias>	
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Peixe</tipo>
+		</tipos>
+		<data>24-07-2015</data>
+		<autores>
+			<nome_autor>Jamie Oliver</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>320</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Massa penne seca</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Cebola</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Abóbora</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>ramos</unidade>
+				<nome_i>Alecrim fresco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>130</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Filetes de cavala fumada sem espinhas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite semi-desnatado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>40</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Queijo parmesão</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Limão</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>55</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229298.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Cozinhe a penne numa panela de água com sal, de acordo com as instruções da embalagem. Entretanto, descasque e corte, finamente, a cebola e depois corte a abobrinha em quartos ao comprido e remova o interior. Corte a abobrinha angularmente, com cerca de 1cm de espessura – o objetivo é ter as peças do mesmo tamanho e forma da penne. Corte as folhas de alecrim e fatie a cavala em pedaços de 1cm de espessura (removendo a pele, se preferir). Coloque a cebola e a abobrinha numa frigideira grande em lume médio, com um pouco de azeite e uma pitada de sal e pimenta, mexendo ocasionalmente. Após 5 minutos, adicione o alecrim e a cavala e deixe cozinhar durante 5 minutos ou até ficar bem dourado, virando ocasionalmente.</passo>
+			<passo>Entretanto, junte os ovos e o leite e rale, finamente, o parmesão. Guarde um copo de água da fervura, escorra a pasta e junte-a à frigideira das cavalas. Tire a frigideira do lume por alguns segundos e adicione, enquanto mexe, um bom salpico de água reservada para arrefecer (isto é muito importante pois se adicionar os ovos enquanto a frigideira estiver a ferver, o calor vai escalfá-los - quererá que o molho fique cremoso). Adicione rapidamente a mistura dos ovos e mexa tudo até ficar denso, suave e igualmente envolto e depois emprate e serva com parmesão ralado por cima, uma boa pitada de pimenta e uma espremidela de sumo de limão, se gostar.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Banh Mi</nome>
+		<categorias>	
+			<categoria>Prato Principal</categoria>
+			<categoria>Sandes</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Carne</tipo>
+			<tipo>Asiático</tipo>
+		</tipos>
+		<data>29-05-2017</data>
+		<autores>
+			<nome_autor>Jamie Oliver</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Cenoura</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>quarto</unidade>
+				<nome_i>Pepino</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>quarto</unidade>
+				<nome_i>Couve branca</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de sopa</unidade>
+				<nome_i>Açúcar amarelo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Vinagre de vinho branco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Fígado de frango</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Cebolas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>15</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Coentros frescos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>vagem</unidade>
+				<nome_i>Baunilha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Carne de porco assada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Molho picante</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Malagueta vermelha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Baguetes</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>40</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229293.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>    Corte a cenoura e o pepino em palitos finos, corte a couve e coloque tudo numa tigela. Adicione o açúcar, vinagre e uma boa pitada de sal e amasse. Coloque de parte.</passo>
+			<passo>Corte os fígados de frango e mergulhe numa tigela com água durante alguns minutos. Tire a pele e corte as cebolas e os coentros e coloque numa frigideira grande em lume médio com azeite. Deixe ao lume por 10 minutos ou até ficar macio, mexendo regularmente. Escorra e corte os fígados e adicione à frigideira durante 5 minutos e depois coloque tudo num liquidificador para fazer um pâté semi-líquido. Coloque numa taça e tempere a gosto. </passo>
+			<passo> Limpe a frigideira e coloque novamente em lume médio, fatie a carne de porco e adicione uma colher de molho da carne, se tiver, ou um pouco de azeite. Frite durante 5 minutos, até ficar crocante e picante, adicionando o molho picante no final. Corte a malagueta em fatias finas. </passo>
+			<passo>Verta a calda de baunilha sobre a salada, misture bem, cubra com película aderente e reserve no frigorífico.Corte as baguetes ao meio (aqueça-as no forno por 10 minutos primeiro, se puder) e barre o paté nas duas metades. Escorra e deite fora o excesso de líquido dos vegetais e coloque-os nas baguetes. Coloque a carne de porco cozinhada no topo, folhas de coentros frescas, molho picante, se se atrever, e ataque! </passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Pizza na Frigideira</nome>
+		<categorias>	
+			<categoria>Entradas e Petiscos</categoria>
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Pizza</tipo>
+			<tipo>Carne</tipo>
+			<tipo>Italiano</tipo>
+		</tipos>
+		<data>23-06-2019</data>
+		<autores>
+			<nome_autor>Filipa Gomes</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>150</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Farinha de trigo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>80</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Água morna</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de sopa</unidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/2</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Molho basílico</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/2</quantidade>
+				<unidade>chávena</unidade>
+				<nome_i>Queijo mozarella ralado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/4</quantidade>
+				<unidade>chávena</unidade>
+				<nome_i>Quejo azul</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Tomate</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>rodelas</unidade>
+				<nome_i>Chourição</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/4</quantidade>
+				<unidade>chávena</unidade>
+				<nome_i>Azeitonas pretas fatiadas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Oregãos</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273073.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Numa taça junte 1 chávena de farinha de trigo, 1/3 de chávena de água morna, 1 colher de sopa de azeite, 1/2 colher de chá de sal e misture tudo. </passo>
+			<passo>Amasse por 1 ou 2 minutos e com a ajuda de farinha vá polvilhando e esticando num disco grande ou 2 mais pequeno.  </passo>
+			<passo> Coloque sobre uma frigideira bem quente e deixe que cozinhe até ganhar uma cor ligeira. </passo>
+			<passo>Depois vire e junte o recheio.</passo>
+			<passo>Primeiro a base de molho de tomate basílico, depois o queijo mozarella ralado, o queijo azul, chourição, algumas azeitonas pretas fatiadas, tomate cherry e orégãos. </passo>
+			<passo>Tape a frigideira e deixe cozinhar até o queijo derreter e a massa estar mais sequinha. </passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Chocolates de Côco, Morango e Lima</nome>
+		<categorias>	
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Fruta</tipo>
+			<tipo>Chocolate</tipo>
+		</tipos>
+		<data>10-11-2018</data>
+		<autores>
+			<nome_autor>Filipa Gomes</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>60</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Morangos desidratados secos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Côco ralado seco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Côco ralado fresco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>60</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite de côco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Raspa de Lima</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sumo de lima</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>10</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Xarope de agave</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>150</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Manteiga de cacau</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>8</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Cacau orgânico em pó</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>55</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273071.1200x675.jpg</imagem>
+		<descriçao>
+			<passo> No processador triture 60g de morangos desidratados. </passo>
+			<passo>Peneire sobre uma taça e reserve os pedaços maiores para polvilhar no fim.  </passo>
+			<passo> Junte 100g de côco ralado, 50g de côco ralado fresco, 60 ml de leite de côco, raspa de 1 lima e o sumo de 1/2, e 5 colheres de sopa de xarope de agave. </passo>
+			<passo>Deite este recheio numa forma de bolo inglês forrada com película aderente. </passo>
+			<passo>Calque bem, tape com mais película e leve ao congelador por pelo menos 30 minutos.</passo>
+			<passo>Enquanto isso derreta 150g de manteiga de cacau em banho maria. </passo>
+			<passo>DJunte 5 a 8 colheres de sopa de xarope de agave conforme a sua gulodice e 8 colheres de sopa de cacau orgânico em pó. </passo>
+			<passo>Misture e deixe arrefecer até estar à temperatura ambiente. </passo>
+			<passo> Quando o recheio estiver bem frio e mais sólido, corte em barritas e mergulhe-as na cobertura de chocolate. </passo>
+			<passo>Repita o processo uma segunda vez e polvilhe com os pedaços de morango que reservou.  </passo>
+			<passo>Guarde no frio até ser hora de comer.  </passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Madalenas de Limão e Mirtilos na Tostadeira</nome>
+		<categoria>Doces e Sobremesas</categoria>
+		<tipos>
+			<tipo>Fruta</tipo>
+			<tipo>Bolos</tipo>
+			<tipo>Bolachas</tipo>
+		</tipos>
+		<data>10-11-2018</data>
+		<autores>
+			<nome_autor>Filipa Gomes</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Manteiga à temperatura ambiente</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Açúcar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Ovo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Raspa de Limão</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Farinha</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Mirtilos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Queijo da ilha ralado</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>7</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>17</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273075.1200x675.jpg</imagem>
+		<descriçao>
+			<passo> Numa taça junte 4 colheres de sopa de manteiga amolecida, 3 colheres de sopa de açúcar, raspa de 1/2 limão misture até estar cremoso. </passo>
+			<passo> Junte 1 ovo, bata e acrescente 4 colheres de sopa de farinha de trigo com fermento. </passo>
+			<passo> Envolva bem, adicione 1/2 chávena de mirtilos e volte a envolver. </passo>
+			<passo>Com a massa pronta, unte uma tostadeira com manteiga, junte umas colheradas de massa e deixe cozinhar por 3 a 7 minutos. </passo>
+			<passo>Quando tiver cozido e com boas cores, tire, deixe arrefecer e já pode comer. </passo>
+			
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Massa Gnochi com couve-lombarda</nome>
+		<categorias>	
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Italiano</tipo>
+			<tipo>Vegetariano</tipo>
+		</tipos>
+		<data>29-12-2017</data>
+		<autores>
+			<nome_autor>Rudolph van Veen</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Cebolas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>dentes</unidade>
+				<nome_i>Alho</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Vinho Branco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>250</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Natas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>cubo</unidade>
+				<nome_i>Caldo de legumes</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Couve Lombarda</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>450</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Massa gnochi</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Queijo Parmesão ralado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pimenta moída</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>45</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228199.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Molho de cebola:</passo>
+			<passo>Descasque e pique as cebolas. Descasque e corte o alho. </passo>
+			<passo>Aqueça óleo numa panela e frite a cebola e o alho.</passo>
+			<passo>Adicione o vinho branco e as natas.</passo>
+			<passo>Deixe ferver e reduza o lume.</passo>
+			<passo>Cozinhe o molho cerca de 10 minutos.</passo>
+			<passo>Couve:</passo>
+			<passo>Ferva uma panela de água e junte o cubo de caldo. </passo>
+			<passo>Separe as folhas da couve. Retire os veios duros e corte as folhas em tiras.</passo>
+			<passo>Escalde as folhas cortadas cerca de 5 minutos até ficarem macias.</passo>
+			<passo>Escorra, reserve cerca de 500 ml de caldo de carne e deixe esfriar.</passo>
+			<passo>Gnochi com couve-lombarda:</passo>
+			<passo>Cozinhe a massa de acordo com as instruções da embalagem.</passo>
+			<passo>Misture a couve com o molho.</passo>
+			<passo>Adicione o caldo de cozimento da couve.</passo>
+			<passo>Tempere com sal e pimenta.</passo>
+			<passo>Polvilhe com o queijo parmesão.</passo>
+			</descriçao>
+	</receita>
+	<receita>
+		<nome>Mini hambúrgueres com batatas fritas e batido de laranja</nome>
+		<categorias>
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Carne</tipo>
+			<tipo>Americano</tipo>
+		</tipos>
+		<data>10-11-2018</data>
+		<autores>
+			<nome_autor>Rudolph van Veen</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>400</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Carne vaca picada </nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Pimentão em pó</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Caril em pó</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pimenta moída</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Pão ralado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Queijo semi-amadurecido</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>450</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Batata para fritar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>12</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Pãezinhos de hamburguer</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Alface</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Tomates</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Cornichons</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Banana</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Sumo de Laranja</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite magro</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>250</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Gelado de baunilha</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>30</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>55</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228200.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Preparação:</passo>
+			<passo>Pré-aqueça o forno a 100 ° C.</passo>
+			<passo>Pré-aqueça uma frigideira.</passo>
+			<passo>Mini hambúrgueres:</passo>
+			<passo>Misture a carne picada com o pimentão e com o caril.</passo>
+			<passo>Adicione sal, pimenta e pão ralado.</passo>
+			<passo>Amasse a carne picada.</passo>
+			<passo>Humedeça a mão e molde a mistura de carne em pequenos hambúrgueres (± 12).</passo>
+			<passo>Cozinhe os hambúrgueres cerca de 10 minutos na frigideira.</passo>
+			<passo>Coloque numa assadeira e cubra com queijo.</passo>
+			<passo>Coloque 5 minutos no forno até que o queijo derreta.</passo>
+			<passo>Batatas fritas:</passo>
+			<passo>Aqueça o óleo numa panela.</passo>
+			<passo>Asse as batatas cerca de 10 minutos até dourarem. Mexa regularmente.</passo>
+			<passo>Pãezinhos e decoração:</passo>
+			<passo>Corte os pães coloque a parte inferior na frigideira. Cozinhe cerca de 1 minuto.</passo>
+			<passo>Separe as folhas de alface e corte os tomates.</passo>
+			<passo>Corte os cornichões em fatias finas.</passo>
+			<passo>Divida as folhas de alface sobre o miolo dos pães.</passo>
+			<passo>Cubra com os hambúrgueres, com as fatias de tomate e com os cornichons.</passo>
+			<passo>Adicione as metades superiores dos pães.</passo>
+			<passo>Batido:</passo>
+			<passo>Divida a banana em pedaços.</passo>
+			<passo>Com uma varinha mágica, misture a banana, o sumo de laranja, o leite e o gelado.</passo> 
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Maçã recheada</nome>
+		<categorias>
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Carne</tipo>
+			<tipo>Holandês</tipo>
+		</tipos>
+		<data>08-03-2019</data>
+		<autores>
+			<nome_autor>Rudolph van Veen</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Cebolas </nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>dente</unidade>
+				<nome_i>Alho</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Biscoitos temperados(spekulaas)</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Óleo de girassol</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>400</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Carne vaca picada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>colheres de chá</unidade>
+				<nome_i>Especiarias para carne picada</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Tomate</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>700</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Batatatinhas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Maçãs Elstar</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Queijo ralado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/4</quantidade>
+				<unidade>Molho</unidade>
+				<nome_i>Cebolinho</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pimenta moída</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>250</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Ervilhas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>cabeças</unidade>
+				<nome_i>Couve Roxa</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>gr</unidade>
+				<nome_i>Queijo Feta</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Leite magro</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Azeite virgem extra</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>colheres de sopa</unidade>
+				<nome_i>Azeite virgem extra</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de sopa</unidade>
+				<nome_i>Vinagre de vinho tinto</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Mostarda</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>20</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>40</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>1</tempo>
+			<unidade>h</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228198.1200x675.jpg</imagem>
+		<descriçao>
+			<passo>Preparação:</passo>
+			<passo>Pré-aqueça o forno a 180 º C.</passo>
+			<passo>Faça a mistura de carne moída:</passo>
+			<passo>Descasque e pique uma cebola. Descasque a outra cebola e corte finamente em meias rodelas.</passo>
+			<passo>Descasque e pique o alho.</passo>
+			<passo>Desfaça os biscoitos.</passo>
+			<passo>Aqueça um pouco de óleo numa frigideira e cozinhe a carne em fogo alto, separando os pedaços.</passo>
+			<passo>Adicione a cebola picada, o alho, a especiarias, 1 colher de sopa de molho de tomate, os biscoitos e um pouco de água.</passo>
+			<passo>Ferva e deixe a mistura diminuir com a fervura.</passo>
+			<passo>As batatas:</passo>
+			<passo>Unte uma assadeira.</passo>
+			<passo>Ponha as batatas na assadeira e leve ao forno cerca de 25 minutos até alourarem.</passo>
+			<passo>Tempere com sal e pimenta.</passo>
+			<passo>Recheio das maçãs:</passo>
+			<passo>Descasque as maçãs e corte as coroas e reserve. Retire o interior das maçãs.</passo>
+			<passo>Encha as maçãs com a mistura de carne picada e coloque numa assadeira untada.</passo>
+			<passo>Polvilhe as maçãs recheadas com metade das rodelas de cebola e queijo ralado.</passo>
+			<passo>Coloque as coroas sobre as maçãs. Asse as maçãs no forno, durante 20 minutos.</passo>
+			<passo>Pique o cebolinho e polvilhe sobre as maçãs.</passo>
+			<passo>A salada de ervilha:</passo>
+			<passo>Leve uma panela de água com sal a ferver.</passo>
+			<passo>Limpe as ervilhas e corte em tiras finas.</passo>
+			<passo>Corte o fundo da couve e fatie.</passo>
+			<passo>Coloque as ervilhas em água a ferver e cozinhe cerca de 2 minutos. Lave abundantemente com água fria.</passo>
+			<passo>Misture as ervilhas e a couve numa tigela e desfaça o queijo feta por cima.</passo>
+			<passo>Misture o vinagre de vinho tinto e mostarda.</passo>
+			<passo>Tempere com um fio de azeite, sal e pimenta.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Hambúrguer de peixe com molho Ravigote caseiro</nome>
+		<categorias>
+			<categoria>Prato Principal</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Peixe</tipo>
+			<tipo>Holandês</tipo>
+		</tipos>
+		<data>22-07-2019</data>
+		<autores>
+			<nome_autor>Rudolph van Veen</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>500</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Batatas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Azeite</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/2</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Paprika em pó</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pimenta moída</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Bacalhau</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Salmão</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Ovos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Pão ralado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Óleo de girassol</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>5</quantidade>
+				<unidade>raminhos</unidade>
+				<nome_i>Salsa</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1/4</quantidade>
+				<unidade>Molho</unidade>
+				<nome_i>Cebolinho</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Pickle</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de sopa</unidade>
+				<nome_i>Alcaparras</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Maionese light</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>ml</unidade>
+				<nome_i>Iogurte magro</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Alface romana</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Tomates</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>4</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Rolos de sésamo duros</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>50</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>75</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228193.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Preparação:</passo>
+			<passo>Pré-aqueça o forno a 200º C.</passo>
+			<passo>Batatas no forno:</passo>
+			<passo>Lave as batatas, corte-as em fatias e coloque numa assadeira.</passo>
+			<passo>Regue com azeite e tempere com sal e pimenta. Misture bem e leve ao forno durante cerca de 20 minutos.</passo>
+			<passo>Hambúrguer de peixe:</passo>
+			<passo>Corte o peixe tão finamente quanto possível.</passo>
+			<passo>Parta 1 ovo numa tigela e misture o peixe, o sal, a pimenta, algumas gotas de sumo de limão e pimentão em pó.</passo>
+			<passo>Molde quatro hambúrgueres e envolva-os em pão ralado.</passo>
+			<passo>Aqueça um pouco de óleo numa frigideira e frite os hambúrgueres de peixe 6 minutos, aproximadamente, de cada lado até dourar.</passo>
+
+			<passo>Molho Ravigote:</passo>
+			<passo>Ferver água numa panela e cozer os 3 ovos durante 10 minutos.</passo>
+			<passo>Arrefeça os ovos em água fria e descasque-os.</passo>
+			<passo>Corte os ovos em fatias finas.</passo>
+			<passo>Escolha e pique a salsa.</passo>
+			<passo>Corte o cebolinho.</passo>
+			<passo>Corte os pepinos e as alcaparras.</passo>
+			<passo>Numa tigela, misture o ovo com as ervas, pepino, alcaparras, maionese e iogurte.
+			<passo>Tempere com pimenta, sal e algumas gotas de sumo de limão.</passo>
+
+			<passo>Pãezinhos de hambúrguer de peixe:</passo>
+			<passo>Separe e lave as folhas de alface. Seque de seguida.</passo>
+			<passo>Corte os tomates em fatias.</passo>
+			<passo>Abra os rolos e coloque fatias de alface e tomate na metade inferior e depois o hambúrguer de peixe. Adicione uma colher de molho ravigote e, em seguida, a metade superior do rolo de sésamo.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Terrina de Fruta</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Fruta</tipo>
+		</tipos>
+		<data>10-11-2018</data>
+		<autores>
+			<nome_autor>Sandra Nobre</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>2</quantidade>
+				<unidade>saquetas</unidade>
+				<nome_i>Gelatina de morango</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>L</unidade>
+				<nome_i>Água</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>3</quantidade>
+				<unidade>unidades</unidade>
+				<nome_i>Kiwis</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Mirtilos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>125</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Groselhas</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>1</tempo>
+			<unidade>h</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>70</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/275820.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Dissolva 2 saquetas de gelatina de morango em meio litro de água quente e depois junte meio litro de água fria.</passo>
+			<passo>Deite uma concha da gelatina na forma forrada com pelicula e reserve enquanto trata das frutas.</passo>
+			<passo>Descasque e corte em fatias 3 kiwis.</passo>
+			<passo>Na terrina, por cima da gelatina deite as fatias de kiwi, 200g de mirtilos e 125g de groselhas.</passo>
+			<passo>De seguida, deite a restante gelatina e leve ao congelador por 1 hora ou até ganhar consistência.</passo>
+			<passo>Desenforme e decore com os frutos.</passo> 
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Chocolate Belga com Frutos Secos</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Chocolate</tipo>
+			<tipo>Bolachas</tipo>
+		</tipos>
+		<data>27-06-2019</data>
+		<autores>
+			<nome_autor>Sandra Nobre</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Chocolate Belga</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Pistachos</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Amendoins</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Amendoas</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Avelãs</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>q.b.</quantidade>
+				<nome_i>Papaia seca</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>5</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem></imagem>
+		<descriçao>
+			<passo>Derreta 200g de chocolate belga em banho-maria.</passo>
+			<passo>Aproveite e pique grosseiramente os frutos secos, primeiro os pistachos, depois os amendoins, seguido da amêndoa e por fim a avelã.</passo>
+			<passo>Verta o chocolate derretido em forma de círculos sobre papel vegetal e por cima coloque os frutos secos picados.</passo>
+			<passo>Deixe solidificar e está pronto a servir.</passo>
+		</descriçao>
+	</receita>
+	<receita>
+		<nome>Chocolate Belga com Frutos Secos</nome>
+		<categorias>
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
+		<tipos>
+			<tipo>Chocolate</tipo>
+			<tipo>Bolachas</tipo>
+			<tipo>Americano</tipo>
+		</tipos>
+		<data>23-05-2019</data>
+		<autores>
+			<nome_autor>Sandra Nobre</nome_autor>
+		</autores>
+		<ingredientes>
+			<ingrediente>
+				<quantidade>200</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Farinha de trigo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Bicarbonato de sódio</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>colher de chá</unidade>
+				<nome_i>Sal</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>150</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Manteiga</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar branco</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Açúcar mascavado</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>1</quantidade>
+				<unidade>unidade</unidade>
+				<nome_i>Ovo</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>100</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Chocolate</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Nozes</nome_i>
+			</ingrediente>
+			<ingrediente>
+				<quantidade>50</quantidade>
+				<unidade>g</unidade>
+				<nome_i>Chips de banana</nome_i>
+			</ingrediente>
+		</ingredientes>
+		<dificuldade>Fácil</dificuldade>
+		<tempo_de_preparaçao>
+			<tempo>15</tempo>
+			<unidade>min</unidade>
+		</tempo_de_preparaçao>
+		<tempo_de_cozedura>
+			<tempo>10</tempo>
+			<unidade>min</unidade>
+		</tempo_de_cozedura>
+		<tempo_total>
+			<tempo>25</tempo>
+			<unidade>min</unidade>
+		</tempo_total>
+		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/275796.1024x576.jpg</imagem>
+		<descriçao>
+			<passo>Peneire 200g de farinha, com 1 colher de chá de bicarbonato de sódio e a mesma quantidade de sal. Reserve.</passo>
+			<passo>Depois bata 150g de manteiga amolecida com 50g de açúcar branco e 50g de açúcar mascavado até obter um creme.</passo>
+			<passo>De seguida, adicione 1 colher de chá de essência de baunilha, 1 ovo e volte a bater.</passo>
+			<passo>Aos poucos, envolva a mistura de farinha reservada ao preparado.</passo>
+			<passo>Parta grosseiramente 100g de chocolate e junte à massa, assim como 50g de banana seca e 50g de nozes. Misture muito bem.</passo>
+			<passo>Num tabuleiro de forno, coloque papel vegetal e com ajuda de uma colher de gelado faça bolas com a massa e disponha com intervalo de 5 centímetros entre si.</passo>
+			<passo>Coza entre 8-10 minutos em forno pré-aquecido nos 180º, ou até as bolachas ficarem douradas.</passo> 
+		</descriçao>
+	</receita>
+</receitas>
+		
+
+	
+		
