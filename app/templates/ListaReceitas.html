@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    {% for key,value in send.items %}
+        <!--<div class="row">-->
+            <br>
+              <div style="float:left; width:50%; height:500px; display: inline " class="col-md-6" data-aos="fade-up" data-aos-delay="">
+                <div class="media-92812">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                  <div class="text">
+                    <span class="caption">{{ key }}</span>
+                    <h3><a href="#">{{ value }}</a></h3>
+                    <p class="my-5"><a href="#" class="more-39291">Learn More</a></p>
+                  </div>
+                    <p></p>
+                </div>
+              </div>
+
+        <!--</div>-->
+    {% endfor %}
+{% endblock content %}

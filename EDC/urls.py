@@ -21,4 +21,5 @@ from app import views as app_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , app_views.home),
+    path('lista/', app_views.ListaReceitas, name="ListaReceitas.html")
 ]
