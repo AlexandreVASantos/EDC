@@ -2,21 +2,72 @@
 {% load static %}
 {% block content %}
 
-    {% for key,value in send.items %}
-        <!--<div class="row">-->
+
+
+    <div class="row" style="height: 36vh; padding-top: 25vh">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2" style="text-align: right">
+            <div style="text-align: center">
+            Autores:
             <br>
-              <div style="float:left; width:50%; height:500px; display: inline " class="col-md-6" data-aos="fade-up" data-aos-delay="">
-                <div class="media-92812">
-                  <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                  <div class="text">
-                    <span class="caption">{{ key }}</span>
-                    <h3><a href="#">{{ value }}</a></h3>
-                    <p class="my-5"><a href="#" class="more-39291">Learn More</a></p>
-                  </div>
-                    <p></p>
+            <select name= "authors" class="form-control" >
+                {% for auth in autores %}
+                    <option value={{ auth }}>{{ auth }}</option>
+                {% endfor %}
+            </select>
+            </div>
+        </div>
+        <div class="col-sm-2"  style="text-align: center">
+         <div style="text-align: center">
+            Categoria:
+            <br>
+            <select name= "categorias" class="form-control">
+                {% for cat in categorias %}
+                    <option value={{ cat }}>{{ cat }}</option>
+                {% endfor %}
+            </select>
+         </div>
+        </div>
+        <div class= "col-sm-3" style="text-align: center">
+         <div style="text-align: center">
+            Tags:
+            <br>
+             <select name= "tags" class="form-control" >
+                {% for tag in tags %}
+                    <option value={{ tag }}>{{ tag }}</option>
+                {% endfor %}
+            </select>
+          </div>
+
+        </div>
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+
+    <div style="text-align: center">
+    {% for key,value in info.items %}
+              <div style="float: left; height: 80vh; display: inline " class="col-sm-6" data-aos="fade-up" data-aos-delay="">
+                     <img src="{{value.0}}" style="text-align: center" alt="Image" class="img-fluid">
+                  <div class="media-92812">
+                     <div class="text" style="height: 30vh">
+                        <span class="caption">{{ value.1 }}</span>
+                        <h3><a href="#">{{ key }}</a></h3>
+                        <p class="my-5"><a href="#" class="more-39291">Learn More</a></p>
+                    </div>
+
+
+
                 </div>
               </div>
 
-        <!--</div>-->
+
     {% endfor %}
+    </div>
+
+
+
 {% endblock content %}
