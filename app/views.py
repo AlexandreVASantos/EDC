@@ -11,11 +11,14 @@ def ListaReceitas(request):
     doc = etree.parse("xml_database.xml")
     search = doc.xpath("//receita")
 
-    send = {}
-    index = 1
+    information = {}
+
 
     for s in search:
-        send[index] = s.find("nome").text
-        index = index + 1
+        index= s.find("nome").text
+        print(s.find("imagem").text)
+        information[index] = []
+        information[index].append(s.find("imagem").text)
+        information[index].append(s.find("autores/nome_autor").text)
 
-    return render(request, "ListaReceitas.html", {"send": send})
+    return render(request, "ListaReceitas.html", {"info": information})
