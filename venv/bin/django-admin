@@ -1,4 +1,4 @@
-#!/home/alexandre/Desktop/EDC_project/EDC/venv/bin/python
+#!/home/alexandre/Desktop/EDC/pratica/projeto1/EDC/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
