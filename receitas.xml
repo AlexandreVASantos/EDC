@@ -73,18 +73,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>5</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>20</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/278483.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Num fio de azeite, refogue 1 cebola. Acrescente 2 dentes de alho e 1 folha de louro, 400g de carne de porco e 400g de carne de vaca. Tempere com sal e pimenta</passo>
@@ -155,18 +143,6 @@
 
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>1</tempo>
-			<unidade>dia</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>8</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>1</tempo>
-			<unidade>dia</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273196.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Leve um tacho ao lume com 1 vagem de baunilha aberta, 25g de leite e 100g de manteiga. Deixe derreter e desligue o lume.</passo>
@@ -228,18 +204,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>20</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>35</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/278470.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Num tacho misture 750ml de leite com 100g de amido de milho. Acrescente 700ml de leite de coco, 360g de açúcar, casca de limão e deixe ferver. Desligue o lume.</passo>
@@ -293,18 +257,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>55</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273634.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Ferva 500g de leite meio-gordo com 120g de açúcar, desligue o lume e faça uma infusão com sementes e a vagem de baunilha.</passo>
@@ -398,18 +350,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>55</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/234078.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Salada de frutas:</passo>
@@ -500,18 +440,6 @@
 
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>5</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229312.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Coloque o abacate numa trituradora, deitando fora a pele e o caroço. Esprema 2 limas para o interior, adicione os talos de coentros, adicione o iogurte e um salpico de azeite, misture até ficar suave e tempere a gosto</passo>
@@ -583,18 +511,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>55</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229298.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Cozinhe a penne numa panela de água com sal, de acordo com as instruções da embalagem. Entretanto, descasque e corte, finamente, a cebola e depois corte a abobrinha em quartos ao comprido e remova o interior. Corte a abobrinha angularmente, com cerca de 1cm de espessura – o objetivo é ter as peças do mesmo tamanho e forma da penne. Corte as folhas de alecrim e fatie a cavala em pedaços de 1cm de espessura (removendo a pele, se preferir). Coloque a cebola e a abobrinha numa frigideira grande em lume médio, com um pouco de azeite e uma pitada de sal e pimenta, mexendo ocasionalmente. Após 5 minutos, adicione o alecrim e a cavala e deixe cozinhar durante 5 minutos ou até ficar bem dourado, virando ocasionalmente.</passo>
@@ -687,18 +603,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>40</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/229293.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>    Corte a cenoura e o pepino em palitos finos, corte a couve e coloque tudo numa tigela. Adicione o açúcar, vinagre e uma boa pitada de sal e amasse. Coloque de parte.</passo>
@@ -774,18 +678,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273073.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Numa taça junte 1 chávena de farinha de trigo, 1/3 de chávena de água morna, 1 colher de sopa de azeite, 1/2 colher de chá de sal e misture tudo. </passo>
@@ -855,18 +747,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>55</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273071.1200x675.jpg</imagem>
 		<descriçao>
 			<passo> No processador triture 60g de morangos desidratados. </passo>
@@ -930,18 +810,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>7</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>17</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/273075.1200x675.jpg</imagem>
 		<descriçao>
 			<passo> Numa taça junte 4 colheres de sopa de manteiga amolecida, 3 colheres de sopa de açúcar, raspa de 1/2 limão misture até estar cremoso. </passo>
@@ -1020,18 +888,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>45</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228199.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Molho de cebola:</passo>
@@ -1147,18 +1003,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>30</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>55</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228200.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Preparação:</passo>
@@ -1305,18 +1149,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>20</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>40</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>1</tempo>
-			<unidade>h</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228198.1200x675.jpg</imagem>
 		<descriçao>
 			<passo>Preparação:</passo>
@@ -1455,18 +1287,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>50</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>75</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/228193.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Preparação:</passo>
@@ -1536,18 +1356,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>1</tempo>
-			<unidade>h</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>70</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/275820.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Dissolva 2 saquetas de gelatina de morango em meio litro de água quente e depois junte meio litro de água fria.</passo>
@@ -1603,18 +1411,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>5</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/275813.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Derreta 200g de chocolate belga em banho-maria.</passo>
@@ -1690,18 +1486,6 @@
 			</ingrediente>
 		</ingredientes>
 		<dificuldade>Fácil</dificuldade>
-		<tempo_de_preparaçao>
-			<tempo>15</tempo>
-			<unidade>min</unidade>
-		</tempo_de_preparaçao>
-		<tempo_de_cozedura>
-			<tempo>10</tempo>
-			<unidade>min</unidade>
-		</tempo_de_cozedura>
-		<tempo_total>
-			<tempo>25</tempo>
-			<unidade>min</unidade>
-		</tempo_total>
 		<imagem>https://origin-sire-media.fichub.com/24k_pt/recipe-image/275796.1024x576.jpg</imagem>
 		<descriçao>
 			<passo>Peneire 200g de farinha, com 1 colher de chá de bicarbonato de sódio e a mesma quantidade de sal. Reserve.</passo>
@@ -1714,6 +1498,7 @@
 		</descriçao>
 	</receita>
 </receitas>
+
 
 
 

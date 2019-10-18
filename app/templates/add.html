@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<label for="name">Nome receita:</label>
+<input type="text" id="name" name="name" required size="10">
+
+
+<label for="cat">Categorias(inserir categorias separadas por vírgulas):</label>
+<input type="text" id="cat" name="cat" required size="10">
+
+
+<label for="tipo">Tipos(inserir tipos separadas por vírgulas):</label>
+<input type="text" id="tipo" name="tipo" required size="10">
+
+
+<label for="data">Data(dd-mm-yyyy):</label>
+<input type="text" id="data" name="data" required size="10">
+
+
+<label for="aut">Autores(inserir autores separados por vírgulas)</label>
+<input type="text" id="aut" name="aut" required size="10">
+
+
+<label for="ingredientes">Ingredientes(inserir ingredientes separados por virgulas eg leite,500,ml,manteiga,50,g)</label>
+<input type="text" id="ingredientes" name="ingredientes" required size="10">
+
+<label for="dificuldade">Dificuldade(Fácil, Médio, Dificil)</label>
+<input type="text" id="dificuldade" name="dificuldade" required size="10">
+
+<label for="imagem">Imagem(insira link da imagem que pretende)</label>
+<input type="text" id="imagem" name="imagem" required size="10">
+
+<label for="Passos">Passos(inserir passos separados por parágrafos)</label>
+    <textarea type="text" id="passos" name="passos" required size="10"></textarea>
+
+
+
+{% endblock %}

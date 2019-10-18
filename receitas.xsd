@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="receitas" type="receitasType"/>
+  <xs:complexType name="categoriasType">
+    <xs:sequence>
+      <xs:element name="categoria" maxOccurs="unbounded" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Prato Principal"/>
+            <xs:enumeration value="Doces e Sobremesas"/>
+            <xs:enumeration value="Pequeno Almoço"/>
+            <xs:enumeration value="Sandes"/>
+            <xs:enumeration value="Entradas e Petiscos"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tiposType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="tipo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="autoresType">
+    <xs:sequence>
+      <xs:element name="nome_autor">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Cátia Goarmon"/>
+            <xs:enumeration value="Francisco Moreira"/>
+            <xs:enumeration value="Jamie Oliver"/>
+            <xs:enumeration value="Filipa Gomes"/>
+            <xs:enumeration value="Rudolph van Veen"/>
+            <xs:enumeration value="Sandra Nobre"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ingredienteType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="quantidade"/>
+      <xs:element type="xs:string" name="unidade" minOccurs="0"/>
+      <xs:element type="xs:string" name="nome_i"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ingredientesType">
+    <xs:sequence>
+      <xs:element type="ingredienteType" name="ingrediente" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tempo_de_preparaçaoType">
+    <xs:sequence>
+      <xs:element name="tempo">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="15"/>
+            <xs:enumeration value="25"/>
+            <xs:enumeration value="10"/>
+            <xs:enumeration value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="unidade">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="min"/>
+            <xs:enumeration value="dia"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tempo_de_cozeduraType">
+    <xs:sequence>
+      <xs:element name="tempo">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="15"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="20"/>
+            <xs:enumeration value="30"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="10"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="40"/>
+            <xs:enumeration value="50"/>
+            <xs:enumeration value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="unidade">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="min"/>
+            <xs:enumeration value="h"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tempo_totalType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="tempo"/>
+      <xs:element name="unidade">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="min"/>
+            <xs:enumeration value="dia"/>
+            <xs:enumeration value="h"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descriçaoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="passo" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receitaType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="nome"/>
+      <xs:element type="categoriasType" name="categorias" minOccurs="0"/>
+      <xs:element type="xs:string" name="categoria" minOccurs="0"/>
+      <xs:element type="tiposType" name="tipos"/>
+      <xs:element type="xs:string" name="data"/>
+      <xs:element type="autoresType" name="autores"/>
+      <xs:element type="ingredientesType" name="ingredientes"/>
+      <xs:element type="xs:string" name="dificuldade"/>
+      <xs:element type="tempo_de_preparaçaoType" name="tempo_de_preparaçao"/>
+      <xs:element type="tempo_de_cozeduraType" name="tempo_de_cozedura"/>
+      <xs:element type="tempo_totalType" name="tempo_total"/>
+      <xs:element type="xs:string" name="imagem"/>
+      <xs:element type="descriçaoType" name="descriçao"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receitasType">
+    <xs:sequence>
+      <xs:element type="receitaType" name="receita" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

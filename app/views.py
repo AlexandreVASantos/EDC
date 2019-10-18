@@ -8,7 +8,7 @@ def home(request):
 
 
 def ListaReceitas(request):
-    doc = etree.parse("xml_database.xml")
+    doc = etree.parse("receitas.xml")
     search = doc.xpath("//receita")
 
     information = {}
