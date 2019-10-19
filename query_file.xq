@@ -1,4 +1,36 @@
+
 (:
+declare function local:get_tipos_receita($nome_receita)
+{
+let $receita := collection("receitas")//receita[nome=$nome_receita]
+let $tipos := $receita/tipos
+for $t in $tipos
+return $t/tipo/text()
+};
+
+
+
+
+
+
+declare function local:get_categorias_receita($nome_receita)
+{
+let $receita := collection("receitas")//receita[nome=$nome_receita]
+let $categorias := $receita/categorias
+for $c in $categorias
+return $c/categoria/text()
+};
+
+declare function local:get_autores_receita($nome_receita)
+{
+let $receita := collection("receitas")//receita[nome=$nome_receita]
+let $autores := $receita/autores
+for $a in $autores
+return $a/nome_autor/text()
+};
+
+
+
 
 declare function local:get_dificuldades()
 {
@@ -26,6 +58,22 @@ return distinct-values($receita/autores/nome_autor)
 };
 
 
+declare function local:get_receita($nome)
+{
+let $receita := collection("receitas")//receita[nome=$nome]
+return ($receita/nome, $receita/data,$receita/dificuldade,$receita/imagem)
+};
+
+
+
+
+declare function local:get_count_ingredientes($nome)
+{
+let $receita := collection("receitas")//receita[nome=$nome]
+return count($receita/ingredientes/ingrediente)
+};
+
+
 declare updating function local:add_receita($nome, $dificuldade, $imagem, $data)
 {
   let $receitas := collection("receitas")
@@ -42,12 +90,6 @@ declare updating function local:add_receita($nome, $dificuldade, $imagem, $data)
       <ingredientes>
       </ingredientes>
       <dificuldade>{$dificuldade}</dificuldade>
-      <tempo_de_preparaçao>
-      </tempo_de_preparaçao>
-      <tempo_de_cozedura>
-      </tempo_de_cozedura>
-      <tempo_total>
-      </tempo_total>
       <imagem>{$imagem}</imagem>
       <descriçao>
       </descriçao>
@@ -57,15 +99,13 @@ declare updating function local:add_receita($nome, $dificuldade, $imagem, $data)
   
 };
 
+
 declare updating function local:add_autor($nome,$autor)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
     <nome_autor>{$autor}</nome_autor>) as last into $receita/autores
 };
-
-for $receita in collection("receitas")//receitas
-return $receita
 
 declare updating function local:add_categoria($nome,$categoria)
 {
@@ -145,3 +185,4 @@ declare updating function local:update_ingrediente($nome_receita, $ingrediente, 
   )
   
 };
+:)
