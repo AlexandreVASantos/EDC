@@ -22,3 +22,10 @@ def ListaReceitas(request):
         information[index].append(s.find("autores/nome_autor").text)
 
     return render(request, "ListaReceitas.html", {"info": information})
+
+def add_receita(request):
+    return render(request, 'add.html')
+
+
+def edit_receita(request):
+    return render(request, 'edit.html')

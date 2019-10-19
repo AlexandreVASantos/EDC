@@ -4,9 +4,8 @@
 
 
 
-    <div class="row" style="height: 36vh; padding-top: 25vh">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-2" style="text-align: right">
+    <div class="row" style="height: 36vh; padding-top: 25vh; padding-left: 8%">
+        <div class="col-sm-3" style="text-align: right">
             <div style="text-align: center">
             Autores:
             <br>
@@ -17,7 +16,7 @@
             </select>
             </div>
         </div>
-        <div class="col-sm-2"  style="text-align: center">
+        <div class="col-sm-3"  style="text-align: center">
          <div style="text-align: center">
             Categoria:
             <br>
@@ -35,6 +34,18 @@
              <select name= "tags" class="form-control" >
                 {% for tag in tags %}
                     <option value={{ tag }}>{{ tag }}</option>
+                {% endfor %}
+            </select>
+          </div>
+
+        </div>
+        <div class= "col-sm-2" style="text-align: center">
+         <div style="text-align: center">
+            Dificuldade:
+            <br>
+             <select name= "dificuldade" class="form-control" >
+                {% for d in dificuldade %}
+                    <option value={{ d }}>{{ d }}</option>
                 {% endfor %}
             </select>
           </div>
