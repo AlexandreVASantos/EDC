@@ -24,5 +24,6 @@ urlpatterns = [
     path('list/', app_views.listrecipes, name="list_recipes"),
     path('add/', app_views.add_receita, name='add_receita'),
     path('edit/', app_views.edit_receita, name='edit_receita'),
-    path('showrec/<str:recipe>/', app_views.show_recipe, name='show_recipe')
+    path('showrec/<str:recipe>/', app_views.show_recipe, name='show_recipe'),
+    path('validatexml/', app_views.validatexml, name='validate_xml'),
 ]
