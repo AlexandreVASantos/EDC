@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <div style = "text-align:center; padding-top: 10vh">
+        <h2>Eliminar Receita</h2>
+    </div>
+    <form action="/del_recipe" method="POST">
+        <div class="row" style="height: 5vh; padding-top: 5vh;">
+            <div class="col-md-12" style="text-align: center">
+                <p>Receitas:</p>
+                <div style=" padding-left: 33%; padding-right: 33%">
+                    <br>
+                    <select name= "Eliminar Receita" class="form-control">
+
+                        {% for r in receitas %}
+                            <option value={{ r }}>{{ r }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div style = "padding-top: 10vh; text-align: center">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name">Nome receita:</label>
+                    <br>
+                    <input type="text" id="name" name="name" required size="40">
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-md-12" style="text-align: center">
+                <input type="submit">
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+<script type="text/javascript">
+    function get_recipe(){
+        var element = document.getElementById("receitas");
+        var selected_recipe = element.options[element.selectedIndex].value;
+        url = "{% url 'get_recipe_data' %}";
+        $.post(url, selected_recipe,function (data) {
+          document.getElementById("name").innerText = data["receita"][0];
+        });
+
+    }
+
+    function onSubmit(){
+          document.getElementById("name").value = document.getElementById("name").innerText;
+          return true;
+
+    }
+</script>

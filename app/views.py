@@ -15,7 +15,6 @@ def listrecipes(request):
 
     information = {}
 
-
     for s in search:
         index= s.find("nome").text
         print(s.find("imagem").text)
@@ -25,12 +24,18 @@ def listrecipes(request):
 
     return render(request, "list_recipes.html", {"info": information})
 
+
 def add_receita(request):
     return render(request, 'add.html')
 
 
 def edit_receita(request):
     return render(request, 'edit.html')
+
+
+def del_receita(request):
+
+    return render(request, 'del.html')
 
 
 def show_recipe(request, recipe):
