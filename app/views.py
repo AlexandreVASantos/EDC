@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from lxml import etree
-from BaseXClient import BaseXClient
-
 import os
 from EDC.settings import BASE_DIR
 from BaseXClient import BaseXClient
@@ -13,11 +11,46 @@ def home(request):
     return render(request, "main.html")
 
 
+
+
+
+def handle_lista_ingredientes(req):
+    lista = req.split(",")
+    list_tupples = []
+    count =0
+    tmp = []
+    for i in range(0,lista):
+        tmp.append(i)
+        if count == 2:
+            count = 0
+            list_tupples.append(tmp)
+            tmp=[]
+        else:
+            count = count + 1
+    return
+
+
 def listrecipes(request):
     doc = etree.parse("app/data/receitas.xml")
     search = doc.xpath("//receita")
 
     information = {}
+    autores=[]
+
+    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+    try:
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores()')
+        exec = q.execute()
+        q.close()
+        print(exec)
+
+        dict= xmltodict.parse(exec)
+
+        print(dict)
+    finally:
+        # close session
+        if session:
+            session.close()
 
     for s in search:
         index= s.find("nome").text
