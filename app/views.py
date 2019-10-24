@@ -1,20 +1,26 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 from lxml import etree
+<<<<<<< HEAD
 from BaseXClient import BaseXClient
 
+=======
+import os
+from EDC.settings import BASE_DIR
+from BaseXClient import BaseXClient
+import xmltodict
+>>>>>>> 81e4e68901e57bd6bb56fb5a74dec54856f1c382
 
-# Create your views here.
 
 def home(request):
     return render(request, "main.html")
 
 
-def ListaReceitas(request):
-    doc = etree.parse("receitas.xml")
+def listrecipes(request):
+    doc = etree.parse("app/data/receitas.xml")
     search = doc.xpath("//receita")
 
     information = {}
-
 
     for s in search:
         index= s.find("nome").text
@@ -23,7 +29,8 @@ def ListaReceitas(request):
         information[index].append(s.find("imagem").text)
         information[index].append(s.find("autores/nome_autor").text)
 
-    return render(request, "ListaReceitas.html", {"info": information})
+    return render(request, "list_recipes.html", {"info": information})
+
 
 def add_receita(request):
     return render(request, 'add.html')
@@ -32,6 +39,7 @@ def add_receita(request):
 def edit_receita(request):
     return render(request, 'edit.html')
 
+<<<<<<< HEAD
 def add_recipe(request):
     requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
     for req in requiredToAdd:
@@ -50,3 +58,51 @@ local:add_receita("""+request.POST.get('name',' ')+','+request.POST.get('dificul
     return render(request, 'main.html',{'error':False})
 
 
+=======
+
+def del_receita(request):
+
+    return render(request, 'del.html')
+
+
+def show_recipe(request, recipe):
+    doc = etree.parse("app/data/receitas.xml")
+
+    search_recipe_xml = doc.xpath("//receita[nome = '{}']".format(recipe))
+
+
+    fn = 'receita.xslt'
+    pname = os.path.join(BASE_DIR,'app/data/' + fn)
+    xslt = etree.parse(pname)
+    transform = etree.XSLT(xslt)
+    html = transform(search_recipe_xml[0])
+    return render(request, 'show_recipe.html', {'xslt_to_html': html})
+
+
+@csrf_exempt
+def validatexml(request):
+    validation_performed = False
+    if request.method == 'POST':
+        try:
+
+            xml_to_verify = request.FILES["xml"]
+
+            xsd_file = etree.parse("app/data/receitas.xsd")
+
+            xmlschema = etree.XMLSchema(xsd_file)
+
+            doc = etree.parse(xml_to_verify)
+
+            valid = xmlschema.validate(doc)
+
+
+            validation_performed = True
+            return render(request, "validation.html", {"valid": valid, "validation_performed" : validation_performed})
+        except:
+            validation_performed = True
+            valid = False
+            return render(request, "validation.html", {"valid": valid, "validation_performed": validation_performed})
+
+    else:
+        return render(request, "validation.html", {'validation_performed' : validation_performed})
+>>>>>>> 81e4e68901e57bd6bb56fb5a74dec54856f1c382
