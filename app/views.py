@@ -1,15 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from lxml import etree
-<<<<<<< HEAD
 from BaseXClient import BaseXClient
 
-=======
 import os
 from EDC.settings import BASE_DIR
 from BaseXClient import BaseXClient
 import xmltodict
->>>>>>> 81e4e68901e57bd6bb56fb5a74dec54856f1c382
 
 
 def home(request):
@@ -39,7 +36,6 @@ def add_receita(request):
 def edit_receita(request):
     return render(request, 'edit.html')
 
-<<<<<<< HEAD
 def add_recipe(request):
     requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
     for req in requiredToAdd:
@@ -58,7 +54,6 @@ local:add_receita("""+request.POST.get('name',' ')+','+request.POST.get('dificul
     return render(request, 'main.html',{'error':False})
 
 
-=======
 
 def del_receita(request):
 
@@ -105,4 +100,3 @@ def validatexml(request):
 
     else:
         return render(request, "validation.html", {'validation_performed' : validation_performed})
->>>>>>> 81e4e68901e57bd6bb56fb5a74dec54856f1c382
