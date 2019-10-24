@@ -1,6 +1,6 @@
-module namespace local = "com.local.my.index";
+module namespace funcs = "com.funcs.my.index";
 
-declare function local:get_tipos_receita($nome_receita)
+declare function funcs:get_tipos_receita($nome_receita)
 {
 let $receita := collection("receitas")//receita[nome=$nome_receita]
 let $tipos := $receita/tipos
@@ -13,7 +13,7 @@ return $t/tipo/text()
 
 
 
-declare function local:get_categorias_receita($nome_receita)
+declare function funcs:get_categorias_receita($nome_receita)
 {
 let $receita := collection("receitas")//receita[nome=$nome_receita]
 let $categorias := $receita/categorias
@@ -21,7 +21,7 @@ for $c in $categorias
 return $c/categoria/text()
 };
 
-declare function local:get_autores_receita($nome_receita)
+declare function funcs:get_autores_receita($nome_receita)
 {
 let $receita := collection("receitas")//receita[nome=$nome_receita]
 let $autores := $receita/autores
@@ -32,33 +32,33 @@ return $a/nome_autor/text()
 
 
 
-declare function local:get_dificuldades()
+declare function funcs:get_dificuldades()
 {
   let $receita := collection("receitas")//receita
   return distinct-values($receita/dificuldade)
 };
 
-declare function local:get_categorias()
+declare function funcs:get_categorias()
 {
   let $receita := collection("receitas")//receita
   return distinct-values( $receita/categorias/categoria)
 };
 
-declare function local:get_tags()
+declare function funcs:get_tags()
 {
   let $receita := collection("receitas")//receita
   return distinct-values($receita/tipos/tipo)
 };
 
 
-declare function local:get_autores()
+declare function funcs:get_autores()
 {
 let $receita := collection("receitas")//receita
 return distinct-values($receita/autores/nome_autor)
 };
 
 
-declare function local:get_receita($nome)
+declare function funcs:get_receita($nome)
 {
 let $receita := collection("receitas")//receita[nome=$nome]
 return ($receita/nome, $receita/data,$receita/dificuldade,$receita/imagem)
@@ -67,16 +67,16 @@ return ($receita/nome, $receita/data,$receita/dificuldade,$receita/imagem)
 
 
 
-declare function local:get_count_ingredientes($nome)
+declare function funcs:get_count_ingredientes($nome)
 {
 let $receita := collection("receitas")//receita[nome=$nome]
 return count($receita/ingredientes/ingrediente)
 };
 
 
-declare updating function local:add_receita($nome, $dificuldade, $imagem, $data)
+declare updating function funcs:add_receita($nome, $dificuldade, $imagem, $data)
 {
-  let $receitas := collection("receitas")/receitas
+  let $receitas := collection("receitas")
   return insert node(
     <receita>
       <nome>{$nome}</nome>
@@ -100,21 +100,21 @@ declare updating function local:add_receita($nome, $dificuldade, $imagem, $data)
 };
 
 
-declare updating function local:add_autor($nome,$autor)
+declare updating function funcs:add_autor($nome,$autor)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
     <nome_autor>{$autor}</nome_autor>) as last into $receita/autores
 };
 
-declare updating function local:add_categoria($nome,$categoria)
+declare updating function funcs:add_categoria($nome,$categoria)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
     <categoria>{$categoria}</categoria>) as last into $receita/categorias
 };
 
-declare updating function local:add_tipo($nome,$tipo)
+declare updating function funcs:add_tipo($nome,$tipo)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
@@ -122,14 +122,14 @@ declare updating function local:add_tipo($nome,$tipo)
 };
 
 
-declare updating function local:add_passo($nome,$passo)
+declare updating function funcs:add_passo($nome,$passo)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
     <passo>{$passo}</passo>) as last into $receita/descriçao
 };
 
-declare updating function local:add_ingrediente($nome,$ingrediente, $unidade, $quantidade)
+declare updating function funcs:add_ingrediente($nome,$ingrediente, $unidade, $quantidade)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return insert node(
@@ -141,21 +141,21 @@ declare updating function local:add_ingrediente($nome,$ingrediente, $unidade, $q
 };
 
 
-declare updating function local:delete_receita($nome)
+declare updating function funcs:delete_receita($nome)
 {
   let $receita := collection("receitas")//receita[nome=$nome]
   return delete node $receita
 };
 
 
-declare updating function local:delete_ingrediente($nome_receita, $ingrediente)
+declare updating function funcs:delete_ingrediente($nome_receita, $ingrediente)
 {
    let $receita := collection("receitas")//receita[nome=$nome_receita]
    let $i := $receita/ingredientes/ingrediente[nome_i = $ingrediente]
    return delete node  $i
 };
 
-declare updating function local:update_receita($nome_atual, $next_nome, $dificuldade, $imagem, $data)
+declare updating function funcs:update_receita($nome_atual, $next_nome, $dificuldade, $imagem, $data)
 {
   
   let $receita := collection('receitas')//receita[nome=$nome_atual]
@@ -168,14 +168,14 @@ declare updating function local:update_receita($nome_atual, $next_nome, $dificul
 };
 
 
-declare updating function local:update_data($nome, $data, $new_data)
+declare updating function funcs:update_data($nome, $data, $new_data)
 {
   let $receita := collection('receitas')//receita[nome=$nome]
   return( replace node $receita/data with $new_data
   )
 };
 
-declare updating function local:update_ingrediente($nome_receita, $ingrediente, $novo_ingrediente, $unidade, $quantidade)
+declare updating function funcs:update_ingrediente($nome_receita, $ingrediente, $novo_ingrediente, $unidade, $quantidade)
 {
   let $receita := collection('receitas')//receita[nome=$nome_receita]
   let $ingrediente := $receita/ingredientes/ingrediente[nome_i = $ingrediente]

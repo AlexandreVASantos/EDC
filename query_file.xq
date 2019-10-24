@@ -1,5 +1,18 @@
 module namespace funcs = "com.funcs.my.index";
 
+
+
+declare function funcs:get_nomes_receitas() as node()*
+{
+    <nomes>{
+        let $receita := collection("receitas")//receita
+        let $nomes := $receita/nome
+        for $n in $nomes
+	order by $n
+        return $n
+   }</nomes>
+};
+
 declare function funcs:get_tipos_receita($nome_receita) as node()*
 {
   <tipos>{
@@ -10,10 +23,26 @@ declare function funcs:get_tipos_receita($nome_receita) as node()*
   }</tipos>
 };
 
+declare function funcs:get_passos_receita($nome_receita) as node()*
+{
+  <descriçao>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $descricao := $receita/descriçao
+    for $p in $descricao
+    return $p
+  }</descriçao>
+};
 
 
-
-
+declare function funcs:get_ingredientes_receita($nome_receita) as node()*
+{
+  <ingredientes>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $ingredientes := $receita/ingredientes/ingrediente
+    for $i in $ingredientes
+    return $i
+  }</ingredientes>
+};
 
 declare function funcs:get_categorias_receita($nome_receita) as node()*
 {

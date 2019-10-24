@@ -1,7 +1,7 @@
 # Paths
 INPUTPATH = /home/alexandre/Desktop/EDC/pratica/projeto1/EDC/receitas.xml
 DATAPATH = /home/alexandre/Desktop/EDC/pratica/BaseX924/basex/
-WORKPATH = /home/alexandre/Desktop/EDC/pratica/projeto1/EDC/query_file.xq
+WORKPATH = /home/alexandre/Desktop/EDC/pratica/projeto1/EDC/
 PROJECTPATH = /home/alexandre/Desktop/EDC/pratica/BaseX924/basex/
 
 # Layout

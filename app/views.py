@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponse
 from lxml import etree
 import os
 from EDC.settings import BASE_DIR
@@ -9,9 +10,6 @@ import xmltodict
 
 def home(request):
     return render(request, "main.html")
-
-
-
 
 
 def handle_lista_ingredientes(req):
@@ -65,9 +63,123 @@ def listrecipes(request):
 def add_receita(request):
     return render(request, 'add.html')
 
+@csrf_exempt
+def edit_recipe(request):
+    if request.method == 'POST':
+        if request.is_ajax():
+            print(request.POST)
+            session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+            try:
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{}")'.format(request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_recipe = xmltodict.parse(exec)
+                print(dict_recipe)
+
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{}")'.format(
+                        request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_autores = xmltodict.parse(exec)
+
+                lista_autores = ""
+                if(len(dict_autores["autores"]) > 1):
+                    for aut in dict_autores["autores"]["nome_autor"]:
+                        lista_autores += aut + ","
+                else:
+                    lista_autores=dict_autores["autores"]["nome_autor"]
+
+
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_categorias_receita("{}")'.format(
+                        request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_categorias = xmltodict.parse(exec)
+
+
+                lista_categorias = ""
+                if (len(dict_categorias["categorias"]) > 1):
+                    for cat in dict_categorias["categorias"]["categoria"]:
+                        lista_categorias += cat + ","
+                else:
+                    lista_categorias = dict_categorias["categorias"]["categoria"]
+
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_tipos_receita("{}")'.format(
+                        request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_tipos = xmltodict.parse(exec)
+
+                lista_tipos = ""
+
+                if(len(dict_tipos["tipos"]) >1):
+                    for tipo in dict_tipos["tipos"]["tipo"]:
+                        lista_tipos += tipo + ","
+                else:
+                    lista_tipos= dict_tipos["tipos"]["tipo"]
+
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_passos_receita("{}")'.format(
+                        request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_passos = xmltodict.parse(exec)
+                lista_passos=""
+                for passo in dict_passos["descriçao"]["descriçao"]["passo"]:
+                    lista_passos+= passo + ","
+
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
+                        request.POST.get("selected_recipe")))
+                exec = q.execute()
+                q.close()
+
+                dict_ingredientes = xmltodict.parse(exec)
+                lista_ingredientes=""
+
+
+
+                for item in dict_ingredientes["ingredientes"]["ingrediente"]:
+                    item = list(item.items())
+                    if len(item) == 3:
+                        lista_ingredientes+= item[2][1] + ","+ item[0][1] +"," + item[1][1]+ ","
+                    else:
+                        lista_ingredientes += item[1][1] + "," + item[0][1] + ","
+
+
+                print(lista_ingredientes)
+
+            finally:
+                # close session
+                if session:
+                    session.close()
+
+
+
+            return JsonResponse({"receita": [dict_recipe["receita"]["nome"],lista_categorias,dict_recipe["receita"]["data"],lista_tipos,lista_autores,dict_recipe["receita"]["dificuldade"],lista_ingredientes,lista_passos,dict_recipe["receita"]["imagem"]]})
+
+        return render(request)
+
+
 
 def edit_receita(request):
-    return render(request, 'edit.html')
+    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+    q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+    exec = q.execute()
+    q.close()
+
+
+    dict_nomes = xmltodict.parse(exec)
+    return render(request, 'edit.html', {"receitas": dict_nomes["nomes"]["nome"]})
 
 def add_recipe(request):
     requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
