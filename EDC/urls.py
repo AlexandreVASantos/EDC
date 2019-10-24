@@ -24,4 +24,5 @@ urlpatterns = [
     path('lista/', app_views.ListaReceitas, name="listar_receitas"),
     path('add/', app_views.add_receita, name='add_receita'),
     path('edit/', app_views.edit_receita, name='edit_receita'),
+    path('add_recipe/', app_views.add_recipe, name='add_recipe'),
 ]
