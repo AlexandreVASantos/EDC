@@ -236,7 +236,7 @@ def edit_recipe(request):
                 for cat in new_list_categorias:
                     if cat not in list_categorias_original:
                         q = session.query(
-                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_autor("{}", "{}")'.format(
+                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_categoria("{}", "{}")'.format(
                                 next_nome_receita, cat))
                         q.execute()
                         q.close()
@@ -244,26 +244,40 @@ def edit_recipe(request):
                 for cat in list_categorias_original:
                     if cat not in new_list_categorias:
                         q = session.query(
-                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_autor("{}", "{}")'.format(
+                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_categoria("{}", "{}")'.format(
                                 next_nome_receita, cat))
                         q.execute()
                         q.close()
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_tipos_receita("{}")'.format(
-                        request.POST.get("selected_recipe")))
+                        next_nome_receita))
                 exec = q.execute()
                 q.close()
 
                 dict_tipos = xmltodict.parse(exec)
 
-                lista_tipos = ""
+                list_tipos_original = dict_categorias["tipos"]["tipo"]
 
-                if (len(dict_tipos["tipos"]) > 1):
-                    for tipo in dict_tipos["tipos"]["tipo"]:
-                        lista_tipos += tipo + ","
-                else:
-                    lista_tipos = dict_tipos["tipos"]["tipo"]
+                new_list_tipos = request.POST.get("tipo").split(",")
+
+                for tip in new_list_tipos:
+                    if tip not in list_tipos_original:
+                        q = session.query(
+                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_tipo("{}", "{}")'.format(
+                                next_nome_receita, tip))
+                        q.execute()
+                        q.close()
+
+                for tip in list_tipos_original:
+                    if tip not in new_list_categorias:
+                        q = session.query(
+                            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_tipo("{}", "{}")'.format(
+                                next_nome_receita, tip))
+                        q.execute()
+                        q.close()
+
+
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_passos_receita("{}")'.format(
@@ -272,9 +286,46 @@ def edit_recipe(request):
                 q.close()
 
                 dict_passos = xmltodict.parse(exec)
-                lista_passos = ""
-                for passo in dict_passos["descriçao"]["descriçao"]["passo"]:
-                    lista_passos += passo + "\n"
+
+                list_passos_original = dict_passos["descriçao"]["passo"]
+
+                new_list_passos = request.POST.get("passos").split("\n")
+
+                count_passos=0
+                if len(list_passos_original) >= len(new_list_passos):
+                    while count_passos != len(list_passos_original)-1:
+                        if count_passos <= len(new_list_passos):
+                            q = session.query(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:edit_passo("{}", "{}","{}")'.format(
+                                    next_nome_receita, list_passos_original[count_passos],new_list_passos[count_passos]))
+                            q.execute()
+                            q.close()
+                            count_passos +=1
+                        else:
+                            q = session.query(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_passo("{}", "{}")'.format(
+                                    next_nome_receita, list_passos_original[count_passos]))
+                            q.execute()
+                            q.close()
+                            count_passos += 1
+                else:
+                    while count_passos != len(new_list_passos)-1:
+                        if count_passos <= len(list_passos_original):
+                            q = session.query(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:edit_passo("{}", "{}","{}")'.format(
+                                    next_nome_receita,list_passos_original[count_passos], new_list_passos[count_passos]))
+                            q.execute()
+                            q.close()
+                            count_passos +=1
+                        else:
+                            q = session.query(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_passo("{}", "{}")'.format(
+                                    next_nome_receita, new_list_passos[count_passos]))
+                            q.execute()
+                            q.close()
+                            count_passos += 1
+
+
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
@@ -283,16 +334,10 @@ def edit_recipe(request):
                 q.close()
 
                 dict_ingredientes = xmltodict.parse(exec)
-                lista_ingredientes = ""
 
-                for item in dict_ingredientes["ingredientes"]["ingrediente"]:
-                    item = list(item.items())
-                    if len(item) == 3:
-                        lista_ingredientes += item[2][1] + "," + item[0][1] + "," + item[1][1] + ",\n"
-                    else:
-                        lista_ingredientes += item[1][1] + "," + item[0][1] + ",\n"
+                list_ingredientes_original = dict_ingredientes["ingredientes"]["ingrediente"]
 
-                print(lista_passos)
+                new_list_ingredientes = request.POST.get("inredientes").split("\n")
 
 
             finally:
@@ -300,7 +345,7 @@ def edit_recipe(request):
                 if session:
                     session.close()
 
-            return render(request)
+                return render(request)
     else:
         return edit_receita(request)
 
