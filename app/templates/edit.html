@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-
+    <div style="height: 130vh">
     <div style = "text-align:center; padding-top: 10vh">
         <h2>Editar Receita</h2>
     </div>
@@ -12,10 +12,10 @@
                 <p>Receitas:</p>
                 <div style=" padding-left: 33%; padding-right: 33%">
                     <br>
-                    <select name= "receitas" class="form-control">
-
+                    <select name= "receitas" id="receitas" class="form-control" onchange="get_recipe()">
+                        <option value="vazio">---</option>
                         {% for r in receitas %}
-                            <option value={{ r }}>{{ r }}</option>
+                            <option value="{{ r }}">{{ r }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -68,14 +68,14 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="ingredientes">Ingredientes(separados por vírgulas eg leite,500,ml,manteiga,50,g)</label>
+                    <label for="ingredientes">Ingredientes(separados por ENTER eg leite,500,ml<ENTER>manteiga,50,g)</label>
                     <br>
-                    <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 10vh"></textarea>
+                    <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 90%; height: 30vh"></textarea>
                 </div>
                 <div class="col-md-6">
                     <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
                     <br>
-                    <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 80%; height: 10vh"></textarea>
+                    <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 90%; height: 30vh"></textarea>
                 </div>
             </div>
             <br>
@@ -99,39 +99,48 @@
 
         </div>
     </form>
-{% endblock %}
 
+    </div>
 <script type="text/javascript">
     function get_recipe(){
+
         var element = document.getElementById("receitas");
         var selected_recipe = element.options[element.selectedIndex].value;
-        url = "{% url 'get_recipe_data' %}";
-        $.post(url, selected_recipe,function (data) {
-          document.getElementById("name").innerText = data["receita"][0];
-          document.getElementById("cat").innerText = data["receita"][1];
-          document.getElementById("data").innerText = data["receita"][2];
-          document.getElementById("tipo").innerText = data["receita"][3];
-          document.getElementById("aut").innerText = data["receita"][4];
-          document.getElementById("dificuldade").innerText = data["receita"][5];
-          document.getElementById("ingredientes").innerText = data["receita"][6];
-          document.getElementById("passos").innerText = data["receita"][7];
-          document.getElementById("imagem").innerText = data["receita"][8];
+        if (selected_recipe == "vazio"){
+
+            document.getElementById("name").value ="";
+          document.getElementById("cat").value = "";
+          document.getElementById("data").value = "";
+          document.getElementById("tipo").value = "";
+          document.getElementById("aut").value = "";
+          document.getElementById("dificuldade").value = "";
+          document.getElementById("ingredientes").value = "";
+          document.getElementById("passos").value = "";
+          document.getElementById("imagem").value = "";
+            return;
+        }
+
+
+
+        data_to_send = {selected_recipe: selected_recipe};
+        url = "{% url 'edit_recipe' %}";
+        $.post(url, data_to_send,function (data) {
+            console.log(data)
+          document.getElementById("name").value = data["receita"][0];
+          document.getElementById("cat").value = data["receita"][1];
+          document.getElementById("data").value = data["receita"][2];
+          document.getElementById("tipo").value = data["receita"][3];
+          document.getElementById("aut").value = data["receita"][4];
+          document.getElementById("dificuldade").value = data["receita"][5];
+          document.getElementById("ingredientes").value = data["receita"][6].toString();
+          document.getElementById("passos").value = data["receita"][7].toString();
+          document.getElementById("imagem").value = data["receita"][8];
 
         });
 
     }
 
-    function onSubmit(){
-          document.getElementById("name").value = document.getElementById("name").innerText;
-          document.getElementById("cat").value = document.getElementById("cat").innerText;
-          document.getElementById("data").value = document.getElementById("data").innerText;
-          document.getElementById("tipo").value = document.getElementById("tipo").innerText;
-          document.getElementById("aut").value = document.getElementById("aut").innerText;
-          document.getElementById("dificuldade").value = document.getElementById("dificuldade").innerText;
-          document.getElementById("ingredientes").value = document.getElementById("ingredientes").innerText;
-          document.getElementById("passos").value = document.getElementById("passos").innerText;
-          document.getElementById("imagem").value = document.getElementById("imagem").innerText;
-          return true;
 
-    }
 </script>
+{% endblock %}
+

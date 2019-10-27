@@ -70,6 +70,7 @@
 
         <div class="row" style = "padding-top:10%; padding-left:10%; padding-right:10%">
             <div class = "col-md-8">
+
                 <table>
                     <tr>
                       <th style="text-align:left"><h4>Descrição</h4></th>

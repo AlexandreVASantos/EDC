@@ -5,7 +5,7 @@ LOGPATH = .logs
 REPOPATH = /home/alexandre/Desktop/EDC/pratica/BaseX924/basex/repo
 LANG = English
 LANGKEYS = false
-GLOBALLOCK = false
+FAIRLOCK = false
 CACHETIMEOUT = 3600
 
 # Client/Server Architecture
@@ -19,6 +19,7 @@ PROXYHOST =
 PROXYPORT = 0
 NONPROXYHOSTS = 
 IGNORECERT = false
+IGNOREHOSTNAME = false
 TIMEOUT = 30
 KEEPALIVE = 600
 PARALLEL = 8
@@ -29,7 +30,8 @@ LOGMSGMAXLEN = 1000
 WEBPATH = /home/alexandre/Desktop/EDC/pratica/BaseX924/basex/webapp
 RESTPATH = 
 RESTXQPATH = 
-CACHERESTXQ = false
+PARSERESTXQ = 3
+RESTXQERRORS = true
 HTTPLOCAL = false
 STOPPORT = 8985
 AUTHMETHOD = Basic

@@ -1,67 +1,123 @@
 module namespace funcs = "com.funcs.my.index";
 
-declare function funcs:get_tipos_receita($nome_receita)
+
+
+declare function funcs:get_nomes_receitas() as node()*
 {
-let $receita := collection("receitas")//receita[nome=$nome_receita]
-let $tipos := $receita/tipos
-for $t in $tipos
-return $t/tipo/text()
+    <nomes>{
+        let $receita := collection("receitas")//receita
+        let $nomes := $receita/nome
+        for $n in $nomes
+	order by $n
+        return $n
+   }</nomes>
+};
+
+declare function funcs:get_tipos_receita($nome_receita) as node()*
+{
+  <tipos>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $tipos := $receita/tipos
+    for $t in $tipos
+    return $t/tipo
+  }</tipos>
+};
+
+declare function funcs:get_passos_receita($nome_receita) as node()*
+{
+  <descriçao>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $descricao := $receita/descriçao
+    for $p in $descricao
+    return $p
+  }</descriçao>
+};
+
+
+declare function funcs:get_ingredientes_receita($nome_receita) as node()*
+{
+  <ingredientes>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $ingredientes := $receita/ingredientes/ingrediente
+    for $i in $ingredientes
+    return $i
+  }</ingredientes>
+};
+
+declare function funcs:get_categorias_receita($nome_receita) as node()*
+{
+  <categorias>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $categorias := $receita/categorias
+    for $c in $categorias
+    return $c/categoria
+  }</categorias>
+};
+
+declare function funcs:get_autores_receita($nome_receita) as node()*
+{
+  <autores>{
+    let $receita := collection("receitas")//receita[nome=$nome_receita]
+    let $autores := $receita/autores
+    for $a in $autores
+    return $a/nome_autor
+  }</autores>
 };
 
 
 
 
-
-
-declare function funcs:get_categorias_receita($nome_receita)
+declare function funcs:get_dificuldades() as node()*
 {
-let $receita := collection("receitas")//receita[nome=$nome_receita]
-let $categorias := $receita/categorias
-for $c in $categorias
-return $c/categoria/text()
+  <dificuldades>{
+    let $receita := collection("receitas")//receita
+    for $d in $receita
+    return $d/dificuldade
+  }</dificuldades>
+  
 };
 
-declare function funcs:get_autores_receita($nome_receita)
+declare function funcs:get_categorias() as node()*
 {
-let $receita := collection("receitas")//receita[nome=$nome_receita]
-let $autores := $receita/autores
-for $a in $autores
-return $a/nome_autor/text()
+  <categorias>{
+    let $receita := collection("receitas")//receita
+    for $c in $receita
+    return $c/categorias/categoria
+  }</categorias>
+  
 };
 
-
-
-
-declare function funcs:get_dificuldades()
+declare function funcs:get_tags() as node()*
 {
-  let $receita := collection("receitas")//receita
-  return distinct-values($receita/dificuldade)
-};
-
-declare function funcs:get_categorias()
-{
-  let $receita := collection("receitas")//receita
-  return distinct-values( $receita/categorias/categoria)
-};
-
-declare function funcs:get_tags()
-{
-  let $receita := collection("receitas")//receita
-  return distinct-values($receita/tipos/tipo)
+  <tags>{
+    let $receita := collection("receitas")//receita
+    for $t in $receita
+    return $t/tipos/tipo
+  }</tags>
+  
 };
 
 
-declare function funcs:get_autores()
+declare function funcs:get_autores() as node()*
 {
-let $receita := collection("receitas")//receita
-return distinct-values($receita/autores/nome_autor)
+  <autores>{
+    let $receita := collection("receitas")//receita
+    for $a in $receita
+    return $a/autores/nome_autor
+  }</autores>
 };
 
 
-declare function funcs:get_receita($nome)
+declare function funcs:get_receita($nome)as node()*
 {
 let $receita := collection("receitas")//receita[nome=$nome]
-return ($receita/nome, $receita/data,$receita/dificuldade,$receita/imagem)
+return (
+  <receita>
+    {$receita/nome}
+    {$receita/data}
+    {$receita/dificuldade}
+    {$receita/imagem}
+  </receita>)
 };
 
 
@@ -76,7 +132,7 @@ return count($receita/ingredientes/ingrediente)
 
 declare updating function funcs:add_receita($nome, $dificuldade, $imagem, $data)
 {
-  let $receitas := collection("receitas")
+  let $receitas := collection("receitas")/receitas
   return insert node(
     <receita>
       <nome>{$nome}</nome>
@@ -152,17 +208,17 @@ declare updating function funcs:delete_ingrediente($nome_receita, $ingrediente)
 {
    let $receita := collection("receitas")//receita[nome=$nome_receita]
    let $i := $receita/ingredientes/ingrediente[nome_i = $ingrediente]
-   return delete node  $i
+   return delete node $i
 };
 
 declare updating function funcs:update_receita($nome_atual, $next_nome, $dificuldade, $imagem, $data)
 {
   
   let $receita := collection('receitas')//receita[nome=$nome_atual]
-  return( replace node $receita/nome with $next_nome,
-          replace node $receita/dificuldade with $dificuldade,
-          replace node $receita/imagem with $imagem,
-          replace node $receita/data with $data
+  return( replace node $receita/nome/text() with $next_nome,
+          replace node $receita/dificuldade/text() with $dificuldade,
+          replace node $receita/imagem/text() with $imagem,
+          replace node $receita/data/text() with $data
   )
   
 };
@@ -171,7 +227,7 @@ declare updating function funcs:update_receita($nome_atual, $next_nome, $dificul
 declare updating function funcs:update_data($nome, $data, $new_data)
 {
   let $receita := collection('receitas')//receita[nome=$nome]
-  return( replace node $receita/data with $new_data
+  return( replace node $receita/data/text() with $new_data
   )
 };
 
@@ -179,9 +235,9 @@ declare updating function funcs:update_ingrediente($nome_receita, $ingrediente, 
 {
   let $receita := collection('receitas')//receita[nome=$nome_receita]
   let $ingrediente := $receita/ingredientes/ingrediente[nome_i = $ingrediente]
-  return( replace node $ingrediente/nome_i with $novo_ingrediente,
-          replace node $ingrediente/unidade with $unidade,
-          replace node $ingrediente/quantidade with $quantidade
+  return( replace node $ingrediente/nome_i/text() with $novo_ingrediente,
+          replace node $ingrediente/unidade/text() with $unidade,
+          replace node $ingrediente/quantidade/text() with $quantidade
   )
   
 };
