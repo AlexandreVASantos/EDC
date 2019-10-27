@@ -1,3 +1,5 @@
+from builtins import iter, next
+
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
@@ -367,15 +369,48 @@ def add_recipe(request):
         if req not in request.POST:
             return render(request, 'add.html', {'error': True})
     # create session
+    categorias = request.POST['cat'].split(',')
+    tipos = request.POST['tipo'].split(',')
+    ingredientes = request.POST['ingredientes'].split(',')
+    it = iter(ingredientes)
+    autores = request.POST['aut'].split(',')
+    passos = request.POST['passos'].split('\n')
+    print(categorias)
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+
     try:
-        session.execute("""xquery import module namespace local = "com.local.my.index" at 'index.xqm';
-local:add_receita("""+request.POST.get('name',' ')+','+request.POST.get('dificuldade',' ')+','+request.POST.get('imagem',' ')+','+request.POST.get('data',' ')+')')
-        print(session.info())
+        session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+funcs:add_receita("""+'"'+request.POST.get('name',' ')+'","'+request.POST.get('dificuldade',' ')+'","'+request.POST.get('imagem',' ')+'","'+request.POST.get('data',' ')+'")')
+        for categoria in categorias:
+            print(categoria)
+            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                       funcs:add_categoria(""" + '"'+request.POST.get('name', ' ') + '","' + categoria + '")')
+        for tipo in tipos:
+            print(tipo)
+            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                       funcs:add_tipo(""" + '"'+request.POST.get('name', ' ') + '","' + tipo + '")')
+        for ingrediente in it:
+            print(ingrediente)
+            quantidade=next(it)
+            unidade = next(it)
+            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                       funcs:add_ingrediente(""" + '"'+request.POST.get('name', ' ') + '","' + ingrediente + '","' + unidade
+                            + '","' + quantidade + '")')
+
+        for autor in autores:
+            print(autor)
+            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                       funcs:add_autor(""" + '"'+request.POST.get('name', ' ') + '","' + autor + '")')
+        for passo in passos:
+            print(passo)
+            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                       funcs:add_passo(""" + '"'+request.POST.get('name', ' ') + '","' + passo + '")')
     finally:
         # close session
         if session:
             session.close()
+
+
     return render(request, 'main.html',{'error':False})
 
 

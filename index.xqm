@@ -76,7 +76,7 @@ return count($receita/ingredientes/ingrediente)
 
 declare updating function funcs:add_receita($nome, $dificuldade, $imagem, $data)
 {
-  let $receitas := collection("receitas")
+  let $receitas := collection("receitas")/receitas
   return insert node(
     <receita>
       <nome>{$nome}</nome>
