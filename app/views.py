@@ -8,7 +8,7 @@ import os
 from EDC.settings import BASE_DIR
 from BaseXClient import BaseXClient
 import xmltodict
-
+import time
 
 def home(request):
     return render(request, "main.html")
@@ -68,8 +68,9 @@ def add_receita(request):
 @csrf_exempt
 def edit_recipe(request):
     if request.method == 'POST':
+        edit_occurs = True
         if request.is_ajax():
-            print(request.POST)
+
             session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
             try:
                 q = session.query(
@@ -78,7 +79,6 @@ def edit_recipe(request):
                 q.close()
 
                 dict_recipe = xmltodict.parse(exec)
-                print(dict_recipe)
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{}")'.format(
@@ -104,7 +104,7 @@ def edit_recipe(request):
 
                 dict_categorias = xmltodict.parse(exec)
 
-                print(dict_categorias)
+
 
 
                 lista_categorias = ""
@@ -155,11 +155,11 @@ def edit_recipe(request):
                 for item in dict_ingredientes["ingredientes"]["ingrediente"]:
                     item = list(item.items())
                     if len(item) == 3:
-                        lista_ingredientes+= item[2][1] + ","+ item[0][1] +"," + item[1][1]+ ",\n"
+                        lista_ingredientes+= item[2][1] + ","+ item[0][1] +"," + item[1][1]+ "\n"
                     else:
-                        lista_ingredientes += item[1][1] + "," + item[0][1] + ",\n"
+                        lista_ingredientes += item[1][1] + "," + item[0][1] + "\n"
 
-                print(lista_passos)
+
 
 
             finally:
@@ -171,28 +171,34 @@ def edit_recipe(request):
 
             return JsonResponse({"receita": [dict_recipe["receita"]["nome"],lista_categorias,dict_recipe["receita"]["data"],lista_tipos,lista_autores,dict_recipe["receita"]["dificuldade"],lista_ingredientes,lista_passos,dict_recipe["receita"]["imagem"]]})
         else:
-            nome_receita = request.POST.get("receitas")
-
-            session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
             try:
+                error = False
+                nome_receita = request.POST.get("receitas")
+
+                session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{}")'.format(
                         nome_receita))
                 exec = q.execute()
+
                 q.close()
+
 
                 dict_recipe = xmltodict.parse(exec)
 
-                next_nome_receita= request.POST.get("nome")
+                next_nome_receita= request.POST.get("name")
 
-                if dict_recipe["receita"]["nome"] != nome_receita or  dict_recipe["receita"]["data"] != request.POST.get("data") or  dict_recipe["receita"]["dificuldade"] != request.POST.get("dificuldade") or  dict_recipe["receita"]["imagem"] != request.POST.get("imagem"):
+
+
+
+                if dict_recipe["receita"]["nome"] != next_nome_receita or  dict_recipe["receita"]["data"] != request.POST.get("data") or  dict_recipe["receita"]["dificuldade"] != request.POST.get("dificuldade") or  \
+                        dict_recipe["receita"]["imagem"] != request.POST.get("imagem"):
                     q = session.query(
                         'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_receita("{}", "{}", "{}","{}","{}")'.format(
                             nome_receita, next_nome_receita, request.POST.get("dificuldade"), request.POST.get("imagem"),request.POST.get("data") ))
-                    exec = q.execute()
+                    exec=q.execute()
                     q.close()
-
-
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{}")'.format(
@@ -200,10 +206,14 @@ def edit_recipe(request):
                 exec = q.execute()
                 q.close()
 
-                dict_autores = xmltodict.parse(exec)
-                list_autores_original=dict_autores["autores"]["autor"]
 
-                new_list_autores = request.POST.get("auth").split(",")
+
+                dict_autores = xmltodict.parse(exec)
+
+
+                list_autores_original=dict_autores["autores"]["nome_autor"]
+
+                new_list_autores = request.POST.get("aut").split(",")
 
 
                 for auth in new_list_autores:
@@ -216,6 +226,7 @@ def edit_recipe(request):
 
                 for auth in list_autores_original:
                     if auth not in new_list_autores:
+
                         q = session.query(
                             'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_autor("{}", "{}")'.format(
                                 next_nome_receita, auth))
@@ -232,8 +243,8 @@ def edit_recipe(request):
 
                 list_categorias_original = dict_categorias["categorias"]["categoria"]
 
-                new_list_categorias =  request.POST.get("cat").split(",")
 
+                new_list_categorias =  request.POST.get("cat").split(",")
 
                 for cat in new_list_categorias:
                     if cat not in list_categorias_original:
@@ -259,9 +270,12 @@ def edit_recipe(request):
 
                 dict_tipos = xmltodict.parse(exec)
 
-                list_tipos_original = dict_categorias["tipos"]["tipo"]
+                list_tipos_original = dict_tipos["tipos"]["tipo"]
+
 
                 new_list_tipos = request.POST.get("tipo").split(",")
+
+
 
                 for tip in new_list_tipos:
                     if tip not in list_tipos_original:
@@ -272,7 +286,7 @@ def edit_recipe(request):
                         q.close()
 
                 for tip in list_tipos_original:
-                    if tip not in new_list_categorias:
+                    if tip not in new_list_tipos:
                         q = session.query(
                             'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_tipo("{}", "{}")'.format(
                                 next_nome_receita, tip))
@@ -283,73 +297,182 @@ def edit_recipe(request):
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_passos_receita("{}")'.format(
-                        request.POST.get("selected_recipe")))
+                        next_nome_receita))
                 exec = q.execute()
                 q.close()
 
+
+
                 dict_passos = xmltodict.parse(exec)
 
-                list_passos_original = dict_passos["descriçao"]["passo"]
+
+                list_passos_original = dict_passos["descriçao"]["descriçao"]["passo"]
+
+
 
                 new_list_passos = request.POST.get("passos").split("\n")
 
+
+                if '' in new_list_passos:
+                    new_list_passos.remove('')
+                for i in range(0, len(new_list_passos)):
+                    new_list_passos[i] = new_list_passos[i].replace("\r", "")
+
                 count_passos=0
+
+
                 if len(list_passos_original) >= len(new_list_passos):
-                    while count_passos != len(list_passos_original)-1:
-                        if count_passos <= len(new_list_passos):
+                    while count_passos != len(list_passos_original):
+
+                        if count_passos < len(new_list_passos):
+
                             q = session.query(
-                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:edit_passo("{}", "{}","{}")'.format(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_passo("{}", "{}","{}")'.format(
                                     next_nome_receita, list_passos_original[count_passos],new_list_passos[count_passos]))
                             q.execute()
                             q.close()
-                            count_passos +=1
+
+
                         else:
+
                             q = session.query(
                                 'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_passo("{}", "{}")'.format(
                                     next_nome_receita, list_passos_original[count_passos]))
                             q.execute()
                             q.close()
-                            count_passos += 1
+                        count_passos += 1
+
                 else:
-                    while count_passos != len(new_list_passos)-1:
-                        if count_passos <= len(list_passos_original):
+
+                    while count_passos != len(new_list_passos):
+                        if count_passos < len(list_passos_original):
+
+
                             q = session.query(
-                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:edit_passo("{}", "{}","{}")'.format(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_passo("{}", "{}","{}")'.format(
                                     next_nome_receita,list_passos_original[count_passos], new_list_passos[count_passos]))
                             q.execute()
                             q.close()
-                            count_passos +=1
+
                         else:
+
                             q = session.query(
                                 'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_passo("{}", "{}")'.format(
                                     next_nome_receita, new_list_passos[count_passos]))
                             q.execute()
                             q.close()
-                            count_passos += 1
+
+                        count_passos += 1
+
 
 
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
-                        request.POST.get("selected_recipe")))
+                        next_nome_receita))
                 exec = q.execute()
                 q.close()
 
                 dict_ingredientes = xmltodict.parse(exec)
 
-                list_ingredientes_original = dict_ingredientes["ingredientes"]["ingrediente"]
 
-                new_list_ingredientes = request.POST.get("inredientes").split("\n")
 
+                list_ingredientes = dict_ingredientes["ingredientes"]["ingrediente"]
+
+                list_ingredientes_original=[]
+                for ingrediente in list_ingredientes:
+                    if len(ingrediente) ==3:
+                        list_ingredientes_original.append(ingrediente["nome_i"] + "," + ingrediente["unidade"]+"," + ingrediente["quantidade"])
+                    else:
+                        list_ingredientes_original.append(ingrediente["nome_i"] + "," + ingrediente["quantidade"])
+
+                new_list_ingredientes = request.POST.get("ingredientes").split("\n")
+
+                count_ingredientes=0
+                if '' in new_list_ingredientes:
+                    new_list_ingredientes.remove('')
+
+                for i in range(0, len(new_list_ingredientes)):
+                    new_list_ingredientes[i] = new_list_ingredientes[i].replace("\r", "")
+
+
+                print(new_list_ingredientes)
+
+                if len(list_ingredientes_original) >= len(new_list_ingredientes):
+                    while count_ingredientes != len(list_ingredientes_original):
+
+                        nome_ing = list_ingredientes_original[count_ingredientes].split(",")[0]
+                        if count_ingredientes < len(new_list_ingredientes):
+                            ing = new_list_ingredientes[count_ingredientes].split(",")
+                            if len(ing) == 3:
+                                q = session.query(
+                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente3("{}", "{}", "{}","{}","{}")'.format(
+                                        next_nome_receita, nome_ing,ing[0],ing[1], ing[2]))
+                            else:
+                                q = session.query(
+                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
+                                        next_nome_receita, nome_ing, ing[0], ing[1]))
+                            q.execute()
+                            q.close()
+
+                        else:
+                            q = session.query(
+                                'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:delete_ingrediente("{}", "{}")'.format(
+                                    next_nome_receita, nome_ing))
+                            q.execute()
+                            q.close()
+                        count_ingredientes += 1
+                else:
+                    while count_ingredientes != len(new_list_ingredientes):
+                        ing = new_list_ingredientes[count_ingredientes].split(",")
+
+
+                        if count_ingredientes < len(list_ingredientes_original):
+                            nome_ing = list_ingredientes_original[count_ingredientes].split(",")[0]
+                            if len(ing) == 3:
+
+                                q = session.query(
+                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente3("{}", "{}","{}","{}","{}")'.format(
+                                        next_nome_receita, nome_ing,ing[0],ing[1], ing[2]))
+                            else:
+
+                                q = session.query(
+                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
+                                        next_nome_receita, nome_ing, ing[0], ing[1]))
+                            q.execute()
+                            q.close()
+                        else:
+                            if len(ing) == 2:
+                                q = session.query(
+                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_ingrediente2("{}", "{}","{}")'.format(
+                                        next_nome_receita, ing[0], ing[1]))
+                            else:
+                                q = session.query(
+                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_ingrediente3("{}", "{}","{}","{}")'.format(
+                                        next_nome_receita, ing[0], ing[1], ing[2]))
+
+
+                            q.execute()
+                            q.close()
+                        count_ingredientes += 1
+            except:
+                error = True
 
             finally:
-                # close session
+                q = session.query(
+                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+                exec = q.execute()
+                q.close()
+
+                dict_nomes = xmltodict.parse(exec)
+
                 if session:
                     session.close()
 
-                return render(request)
-    else:
-        return edit_receita(request)
+                return render(request, 'edit.html', {"receitas": dict_nomes["nomes"]["nome"], "error" : error, "edit_occurs":edit_occurs})
+
+    return redirect("/")
+
 
 
 
@@ -359,9 +482,9 @@ def edit_receita(request):
     exec = q.execute()
     q.close()
 
-
+    edit_occurs=False
     dict_nomes = xmltodict.parse(exec)
-    return render(request, 'edit.html', {"receitas": dict_nomes["nomes"]["nome"]})
+    return render(request, 'edit.html', {"receitas": dict_nomes["nomes"]["nome"], "edit_occurs":edit_occurs})
 
 def add_recipe(request):
     requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']

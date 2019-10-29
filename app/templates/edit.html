@@ -6,7 +6,32 @@
     <div style = "text-align:center; padding-top: 10vh">
         <h2>Editar Receita</h2>
     </div>
-    <form action="/edit_recipe" method="POST">
+    {% if edit_occurs %}
+        {% if error  %}
+            <br>
+            <br>
+            <div class="container">
+                <div class="alert alert-danger">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p>O processo de edição falhou!</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        {% else %}
+            <br>
+            <br>
+            <div class="container">
+                <div class="alert alert-success">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p>O processo de edição foi concluido com sucesso!</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        {% endif %}
+    {% endif %}
+    <form action="/edit_recipe/" method="POST">
         <div class="row" style="height: 5vh; padding-top: 5vh;">
             <div class="col-md-12" style="text-align: center">
                 <p>Receitas:</p>
@@ -103,6 +128,8 @@
     </div>
 <script type="text/javascript">
     function get_recipe(){
+
+
 
         var element = document.getElementById("receitas");
         var selected_recipe = element.options[element.selectedIndex].value;
