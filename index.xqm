@@ -25,12 +25,12 @@ declare function funcs:get_tipos_receita($nome_receita) as node()*
 
 declare function funcs:get_passos_receita($nome_receita) as node()*
 {
-  <descricao>{
+  <descriçao>{
     let $receita := collection("receitas")//receita[nome=$nome_receita]
     let $descricao := $receita/descriçao
     for $p in $descricao
     return $p
-  }</descricao>
+  }</descriçao>
 };
 
 
