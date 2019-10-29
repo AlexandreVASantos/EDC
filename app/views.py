@@ -13,6 +13,256 @@ import time
 def home(request):
     return render(request, "main.html")
 
+def listrecipes(request):
+    doc = etree.parse("app/data/receitas.xml")
+    search = doc.xpath("//receita")
+
+    information = {}
+    autores = []
+    tags = []
+    categorias = []
+    dificuldade = []
+    nomesRec = []
+    temp = []
+
+    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+    try:
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores()')
+        autores = q.execute()
+        q.close()
+        autores.split("\n")
+        autores = xmltodict.parse(autores)
+
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_tags()')
+        tags = q.execute()
+        q.close()
+        tags = xmltodict.parse(tags)
+
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_categorias()')
+        categorias = q.execute()
+        q.close()
+        categorias = xmltodict.parse(categorias)
+
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_dificuldades()')
+        dificuldade = q.execute()
+        q.close()
+        dificuldade = xmltodict.parse(dificuldade)
+
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+        nomesRec = q.execute()
+        q.close()
+        nomesRec = xmltodict.parse(nomesRec)
+        nomesRec = nomesRec["nomes"]["nome"]
+
+        for nome in nomesRec:
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
+            q = session.query(input)
+            index = xmltodict.parse(q.execute())
+            index = index["autores"]["nome_autor"]
+            q.close()
+
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{nome}")'
+            q = session.query(input)
+            temp = xmltodict.parse(q.execute())
+            information[temp["receita"]["nome"]] = []
+            information[temp["receita"]["nome"]].append(temp["receita"]["imagem"])
+            information[temp["receita"]["nome"]].append(index)
+            q.close()
+
+    finally:
+        # close session
+        if session:
+            session.close()
+
+    autores = autores["autores"]["nome_autor"]
+    autores = list(set(autores))
+    autores.sort()
+    autores.insert(0, "--")
+
+    tags = tags["tags"]["tipo"]
+    tags = list(set(tags))
+    tags.sort()
+    tags.insert(0, "--")
+
+    categorias = categorias["categorias"]["categoria"]
+    categorias = list(set(categorias))
+    categorias.sort()
+    categorias.insert(0, "--")
+
+    dificuldade = dificuldade["dificuldades"]["dificuldade"]
+    dificuldade = list(set(dificuldade))
+    dificuldade.sort()
+    dificuldade.insert(0, "--")
+
+    print("autores:", autores)
+
+    return render(request, "list_recipes.html", {"info": information, "autores": autores,
+                                                 "tags": tags,
+                                                 "categorias": categorias,
+                                                 "dificuldade": dificuldade})
+
+
+def applyFilters(request):
+    data = request.GET
+    print(data)
+
+    information = {}
+    autor = data["authors"]
+    dif = data["dificuldade"]
+    tag = data["tags"]
+    cat = data["categorias"]
+
+    autores = []
+    tags = []
+    categorias = []
+    dificuldade = []
+    nomesRec = []
+    temp = []
+    recIntersect = {}
+    recByCat = list()
+    recByTag = list()
+    recByAut = list()
+    recByDif = list()
+    recList = list()
+    final = set()
+
+    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+    try:
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores()')
+        autores = q.execute()
+        q.close()
+        autores.split("\n")
+        autores = xmltodict.parse(autores)
+
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_tags()')
+        tags = q.execute()
+        q.close()
+        tags = xmltodict.parse(tags)
+
+        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_categorias()')
+        categorias = q.execute()
+        q.close()
+        categorias = xmltodict.parse(categorias)
+
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_dificuldades()')
+        dificuldade = q.execute()
+        q.close()
+        dificuldade = xmltodict.parse(dificuldade)
+
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+        nomesRec = q.execute()
+        q.close()
+        nomesRec = xmltodict.parse(nomesRec)
+        nomesRec = nomesRec["nomes"]["nome"]
+
+        for nome in nomesRec:
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
+            q = session.query(input)
+            index = xmltodict.parse(q.execute())
+            index = index["autores"]["nome_autor"]
+            q.close()
+
+        if autor != "--":
+            q = session.query(
+                f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byAut("{autor}")')
+            temp = xmltodict.parse(q.execute())
+            print(temp)
+            recByAut = list(temp["receita"]["nome"])
+            q.close()
+
+        if dif != "--":
+            q = session.query(
+                f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byDif("{dif}")')
+            temp = xmltodict.parse(q.execute())
+            recByDif = list(temp["receita"]["nome"])
+            q.close()
+
+        if tag != "--":
+            q = session.query(
+                f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byTags("{tag}")')
+            temp = xmltodict.parse(q.execute())
+            print("asdasda",temp)
+            recByTag.append(temp["receita"]["nome"])
+            print("asdasda",recByTag)
+            q.close()
+
+        if cat != "--":
+            q = session.query(
+                f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byCat("{cat}")')
+            temp = xmltodict.parse(q.execute())
+            recByCat = list(temp["receita"]["nome"])
+            q.close()
+
+        print("recByAut", recByAut)
+        print("recByCat", recByCat)
+        print("recByTag", recByTag)
+        print("recBydif", recByDif)
+
+        recList.append(recByAut)
+        recList.append(recByCat)
+        recList.append(recByTag)
+        recList.append(recByDif)
+
+        for elem in recList:
+            if len(elem) > 0:
+                if len(final) > 0:
+                    final = final.intersection(set(elem))
+                else:
+                    final = set(elem)
+
+        print(final)
+
+        for nome in final:
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
+            q = session.query(input)
+            index = xmltodict.parse(q.execute())
+            index = index["autores"]["nome_autor"]
+            q.close()
+
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{nome}")'
+            q = session.query(input)
+            temp = xmltodict.parse(q.execute())
+            information[temp["receita"]["nome"]] = []
+            information[temp["receita"]["nome"]].append(temp["receita"]["imagem"])
+            information[temp["receita"]["nome"]].append(index)
+            q.close()
+
+    finally:
+        # close session
+        if session:
+            session.close()
+
+
+
+
+    autores = autores["autores"]["nome_autor"]
+    autores = list(set(autores))
+    autores.sort()
+    autores.insert(0, "--")
+
+    tags = tags["tags"]["tipo"]
+    tags = list(set(tags))
+    tags.sort()
+    tags.insert(0, "--")
+
+    categorias = categorias["categorias"]["categoria"]
+    categorias = list(set(categorias))
+    categorias.sort()
+    categorias.insert(0, "--")
+
+    dificuldade = dificuldade["dificuldades"]["dificuldade"]
+    dificuldade = list(set(dificuldade))
+    dificuldade.sort()
+    dificuldade.insert(0, "--")
+
+    return render(request, "list_recipes.html", {"info": information, "autores": autores,
+                                                 "tags": tags,
+                                                 "categorias": categorias,
+                                                 "dificuldade": dificuldade})
 
 def handle_lista_ingredientes(req):
     lista = req.split(",")

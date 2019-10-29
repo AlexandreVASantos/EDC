@@ -1,5 +1,56 @@
 module namespace funcs = "com.funcs.my.index";
 
+declare function funcs:get_receitas_byCat($categoria) as node()*
+{
+  <receita>{
+  let $receita := collection("receitas")//receita[categorias/categoria=$categoria]
+
+  for $rec in $receita
+  return (
+    $rec/nome,
+    $rec/imagem
+)
+  }</receita>
+};
+
+declare function funcs:get_receitas_byDif($dificuldade) as node()*
+{
+  <receita>{
+  let $receita := collection("receitas")//receita[dificuldade=$dificuldade]
+
+  for $rec in $receita
+  return (
+      $rec/nome,
+      $rec/imagem
+    )
+  }</receita>
+};
+
+declare function funcs:get_receitas_byTags($tag) as node()*
+{
+  <receita>{
+  let $receita := collection("receitas")//receita[tipos/tipo=$tag]
+
+  for $rec in $receita
+  return (
+      $rec/nome,
+      $rec/imagem
+    )
+    }</receita>
+};
+
+declare function funcs:get_receitas_byAut($autor) as node()*
+{
+  <receita>{
+  let $receita := collection("receitas")//receita[autores/nome_autor=$autor]
+
+  for $rec in $receita
+  return (
+      $rec/nome,
+      $rec/imagem
+    )
+    }</receita>
+};
 
 
 declare function funcs:get_nomes_receitas() as node()*

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , app_views.home),
     path('list/', app_views.listrecipes, name="list_recipes"),
+    path('listFiltered/', app_views.applyFilters, name="list_recipesFiltered"),
     path('add/', app_views.add_receita, name='add_receita'),
     path('edit/', app_views.edit_receita, name='edit_receita'),
     path('add_recipe/', app_views.add_recipe, name='add_recipe'),
