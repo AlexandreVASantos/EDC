@@ -6,21 +6,8 @@
     <div style = "text-align:center; padding-top: 10vh">
         <h2>Eliminar Receita</h2>
     </div>
-    <form action="/del" method="POST">
-        <div class="row" style="height: 5vh; padding-top: 5vh;">
-            <div class="col-md-12" style="text-align: center">
-                <p>Receitas:</p>
-                <div style=" padding-left: 33%; padding-right: 33%">
-                    <br>
-                    <select name= "Eliminar Receita" class="form-control">
-
-                        {% for r in receitas %}
-                            <option value={{ r }}>{{ r }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-        </div>
+    <form action="/del/" method="POST">
+        {% csrf_token %}
         <br>
         <br>
         <br>
@@ -28,7 +15,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Nome receita:</label>
+                    <label for="name">Nome receita a eliminar:</label>
                     <br>
                     <input type="text" id="name" name="name" required size="40">
                 </div>
