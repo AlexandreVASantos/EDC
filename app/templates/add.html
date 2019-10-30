@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+{% if error %}
+    <p>ERRO: Insira a informação pedida</p>
+{% endif %}
 
     <div style = "text-align:center; padding-top: 12vh">
         <h2>Adicionar Receita</h2>
     </div>
-    <form action="/add_recipe" method="POST">
+    <form action="/add_recipe/" method="POST">
+        {% csrf_token %}
         <div style = "padding-top: 10vh; text-align: center">
             <div class="row">
                 <div class="col-md-4">
@@ -52,12 +55,12 @@
                 <div class="col-md-6">
                     <label for="ingredientes">Ingredientes(separados por vírgulas eg leite,500,ml,manteiga,50,g)</label>
                     <br>
-                    <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 10vh"></textarea>
+                    <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 20vh"></textarea>
                 </div>
                 <div class="col-md-6">
                     <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
                     <br>
-                    <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 80%; height: 10vh"></textarea>
+                    <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 80%; height: 20vh"></textarea>
                 </div>
             </div>
             <br>

@@ -764,7 +764,9 @@
 	</receita>
 	<receita>
 		<nome>Madalenas de Limão e Mirtilos na Tostadeira</nome>
-		<categoria>Doces e Sobremesas</categoria>
+		<categorias>		
+			<categoria>Doces e Sobremesas</categoria>
+		</categorias>
 		<tipos>
 			<tipo>Fruta</tipo>
 			<tipo>Bolos</tipo>
