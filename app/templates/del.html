@@ -6,7 +6,7 @@
     <div style = "text-align:center; padding-top: 10vh">
         <h2>Eliminar Receita</h2>
     </div>
-    <form action="/del_recipe" method="POST">
+    <form action="/del" method="POST">
         <div class="row" style="height: 5vh; padding-top: 5vh;">
             <div class="col-md-12" style="text-align: center">
                 <p>Receitas:</p>
@@ -42,6 +42,20 @@
         </div>
     </form>
 {% endblock %}
+
+<form method="post" id="DelRecipe">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+
+    </table>
+    <button type="submit">Save</button>
+
+  </form>
+<script>
+$("#DelRecipe").on('submit', function(event) {
+      alert("Recipe deleted");
+</script>
 
 <script type="text/javascript">
     function get_recipe(){
