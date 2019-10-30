@@ -263,53 +263,22 @@ def applyFilters(request):
                                                  "tags": tags,
                                                  "categorias": categorias,
                                                  "dificuldade": dificuldade})
-'''
-def handle_lista_ingredientes(req):
-    lista = req.split(",")
-    list_tupples = []
-    count =0
-    tmp = []
-    for i in range(0,lista):
-        tmp.append(i)
-        if count == 2:
-            count = 0
-            list_tupples.append(tmp)
-            tmp=[]
-        else:
-            count = count + 1
-    return 
-'''
 
-def listrecipes(request):
-    doc = etree.parse("app/data/receitas.xml")
-    search = doc.xpath("//receita")
 
-    information = {}
-    autores=[]
 
-    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
-    try:
-        q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores()')
-        exec = q.execute()
-        q.close()
-        print(exec)
+def check_if_in_list_ahead(item_list):
+    tmp_list = []
 
-        dict= xmltodict.parse(exec)
+    for i in range(0,len(item_list)):
+        tmp_list.append(item_list[i].split(",")[0])
 
-        print(dict)
-    finally:
-        # close session
-        if session:
-            session.close()
+    for i in range(0, len(tmp_list)):
 
-    for s in search:
-        index= s.find("nome").text
-        print(s.find("imagem").text)
-        information[index] = []
-        information[index].append(s.find("imagem").text)
-        information[index].append(s.find("autores/nome_autor").text)
+        if tmp_list[i] in tmp_list[i+1:]:
+            return True
 
-    return render(request, "list_recipes.html", {"info": information})
+    return False
+
 
 
 def add_receita(request):
@@ -404,6 +373,7 @@ def edit_recipe(request):
 
                 for item in dict_ingredientes["ingredientes"]["ingrediente"]:
                     item = list(item.items())
+                    print(item)
                     if len(item) == 3:
                         lista_ingredientes+= item[2][1] + ","+ item[0][1] +"," + item[1][1]+ "\n"
                     else:
@@ -411,7 +381,7 @@ def edit_recipe(request):
 
 
 
-
+                print(lista_ingredientes)
             finally:
                 # close session
                 if session:
@@ -465,6 +435,10 @@ def edit_recipe(request):
 
                 new_list_autores = request.POST.get("aut").split(",")
 
+                check = check_if_in_list_ahead(new_list_autores)
+
+                if check:
+                    raise Exception("ingrediente in list ahead")
 
                 for auth in new_list_autores:
                     if auth not in list_autores_original:
@@ -496,6 +470,11 @@ def edit_recipe(request):
 
                 new_list_categorias =  request.POST.get("cat").split(",")
 
+                check = check_if_in_list_ahead(new_list_categorias)
+
+                if check:
+                    raise Exception("ingrediente in list ahead")
+
                 for cat in new_list_categorias:
                     if cat not in list_categorias_original:
                         q = session.query(
@@ -525,7 +504,10 @@ def edit_recipe(request):
 
                 new_list_tipos = request.POST.get("tipo").split(",")
 
+                check = check_if_in_list_ahead(new_list_tipos)
 
+                if check:
+                    raise Exception("ingrediente in list ahead")
 
                 for tip in new_list_tipos:
                     if tip not in list_tipos_original:
@@ -568,7 +550,13 @@ def edit_recipe(request):
                 for i in range(0, len(new_list_passos)):
                     new_list_passos[i] = new_list_passos[i].replace("\r", "")
 
+                check = check_if_in_list_ahead(new_list_passos)
+
+                if check:
+                    raise Exception("ingrediente in list ahead")
+
                 count_passos=0
+
 
 
                 if len(list_passos_original) >= len(new_list_passos):
@@ -614,8 +602,7 @@ def edit_recipe(request):
 
                         count_passos += 1
 
-
-
+                print("X")
 
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
@@ -625,7 +612,7 @@ def edit_recipe(request):
 
                 dict_ingredientes = xmltodict.parse(exec)
 
-
+                print("Y")
 
                 list_ingredientes = dict_ingredientes["ingredientes"]["ingrediente"]
 
@@ -638,12 +625,22 @@ def edit_recipe(request):
 
                 new_list_ingredientes = request.POST.get("ingredientes").split("\n")
 
+
                 count_ingredientes=0
                 if '' in new_list_ingredientes:
                     new_list_ingredientes.remove('')
 
                 for i in range(0, len(new_list_ingredientes)):
                     new_list_ingredientes[i] = new_list_ingredientes[i].replace("\r", "")
+
+                check = check_if_in_list_ahead(new_list_ingredientes)
+
+
+
+                if check:
+                    raise Exception("ingrediente in list ahead")
+
+
 
 
                 print(new_list_ingredientes)
@@ -664,20 +661,7 @@ def edit_recipe(request):
                                         'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
                                             next_nome_receita, nome_ing, ing[0], ing[1]))
                                 else:
-                                    error = True
-                                    q = session.query(
-                                        'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
-                                    exec = q.execute()
-                                    q.close()
-
-                                    dict_nomes = xmltodict.parse(exec)
-
-                                    if session:
-                                        session.close()
-
-                                    return render(request, 'edit.html',
-                                                  {"receitas": dict_nomes["nomes"]["nome"], "error": error,
-                                                   "edit_occurs": edit_occurs})
+                                   raise Exception("not the right amount of arguments")
 
                             q.execute()
                             q.close()
@@ -707,20 +691,7 @@ def edit_recipe(request):
                                          'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
                                             next_nome_receita, nome_ing, ing[0], ing[1]))
                                 else:
-                                    error = True
-                                    q = session.query(
-                                        'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
-                                    exec = q.execute()
-                                    q.close()
-
-                                    dict_nomes = xmltodict.parse(exec)
-
-                                    if session:
-                                        session.close()
-
-                                    return render(request, 'edit.html',
-                                                  {"receitas": dict_nomes["nomes"]["nome"], "error": error,
-                                                   "edit_occurs": edit_occurs})
+                                    raise Exception("not the right amount of arguments")
 
                             q.execute()
                             q.close()
@@ -740,6 +711,7 @@ def edit_recipe(request):
                         count_ingredientes += 1
             except:
                 error = True
+
 
             finally:
                 q = session.query(
@@ -792,7 +764,7 @@ def add_recipe(request):
 
     for i in range(0, len(passos)):
         passos[i] = passos[i].replace("\r", "")
-        
+
     print(categorias)
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
@@ -842,7 +814,6 @@ funcs:add_receita("""+'"'+request.POST.get('name',' ')+'","'+request.POST.get('d
 
 
 def del_receita(request):
-
     return render(request, 'del.html')
 
 
