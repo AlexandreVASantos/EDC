@@ -263,7 +263,7 @@ def applyFilters(request):
                                                  "tags": tags,
                                                  "categorias": categorias,
                                                  "dificuldade": dificuldade})
-
+'''
 def handle_lista_ingredientes(req):
     lista = req.split(",")
     list_tupples = []
@@ -277,8 +277,8 @@ def handle_lista_ingredientes(req):
             tmp=[]
         else:
             count = count + 1
-    return
-
+    return 
+'''
 
 def listrecipes(request):
     doc = etree.parse("app/data/receitas.xml")
@@ -659,9 +659,26 @@ def edit_recipe(request):
                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente3("{}", "{}", "{}","{}","{}")'.format(
                                         next_nome_receita, nome_ing,ing[0],ing[1], ing[2]))
                             else:
-                                q = session.query(
-                                    'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
-                                        next_nome_receita, nome_ing, ing[0], ing[1]))
+                                if len(ing) ==2:
+                                    q = session.query(
+                                        'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
+                                            next_nome_receita, nome_ing, ing[0], ing[1]))
+                                else:
+                                    error = True
+                                    q = session.query(
+                                        'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+                                    exec = q.execute()
+                                    q.close()
+
+                                    dict_nomes = xmltodict.parse(exec)
+
+                                    if session:
+                                        session.close()
+
+                                    return render(request, 'edit.html',
+                                                  {"receitas": dict_nomes["nomes"]["nome"], "error": error,
+                                                   "edit_occurs": edit_occurs})
+
                             q.execute()
                             q.close()
 
@@ -685,10 +702,26 @@ def edit_recipe(request):
                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente3("{}", "{}","{}","{}","{}")'.format(
                                         next_nome_receita, nome_ing,ing[0],ing[1], ing[2]))
                             else:
+                                if len(ing) == 2:
+                                    q = session.query(
+                                         'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
+                                            next_nome_receita, nome_ing, ing[0], ing[1]))
+                                else:
+                                    error = True
+                                    q = session.query(
+                                        'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+                                    exec = q.execute()
+                                    q.close()
 
-                                q = session.query(
-                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente2("{}", "{}","{}","{}")'.format(
-                                        next_nome_receita, nome_ing, ing[0], ing[1]))
+                                    dict_nomes = xmltodict.parse(exec)
+
+                                    if session:
+                                        session.close()
+
+                                    return render(request, 'edit.html',
+                                                  {"receitas": dict_nomes["nomes"]["nome"], "error": error,
+                                                   "edit_occurs": edit_occurs})
+
                             q.execute()
                             q.close()
                         else:
@@ -744,8 +777,7 @@ def add_recipe(request):
     # create session
     categorias = request.POST['cat'].split(',')
     tipos = request.POST['tipo'].split(',')
-    ingredientes = request.POST['ingredientes'].split(',')
-    it = iter(ingredientes)
+    ingredientes = request.POST['ingredientes'].split('\n')
     autores = request.POST['aut'].split(',')
     passos = request.POST['passos'].split('\n')
     print(categorias)
@@ -762,13 +794,21 @@ funcs:add_receita("""+'"'+request.POST.get('name',' ')+'","'+request.POST.get('d
             print(tipo)
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_tipo(""" + '"'+request.POST.get('name', ' ') + '","' + tipo + '")')
-        for ingrediente in it:
-            print(ingrediente)
-            quantidade=next(it)
-            unidade = next(it)
-            session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
-                       funcs:add_ingrediente(""" + '"'+request.POST.get('name', ' ') + '","' + ingrediente + '","' + unidade
-                            + '","' + quantidade + '")')
+        for ingrediente in ingredientes:
+            it = ingrediente.split(",")
+            if len(it) == 3:
+                ingrediente = it[0]
+                unidade = it[2]
+                quantidade = it[1]
+                session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                           funcs:add_ingrediente3(""" + '"'+request.POST.get('name', ' ') + '","' + ingrediente + '","' + unidade
+                                + '","' + quantidade + '")')
+            else:
+                ingrediente = it[0]
+                quantidade = it[1]
+                session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
+                                           funcs:add_ingrediente2(""" + '"' + request.POST.get('name',
+                                                                                               ' ') + '","' + ingrediente + '","' + quantidade + '")')
 
         for autor in autores:
             print(autor)
