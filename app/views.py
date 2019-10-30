@@ -814,7 +814,20 @@ funcs:add_receita("""+'"'+request.POST.get('name',' ')+'","'+request.POST.get('d
 
 
 def del_receita(request):
-    return render(request, 'del.html')
+    if 'name' not in request.POST:
+        return render(request, 'del.html', {'error': True})
+
+    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+    try:
+        session.execute("""xquery import module namespace local = "com.local.my.index" at 'index.xqm';
+    local:del_receita(""" + request.POST.get('name', ' ') + ')')
+        print(session.info())
+    finally:
+        # close session
+        if session:
+            session.close()
+    return render(request, 'main.html', {'error': False})
+
 
 
 def show_recipe(request, recipe):
