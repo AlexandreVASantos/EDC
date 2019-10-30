@@ -778,8 +778,21 @@ def add_recipe(request):
     categorias = request.POST['cat'].split(',')
     tipos = request.POST['tipo'].split(',')
     ingredientes = request.POST['ingredientes'].split('\n')
+    if '' in ingredientes:
+        ingredientes.remove('')
+
+    for i in range(0, len(ingredientes)):
+        ingredientes[i] = ingredientes[i].replace("\r", "")
+
     autores = request.POST['aut'].split(',')
     passos = request.POST['passos'].split('\n')
+
+    if '' in passos:
+        passos.remove('')
+
+    for i in range(0, len(passos)):
+        passos[i] = passos[i].replace("\r", "")
+        
     print(categorias)
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
