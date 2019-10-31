@@ -812,22 +812,67 @@ funcs:add_receita("""+'"'+request.POST.get('name',' ')+'","'+request.POST.get('d
     return render(request, 'main.html',{'error':False})
 
 
+def delete(request):
+    try:
+        session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+        exec = q.execute()
+        q.close()
+        dict_nomes = xmltodict.parse(exec)
+        print(dict_nomes)
+
+    finally:
+       if session:
+            session.close()
+
+
+    return render(request, 'del.html',{"receitas": dict_nomes["nomes"]["nome"], "error": False})
 
 def del_recipe(request):
-    if 'name' not in request.POST:
-        return render(request, 'del.html', {'error': True})
+    if 'receitas' not in request.POST:
+        session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+        q = session.query(
+            'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+        exec = q.execute()
+        q.close()
+
+        dict_nomes = xmltodict.parse(exec)
+        print(dict_nomes)
+        if session:
+            session.close()
+
+        return render(request, 'del.html', {"receitas": dict_nomes["nomes"]["nome"], "error": True})
 
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
-    try:
-        session.execute("""xquery import module namespace local = "com.funcs.my.index" at 'index.xqm';
-    local:delete_receita(""" + '"' + request.POST.get('name', ' ') + '")')
-        print(session.info())
-    finally:
-        # close session
-        if session:
-            session.close()
-    return render(request, 'main.html', {'error': False})
+
+
+    q = session.query(
+        "import module namespace funcs = 'com.funcs.my.index' at 'index.xqm'; "
+                    "funcs:delete_receita('" + request.POST.get('receitas', ' ') + "')")
+    exec = q.execute()
+
+
+    q.close()
+
+
+
+
+    print("erro")
+
+    q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
+    exec = q.execute()
+    q.close()
+
+    dict_nomes = xmltodict.parse(exec)
+    print(dict_nomes)
+    if session:
+        session.close()
+
+    return render(request, 'del.html',{"receitas": dict_nomes["nomes"]["nome"], "error": False})
+    #return render(request, 'main.html', {'error': False})
 
 
 def show_recipe(request, recipe):
