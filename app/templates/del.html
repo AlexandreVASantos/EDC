@@ -9,16 +9,16 @@
     <form action="/del/" method="POST">
         {% csrf_token %}
         <br>
-        <br>
-        <br>
         <div style = "padding-top: 10vh; text-align: center">
-
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="name">Nome receita a eliminar:</label>
-                    <br>
-                    <input type="text" id="name" name="name" required size="40">
-                </div>
+        <p>Receita a eliminar:</p>
+            <div style=" padding-left: 33%; padding-right: 33%">
+                <br>
+                <select name= "receitas" id="receitas" class="form-control">
+                    <option value="vazio">---</option>
+                    {% for r in receitas %}
+                        <option value="{{ r }}">{{ r }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <br>
             <br>
@@ -29,35 +29,3 @@
         </div>
     </form>
 {% endblock %}
-
-<form method="post" id="DelRecipe">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-
-    </table>
-    <button type="submit">Save</button>
-
-  </form>
-<script>
-$("#DelRecipe").on('submit', function(event) {
-      alert("Recipe deleted");
-</script>
-
-<script type="text/javascript">
-    function get_recipe(){
-        var element = document.getElementById("receitas");
-        var selected_recipe = element.options[element.selectedIndex].value;
-        url = "{% url 'get_recipe_data' %}";
-        $.post(url, selected_recipe,function (data) {
-          document.getElementById("name").innerText = data["receita"][0];
-        });
-
-    }
-
-    function onSubmit(){
-          document.getElementById("name").value = document.getElementById("name").innerText;
-          return true;
-
-    }
-</script>
