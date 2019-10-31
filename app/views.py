@@ -748,8 +748,14 @@ def add_recipe(request):
             return render(request, 'add.html', {'error': True})
     # create session
     categorias = request.POST['cat'].split(',')
+    if(len(categorias) != len(set(categorias))):
+	    return render(request, 'add.html', {'error': True})
     tipos = request.POST['tipo'].split(',')
+    if (len(tipos) != len(set(tipos))):
+        return render(request, 'add.html', {'error': True})
     ingredientes = request.POST['ingredientes'].split('\n')
+    if (len(ingredientes) != len(set(ingredientes))):
+        return render(request, 'add.html', {'error': True})
     if '' in ingredientes:
         ingredientes.remove('')
 
@@ -757,7 +763,11 @@ def add_recipe(request):
         ingredientes[i] = ingredientes[i].replace("\r", "")
 
     autores = request.POST['aut'].split(',')
+    if (len(autores) != len(set(autores))):
+        return render(request, 'add.html', {'error': True})
     passos = request.POST['passos'].split('\n')
+    if (len(passos) != len(set(passos))):
+        return render(request, 'add.html', {'error': True})
 
     if '' in passos:
         passos.remove('')
