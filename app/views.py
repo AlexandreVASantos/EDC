@@ -300,10 +300,13 @@ def applyFilters(request):
 def applyFeed(request):
     d = feedparser.parse('https://www.bonappetit.com/feed/latest-recipes/rss')
     info = dict()
+
+    print(d)
     for post in d.entries:
         info[post.title] = []
         info[post.title].append(post.links[0].href)
         info[post.title].append(post.media_thumbnail[0]["url"])
+
 
     for key,value in info.items():
         print(value[1])
@@ -410,15 +413,28 @@ def edit_recipe(request):
                 dict_ingredientes = xmltodict.parse(exec)
                 lista_ingredientes = ""
 
-                for item in dict_ingredientes["ingredientes"]["ingrediente"]:
-                    item = list(item.items())
-                    print(item)
-                    if len(item) == 3:
-                        lista_ingredientes += item[2][1] + "," + item[0][1] + "," + item[1][1] + "\n"
-                    else:
-                        lista_ingredientes += item[1][1] + "," + item[0][1] + "\n"
 
-                print(lista_ingredientes)
+                if isinstance(dict_ingredientes["ingredientes"]["ingrediente"], list):
+                    print("blablabla")
+                    for item in dict_ingredientes["ingredientes"]["ingrediente"]:
+                        item = list(item.items())
+                        print(item)
+                        if len(item) == 3:
+                            lista_ingredientes += item[2][1] + "," + item[0][1] + "," + item[1][1] + "\n"
+                        else:
+                            lista_ingredientes += item[1][1] + "," + item[0][1] + "\n"
+                elif isinstance(dict_ingredientes["ingredientes"]["ingrediente"], dict):
+                    print(dict_ingredientes["ingredientes"]["ingrediente"]["nome_i"])
+                    if "unidade" in dict_ingredientes["ingredientes"]["ingrediente"]:
+                        lista_ingredientes += dict_ingredientes["ingredientes"]["ingrediente"]["nome_i"] + "," + dict_ingredientes["ingredientes"]["ingrediente"]["quantidade"] +"," + dict_ingredientes["ingredientes"]["ingrediente"]["unidade"]+ "\n"
+                    else:
+                        lista_ingredientes += dict_ingredientes["ingredientes"]["ingrediente"]["nome_i"] + "," + dict_ingredientes["ingredientes"]["ingrediente"]["quantidade"] + "\n"
+
+
+
+
+
+
             finally:
                 # close session
                 if session:
@@ -757,43 +773,58 @@ def edit_receita(request):
 
 
 def add_recipe(request):
-    requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
-    for req in requiredToAdd:
-        if req not in request.POST:
-            return render(request, 'add.html', {'error': True})
-    # create session
-    categorias = request.POST['cat'].split(',')
-    if (len(categorias) != len(set(categorias))):
-        return render(request, 'add.html', {'error': True})
-    tipos = request.POST['tipo'].split(',')
-    if (len(tipos) != len(set(tipos))):
-        return render(request, 'add.html', {'error': True})
-    ingredientes = request.POST['ingredientes'].split('\n')
-    if (len(ingredientes) != len(set(ingredientes))):
-        return render(request, 'add.html', {'error': True})
-    if '' in ingredientes:
-        ingredientes.remove('')
-
-    for i in range(0, len(ingredientes)):
-        ingredientes[i] = ingredientes[i].replace("\r", "")
-
-    autores = request.POST['aut'].split(',')
-    if (len(autores) != len(set(autores))):
-        return render(request, 'add.html', {'error': True})
-    passos = request.POST['passos'].split('\n')
-    if (len(passos) != len(set(passos))):
-        return render(request, 'add.html', {'error': True})
-
-    if '' in passos:
-        passos.remove('')
-
-    for i in range(0, len(passos)):
-        passos[i] = passos[i].replace("\r", "")
-
-    print(categorias)
-    session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
     try:
+        error = False
+        session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
+        requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
+        for req in requiredToAdd:
+            if req not in request.POST:
+                return render(request, 'add.html', {'error': True})
+        # create session
+        categorias = request.POST['cat'].split(',')
+        if (len(categorias) != len(set(categorias))):
+            return render(request, 'add.html', {'error': True})
+        tipos = request.POST['tipo'].split(',')
+        if (len(tipos) != len(set(tipos))):
+            return render(request, 'add.html', {'error': True})
+        ingredientes = request.POST['ingredientes'].split('\n')
+        if '' in ingredientes:
+            ingredientes.remove('')
+
+        for i in range(0, len(ingredientes)):
+            ingredientes[i] = ingredientes[i].replace("\r", "")
+
+        check = check_if_in_list_ahead(ingredientes)
+
+        if check:
+            raise Exception("ingrediente in list ahead")
+
+
+
+        if (len(ingredientes) != len(set(ingredientes))):
+            return render(request, 'add.html', {'error': True})
+
+        for i in range(0, len(ingredientes)):
+            ingredientes[i] = ingredientes[i].replace("\r", "")
+
+        autores = request.POST['aut'].split(',')
+        if (len(autores) != len(set(autores))):
+            return render(request, 'add.html', {'error': True})
+        passos = request.POST['passos'].split('\n')
+        if (len(passos) != len(set(passos))):
+            return render(request, 'add.html', {'error': True})
+
+        if '' in passos:
+            passos.remove('')
+
+        for i in range(0, len(passos)):
+            passos[i] = passos[i].replace("\r", "")
+
+        print(categorias)
+
+
+
         session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
 funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.POST.get('dificuldade',
                                                                                        ' ') + '","' + request.POST.get(
@@ -831,12 +862,16 @@ funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.PO
             print(passo)
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_passo(""" + '"' + request.POST.get('name', ' ') + '","' + passo + '")')
+    except:
+
+        error=True
+
     finally:
         # close session
         if session:
             session.close()
 
-    return render(request, 'main.html', {'error': False})
+    return render(request, 'add.html', {'error': error})
 
 
 def delete(request):
