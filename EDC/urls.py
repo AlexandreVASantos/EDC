@@ -21,6 +21,7 @@ from app import views as app_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , app_views.home),
+    path('feed/' , app_views.applyFeed, name="feeds"),
     path('list/', app_views.listrecipes, name="list_recipes"),
     path('listFiltered/', app_views.applyFilters, name="list_recipesFiltered"),
     path('add/', app_views.add_receita, name='add_receita'),

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feeds</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        {% for key,value in info.items %}
+             <div style="float: left; height: 80vh; display: inline " class="col-sm-6" data-aos="fade-up" data-aos-delay="">
+                <img src="{{value.1}}" style="text-align: center" alt="Image" class="img-fluid">
+                  <div class="media-92812">
+                     <div class="text" style="height: 30vh">
+                        <!--<span class="caption">{{ value.1 }}</span> -->
+                        <h3><a href="{{value.0}}">{{ key }}</a></h3>
+                    </div>
+                  </div>
+                </div>
+    {% endfor %}
+    </div>
+{% endblock content %}
+</body>
+</html>

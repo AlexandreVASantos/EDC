@@ -4,11 +4,12 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
 from lxml import etree
-import os
 from EDC.settings import BASE_DIR
 from BaseXClient import BaseXClient
+
 import xmltodict
-import time
+import os
+import feedparser
 
 
 def home(request):
@@ -128,7 +129,7 @@ def applyFilters(request):
     recByAut = list()
     recByDif = list()
     recList = list()
-    final = set()
+    final = list()
 
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
     try:
@@ -173,14 +174,14 @@ def applyFilters(request):
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byAut("{autor}")')
             temp = xmltodict.parse(q.execute())
             print(temp)
-            recByAut = list(temp["receita"]["nome"])
+            recByAut = temp["receita"]["nome"]
             q.close()
 
         if dif != "--":
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byDif("{dif}")')
             temp = xmltodict.parse(q.execute())
-            recByDif = list(temp["receita"]["nome"])
+            recByDif = temp["receita"]["nome"]
             q.close()
 
         if tag != "--":
@@ -188,7 +189,8 @@ def applyFilters(request):
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byTags("{tag}")')
             temp = xmltodict.parse(q.execute())
             print("asdasda", temp)
-            recByTag.append(temp["receita"]["nome"])
+            #recByTag.append(temp["receita"]["nome"])
+            recByTag = temp["receita"]["nome"]
             print("asdasda", recByTag)
             q.close()
 
@@ -196,7 +198,8 @@ def applyFilters(request):
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byCat("{cat}")')
             temp = xmltodict.parse(q.execute())
-            recByCat = list(temp["receita"]["nome"])
+            #recByCat = list(temp["receita"]["nome"])
+            recByCat = temp["receita"]["nome"]
             q.close()
 
         print("recByAut", recByAut)
@@ -216,23 +219,50 @@ def applyFilters(request):
         if len(recByDif) > 0:
             recList.append(recByDif)
 
-        print("reclist",recList)
-        for listas in recList:
-            print("listas",listas)
-            if len(final) > 0:
-                final = final.intersection(set(listas))
-            else:
-                temp = []
-                for lista in listas:
-                    print("lista", lista)
-                    temp.append(lista)
-                print(temp)
-                final = set(temp)
+        print("reclist", recList)
+        # for listas in recList:
+        #     print("listas", listas)
+        #     if len(final) > 0:
+        #         final = final.intersection(set(listas))
+        #     else:
+        #         temp = []
+        #         for lista in listas:
+        #             print("lista", lista)
+        #             temp.append(lista)
+        #
+        #         if len(temp) > 1:
+        #             print(">1")
+        #             final = set(temp)
+        #         else:
+        #             final = temp
 
-        print(final)
+        temp = []
+        for lista in recList:
+            if len(final) == 0:
+                if type(lista) is str:
+                    final.append(lista)
+                else:
+                    final = lista
+            else:
+                temp = final.copy()
+                if type(lista) is str:
+                    print("if",final)
+                    print("if", lista)
+                    for elem in final:
+                        print("iffor",elem)
+                        print("iffor", final)
+                        if elem != lista:
+                            temp.remove(elem)
+                else:
+                    temp = set(temp).intersection(lista)
+                    final = temp.copy()
+
+
+        print("final",final)
 
         for nome in final:
             input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
+            print(input)
             q = session.query(input)
             index = xmltodict.parse(q.execute())
             index = index["autores"]["nome_autor"]
@@ -275,6 +305,19 @@ def applyFilters(request):
                                                  "tags": tags,
                                                  "categorias": categorias,
                                                  "dificuldade": dificuldade})
+
+
+def applyFeed(request):
+    d = feedparser.parse('https://www.bonappetit.com/feed/latest-recipes/rss')
+    info = dict()
+    for post in d.entries:
+        info[post.title] = []
+        info[post.title].append(post.links[0].href)
+        info[post.title].append(post.media_thumbnail[0]["url"])
+
+    for key,value in info.items():
+        print(value[1])
+    return render(request, "feed.html", {"info": info})
 
 
 def check_if_in_list_ahead(item_list):
@@ -805,6 +848,7 @@ funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.PO
 
     return render(request, 'main.html', {'error': False})
 
+
 def delete(request):
     try:
         session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
@@ -817,11 +861,11 @@ def delete(request):
         print(dict_nomes)
 
     finally:
-       if session:
+        if session:
             session.close()
 
+    return render(request, 'del.html', {"receitas": dict_nomes["nomes"]["nome"], "error": False})
 
-    return render(request, 'del.html',{"receitas": dict_nomes["nomes"]["nome"], "error": False})
 
 def del_recipe(request):
     if 'receitas' not in request.POST:
@@ -840,18 +884,12 @@ def del_recipe(request):
 
     session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
-
-
     q = session.query(
         "import module namespace funcs = 'com.funcs.my.index' at 'index.xqm'; "
-                    "funcs:delete_receita('" + request.POST.get('receitas', ' ') + "')")
+        "funcs:delete_receita('" + request.POST.get('receitas', ' ') + "')")
     exec = q.execute()
 
-
     q.close()
-
-
-
 
     print("erro")
 
@@ -864,8 +902,8 @@ def del_recipe(request):
     if session:
         session.close()
 
-    return render(request, 'del.html',{"receitas": dict_nomes["nomes"]["nome"], "error": False})
-    #return render(request, 'main.html', {'error': False})
+    return render(request, 'del.html', {"receitas": dict_nomes["nomes"]["nome"], "error": False})
+    # return render(request, 'main.html', {'error': False})
 
 
 def show_recipe(request, recipe):
