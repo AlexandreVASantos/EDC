@@ -173,102 +173,92 @@ def applyFilters(request):
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byAut("{autor}")')
             temp = xmltodict.parse(q.execute())
-            print(temp)
-            recByAut = temp["receita"]["nome"]
+            if type(temp["receita"]["nome"]) is not str:
+                recByAut = temp["receita"]["nome"]
+            else:
+                recByAut.append(temp["receita"]["nome"])
             q.close()
 
         if dif != "--":
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byDif("{dif}")')
             temp = xmltodict.parse(q.execute())
-            recByDif = temp["receita"]["nome"]
+            if type(temp["receita"]["nome"]) is not str:
+                recByDif = temp["receita"]["nome"]
+            else:
+                recByDif.append(temp["receita"]["nome"])
             q.close()
 
         if tag != "--":
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byTags("{tag}")')
             temp = xmltodict.parse(q.execute())
-            print("asdasda", temp)
-            #recByTag.append(temp["receita"]["nome"])
-            recByTag = temp["receita"]["nome"]
-            print("asdasda", recByTag)
+            if type(temp["receita"]["nome"]) is not str:
+                recByTag = temp["receita"]["nome"]
+            else:
+                recByTag.append(temp["receita"]["nome"])
             q.close()
 
         if cat != "--":
             q = session.query(
                 f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receitas_byCat("{cat}")')
             temp = xmltodict.parse(q.execute())
-            #recByCat = list(temp["receita"]["nome"])
-            recByCat = temp["receita"]["nome"]
+            if type(temp["receita"]["nome"]) is not str:
+                recByCat = temp["receita"]["nome"]
+            else:
+                recByCat.append(temp["receita"]["nome"])
             q.close()
 
-        print("recByAut", recByAut)
-        print("recByCat", recByCat)
-        print("recByTag", recByTag)
-        print("recBydif", recByDif)
 
         if len(recByAut) > 0:
-            recList.append(recByAut)
+            if len(final) > 0:
+                final = set(final).intersection(set(recByAut))
+            else:
+                final = recByAut
 
         if len(recByCat) > 0:
-            recList.append(recByCat)
+            if len(final) > 0:
+                final = set(final).intersection(set(recByCat))
+            else:
+                final = recByCat
 
         if len(recByTag) > 0:
-            recList.append(recByTag)
+            if len(final) > 0:
+                final = set(final).intersection(set(recByTag))
+            else:
+                final = recByTag
 
         if len(recByDif) > 0:
-            recList.append(recByDif)
-
-        print("reclist", recList)
-        # for listas in recList:
-        #     print("listas", listas)
-        #     if len(final) > 0:
-        #         final = final.intersection(set(listas))
-        #     else:
-        #         temp = []
-        #         for lista in listas:
-        #             print("lista", lista)
-        #             temp.append(lista)
-        #
-        #         if len(temp) > 1:
-        #             print(">1")
-        #             final = set(temp)
-        #         else:
-        #             final = temp
-
-        temp = []
-        for lista in recList:
-            if len(final) == 0:
-                if type(lista) is str:
-                    final.append(lista)
-                else:
-                    final = lista
+            if len(final) > 0:
+                final = set(final).intersection(set(recByAut))
             else:
-                temp = final.copy()
-                if type(lista) is str:
-                    print("if",final)
-                    print("if", lista)
-                    for elem in final:
-                        print("iffor",elem)
-                        print("iffor", final)
-                        if elem != lista:
-                            temp.remove(elem)
-                else:
-                    temp = set(temp).intersection(lista)
-                    final = temp.copy()
+                final = recByDif
 
 
-        print("final",final)
+        if type(final) is not str:
+            for nome in final:
+                input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
+                q = session.query(input)
+                index = xmltodict.parse(q.execute())
+                index = index["autores"]["nome_autor"]
+                q.close()
 
-        for nome in final:
-            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{nome}")'
-            print(input)
+                input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{nome}")'
+                q = session.query(input)
+                temp = xmltodict.parse(q.execute())
+                information[temp["receita"]["nome"]] = []
+                information[temp["receita"]["nome"]].append(temp["receita"]["imagem"])
+                information[temp["receita"]["nome"]].append(index)
+                q.close()
+
+        else:
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_autores_receita("{final}")'
             q = session.query(input)
             index = xmltodict.parse(q.execute())
             index = index["autores"]["nome_autor"]
             q.close()
 
-            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{nome}")'
+            input = f'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_receita("{final}")'
             q = session.query(input)
             temp = xmltodict.parse(q.execute())
             information[temp["receita"]["nome"]] = []
