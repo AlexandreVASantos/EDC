@@ -6,6 +6,34 @@
     <div style = "text-align:center; padding-top: 10vh">
         <h2>Eliminar Receita</h2>
     </div>
+    {% if delete_occurs %}
+        {% if error %}
+                    <br>
+                    <br>
+                    <div class="container">
+                        <div class="alert alert-danger">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p>Erro, a sua receita nao foi apagada</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+        {% else %}
+                    <br>
+                    <br>
+                    <div class="container">
+                        <div class="alert alert-success">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p>A sua receita foi apagada com sucesso</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+        {% endif %}
+    {% endif %}
+
+
     <form action="/del/" method="POST">
         {% csrf_token %}
         <br>

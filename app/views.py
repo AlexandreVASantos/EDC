@@ -401,9 +401,13 @@ def edit_recipe(request):
 
                 dict_passos = xmltodict.parse(exec)
                 lista_passos = ""
-                for passo in dict_passos["descriçao"]["descriçao"]["passo"]:
-                    lista_passos += passo + "\n"
 
+                print(dict_passos)
+                if isinstance(dict_passos["descriçao"]["descriçao"]["passo"], list):
+                    for passo in dict_passos["descriçao"]["descriçao"]["passo"]:
+                        lista_passos += passo + "\n"
+                else:
+                    lista_passos = dict_passos["descriçao"]["descriçao"]["passo"]
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
                         request.POST.get("selected_recipe")))
@@ -432,7 +436,7 @@ def edit_recipe(request):
 
 
 
-
+                print(lista_ingredientes)
 
 
             finally:
@@ -488,7 +492,7 @@ def edit_recipe(request):
                 check = check_if_in_list_ahead(new_list_autores)
 
                 if check:
-                    raise Exception("ingrediente in list ahead")
+                    raise Exception("autor in list ahead")
 
                 for auth in new_list_autores:
                     if auth not in list_autores_original:
@@ -579,10 +583,21 @@ def edit_recipe(request):
                 q.close()
 
                 dict_passos = xmltodict.parse(exec)
+                if isinstance(dict_passos["descriçao"]["descriçao"]["passo"],list):
+                    list_passos_original = dict_passos["descriçao"]["descriçao"]["passo"]
+                else:
+                    list_passos_original=[]
+                    list_passos_original.append(dict_passos["descriçao"]["descriçao"]["passo"])
 
-                list_passos_original = dict_passos["descriçao"]["descriçao"]["passo"]
 
-                new_list_passos = request.POST.get("passos").split("\n")
+                new_list = request.POST.get("passos").split("\n")
+
+                if isinstance(new_list, list):
+                    new_list_passos = new_list
+                else:
+
+                    new_list_passos = []
+                    new_list_passos.append(request.POST.get("passos"))
 
                 if '' in new_list_passos:
                     new_list_passos.remove('')
@@ -595,6 +610,10 @@ def edit_recipe(request):
                     raise Exception("ingrediente in list ahead")
 
                 count_passos = 0
+
+
+
+
 
                 if len(list_passos_original) >= len(new_list_passos):
                     while count_passos != len(list_passos_original):
@@ -651,8 +670,11 @@ def edit_recipe(request):
                 dict_ingredientes = xmltodict.parse(exec)
 
                 print("Y")
-
-                list_ingredientes = dict_ingredientes["ingredientes"]["ingrediente"]
+                if isinstance(dict_ingredientes["ingredientes"]["ingrediente"],list):
+                    list_ingredientes = dict_ingredientes["ingredientes"]["ingrediente"]
+                else:
+                    list_ingredientes=[]
+                    list_ingredientes.append(dict_ingredientes["ingredientes"]["ingrediente"])
 
                 list_ingredientes_original = []
                 for ingrediente in list_ingredientes:
@@ -716,7 +738,7 @@ def edit_recipe(request):
 
                                 q = session.query(
                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:update_ingrediente3("{}", "{}","{}","{}","{}")'.format(
-                                        next_nome_receita, nome_ing, ing[0], ing[1], ing[2]))
+                                        next_nome_receita, nome_ing, ing[0], ing[2], ing[1]))
                             else:
                                 if len(ing) == 2:
                                     q = session.query(
@@ -735,7 +757,7 @@ def edit_recipe(request):
                             else:
                                 q = session.query(
                                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:add_ingrediente3("{}", "{}","{}","{}")'.format(
-                                        next_nome_receita, ing[0], ing[1], ing[2]))
+                                        next_nome_receita, ing[0], ing[2], ing[1]))
 
                             q.execute()
                             q.close()
@@ -780,14 +802,14 @@ def add_recipe(request):
         requiredToAdd = ['name', 'cat', 'data', 'tipo', 'aut', 'dificuldade', 'ingredientes', 'passos', 'imagem']
         for req in requiredToAdd:
             if req not in request.POST:
-                return render(request, 'add.html', {'error': True})
+                return render(request, 'add.html', {'error': True,'add_occurs':True})
         # create session
         categorias = request.POST['cat'].split(',')
         if (len(categorias) != len(set(categorias))):
-            return render(request, 'add.html', {'error': True})
+            return render(request, 'add.html', {'error': True,'add_occurs':True})
         tipos = request.POST['tipo'].split(',')
         if (len(tipos) != len(set(tipos))):
-            return render(request, 'add.html', {'error': True})
+            return render(request, 'add.html', {'error': True,'add_occurs':True})
         ingredientes = request.POST['ingredientes'].split('\n')
         if '' in ingredientes:
             ingredientes.remove('')
@@ -803,17 +825,25 @@ def add_recipe(request):
 
 
         if (len(ingredientes) != len(set(ingredientes))):
-            return render(request, 'add.html', {'error': True})
+            return render(request, 'add.html', {'error': True, 'add_occurs':True})
 
         for i in range(0, len(ingredientes)):
             ingredientes[i] = ingredientes[i].replace("\r", "")
 
         autores = request.POST['aut'].split(',')
         if (len(autores) != len(set(autores))):
-            return render(request, 'add.html', {'error': True})
-        passos = request.POST['passos'].split('\n')
+            return render(request, 'add.html', {'error': True,'add_occurs':True})
+
+        print(request.POST.get("passos"))
+        if isinstance(request.POST.get("passos"), list):
+            passos = request.POST['passos'].split('\n')
+        else:
+            print("testeteste")
+            passos = []
+            passos.append(request.POST.get("passos"))
+
         if (len(passos) != len(set(passos))):
-            return render(request, 'add.html', {'error': True})
+            return render(request, 'add.html', {'error': True, 'add_occurs':True})
 
         if '' in passos:
             passos.remove('')
@@ -821,7 +851,7 @@ def add_recipe(request):
         for i in range(0, len(passos)):
             passos[i] = passos[i].replace("\r", "")
 
-        print(categorias)
+        print(passos)
 
 
 
@@ -871,7 +901,7 @@ funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.PO
         if session:
             session.close()
 
-    return render(request, 'add.html', {'error': error})
+    return render(request, 'add.html', {'error': error, 'add_occurs':True})
 
 
 def delete(request):
@@ -916,7 +946,7 @@ def del_recipe(request):
 
     q.close()
 
-    print("erro")
+
 
     q = session.query('import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_nomes_receitas()')
     exec = q.execute()
@@ -927,7 +957,7 @@ def del_recipe(request):
     if session:
         session.close()
 
-    return render(request, 'del.html', {"receitas": dict_nomes["nomes"]["nome"], "error": False})
+    return render(request, 'del.html', {"receitas": dict_nomes["nomes"]["nome"], "error": False, "delete_occurs" : True})
     # return render(request, 'main.html', {'error': False})
 
 
@@ -942,7 +972,6 @@ def show_recipe(request, recipe):
     transform = etree.XSLT(xslt)
     html = transform(search_recipe_xml[0])
     return render(request, 'show_recipe.html', {'xslt_to_html': html})
-
 
 @csrf_exempt
 def validatexml(request):

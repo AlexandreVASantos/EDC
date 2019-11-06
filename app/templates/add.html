@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-{% if error %}
-    <p>ERRO: Insira a informação pedida</p>
-{% endif %}
 
     <div style = "text-align:center; padding-top: 12vh">
         <h2>Adicionar Receita</h2>
     </div>
+{% if add_occurs %}
+    {% if error %}
+                <br>
+                <br>
+                <div class="container">
+                    <div class="alert alert-danger">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <p>Erro, a sua receita nao foi adicionada</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+    {% else %}
+                <br>
+                <br>
+                <div class="container">
+                    <div class="alert alert-success">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <p>A sua receita foi adicionada com sucesso</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+    {% endif %}
+{% endif %}
+
+
+
+
     <form action="/add_recipe/" method="POST">
         {% csrf_token %}
         <div style = "padding-top: 10vh; text-align: center">
