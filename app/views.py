@@ -99,7 +99,6 @@ def listrecipes(request):
     dificuldade.sort()
     dificuldade.insert(0, "--")
 
-    print("autores:", autores)
 
     return render(request, "list_recipes.html", {"info": information, "autores": autores,
                                                  "tags": tags,
@@ -109,7 +108,7 @@ def listrecipes(request):
 
 def applyFilters(request):
     data = request.GET
-    print(data)
+
 
     information = {}
     autor = data["authors"]
@@ -301,15 +300,13 @@ def applyFeed(request):
     d = feedparser.parse('https://www.bonappetit.com/feed/latest-recipes/rss')
     info = dict()
 
-    print(d)
     for post in d.entries:
         info[post.title] = []
         info[post.title].append(post.links[0].href)
         info[post.title].append(post.media_thumbnail[0]["url"])
 
 
-    for key,value in info.items():
-        print(value[1])
+
     return render(request, "feed.html", {"info": info})
 
 
@@ -402,10 +399,10 @@ def edit_recipe(request):
                 dict_passos = xmltodict.parse(exec)
                 lista_passos = ""
 
-                print(dict_passos)
                 if isinstance(dict_passos["descriçao"]["descriçao"]["passo"], list):
                     for passo in dict_passos["descriçao"]["descriçao"]["passo"]:
-                        lista_passos += passo + "\n"
+                        if passo != None:
+                            lista_passos += passo + "\n"
                 else:
                     lista_passos = dict_passos["descriçao"]["descriçao"]["passo"]
                 q = session.query(
@@ -419,16 +416,17 @@ def edit_recipe(request):
 
 
                 if isinstance(dict_ingredientes["ingredientes"]["ingrediente"], list):
-                    print("blablabla")
+
                     for item in dict_ingredientes["ingredientes"]["ingrediente"]:
-                        item = list(item.items())
-                        print(item)
-                        if len(item) == 3:
-                            lista_ingredientes += item[2][1] + "," + item[0][1] + "," + item[1][1] + "\n"
-                        else:
-                            lista_ingredientes += item[1][1] + "," + item[0][1] + "\n"
+                        if item != None:
+                            item = list(item.items())
+
+                            if len(item) == 3:
+                                lista_ingredientes += item[2][1] + "," + item[0][1] + "," + item[1][1] + "\n"
+                            else:
+                                lista_ingredientes += item[1][1] + "," + item[0][1] + "\n"
                 elif isinstance(dict_ingredientes["ingredientes"]["ingrediente"], dict):
-                    print(dict_ingredientes["ingredientes"]["ingrediente"]["nome_i"])
+
                     if "unidade" in dict_ingredientes["ingredientes"]["ingrediente"]:
                         lista_ingredientes += dict_ingredientes["ingredientes"]["ingrediente"]["nome_i"] + "," + dict_ingredientes["ingredientes"]["ingrediente"]["quantidade"] +"," + dict_ingredientes["ingredientes"]["ingrediente"]["unidade"]+ "\n"
                     else:
@@ -436,7 +434,7 @@ def edit_recipe(request):
 
 
 
-                print(lista_ingredientes)
+
 
 
             finally:
@@ -659,8 +657,6 @@ def edit_recipe(request):
 
                         count_passos += 1
 
-                print("X")
-
                 q = session.query(
                     'import module namespace funcs = "com.funcs.my.index" at "index.xqm";funcs:get_ingredientes_receita("{}")'.format(
                         next_nome_receita))
@@ -669,7 +665,7 @@ def edit_recipe(request):
 
                 dict_ingredientes = xmltodict.parse(exec)
 
-                print("Y")
+
                 if isinstance(dict_ingredientes["ingredientes"]["ingrediente"],list):
                     list_ingredientes = dict_ingredientes["ingredientes"]["ingrediente"]
                 else:
@@ -698,7 +694,7 @@ def edit_recipe(request):
                 if check:
                     raise Exception("ingrediente in list ahead")
 
-                print(new_list_ingredientes)
+
 
                 if len(list_ingredientes_original) >= len(new_list_ingredientes):
                     while count_ingredientes != len(list_ingredientes_original):
@@ -834,11 +830,11 @@ def add_recipe(request):
         if (len(autores) != len(set(autores))):
             return render(request, 'add.html', {'error': True,'add_occurs':True})
 
-        print(request.POST.get("passos"))
+
         if isinstance(request.POST.get("passos"), list):
             passos = request.POST['passos'].split('\n')
         else:
-            print("testeteste")
+
             passos = []
             passos.append(request.POST.get("passos"))
 
@@ -851,7 +847,7 @@ def add_recipe(request):
         for i in range(0, len(passos)):
             passos[i] = passos[i].replace("\r", "")
 
-        print(passos)
+
 
 
 
@@ -860,11 +856,11 @@ funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.PO
                                                                                        ' ') + '","' + request.POST.get(
             'imagem', ' ') + '","' + request.POST.get('data', ' ') + '")')
         for categoria in categorias:
-            print(categoria)
+
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_categoria(""" + '"' + request.POST.get('name', ' ') + '","' + categoria + '")')
         for tipo in tipos:
-            print(tipo)
+
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_tipo(""" + '"' + request.POST.get('name', ' ') + '","' + tipo + '")')
         for ingrediente in ingredientes:
@@ -885,11 +881,11 @@ funcs:add_receita(""" + '"' + request.POST.get('name', ' ') + '","' + request.PO
                                                                                                ' ') + '","' + ingrediente + '","' + quantidade + '")')
 
         for autor in autores:
-            print(autor)
+
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_autor(""" + '"' + request.POST.get('name', ' ') + '","' + autor + '")')
         for passo in passos:
-            print(passo)
+
             session.execute("""xquery import module namespace funcs = "com.funcs.my.index" at 'index.xqm';
                        funcs:add_passo(""" + '"' + request.POST.get('name', ' ') + '","' + passo + '")')
     except:
@@ -913,7 +909,7 @@ def delete(request):
         exec = q.execute()
         q.close()
         dict_nomes = xmltodict.parse(exec)
-        print(dict_nomes)
+
 
     finally:
         if session:
@@ -931,7 +927,7 @@ def del_recipe(request):
         q.close()
 
         dict_nomes = xmltodict.parse(exec)
-        print(dict_nomes)
+
         if session:
             session.close()
 
@@ -953,7 +949,7 @@ def del_recipe(request):
     q.close()
 
     dict_nomes = xmltodict.parse(exec)
-    print(dict_nomes)
+
     if session:
         session.close()
 
