@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <div style="height: 130vh">
+    <div style = "text-align:center; padding-top: 10vh">
+        <h2>Editar Receita</h2>
+    </div>
+    {% if edit_occurs %}
+        {% if error  %}
+            <br>
+            <br>
+            <div class="container">
+                <div class="alert alert-danger">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p>O processo de edição falhou!</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        {% else %}
+            <br>
+            <br>
+            <div class="container">
+                <div class="alert alert-success">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <p>O processo de edição foi concluido com sucesso!</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        {% endif %}
+    {% endif %}
+    <form action="/edit_recipe/" method="POST">
+        <div class="row" style="height: 5vh; padding-top: 5vh;">
+            <div class="col-md-12" style="text-align: center">
+                <p>Receitas:</p>
+                <div style=" padding-left: 33%; padding-right: 33%">
+                    <br>
+                    <select name= "receitas" id="receitas" class="form-control" onchange="get_recipe()">
+                        <option value="vazio">---</option>
+                        {% for r in receitas %}
+                            <option value="{{ r }}">{{ r }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div id = "top" style = "padding-top: 10vh; text-align: center">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name">Nome receita:</label>
+                    <br>
+                    <input type="text" id="name" name="name" required size="40">
+                </div>
+                <div class="col-md-4">
+                    <label for="cat">Categorias(inserir categorias separadas por vírgulas):</label>
+                    <br>
+                    <input type="text" id="cat" name="cat" required size="40">
+                </div>
+                <div class="col-md-4">
+                    <label for="data">Data(dd-mm-yyyy):</label>
+                    <br>
+                    <input type="text" id="data" name="data" required size="20">
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="tipo">Tipos(inserir tipos separadas por vírgulas):</label>
+                    <br>
+                    <input type="text" id="tipo" name="tipo" required size="40">
+                </div>
+                <div class="col-md-4">
+                    <label for="aut">Autores(inserir autores separados por vírgulas)</label>
+                    <br>
+                    <input type="text" id="aut" name="aut" required size="40">
+                </div>
+                <div class="col-md-4">
+                    <label for="dificuldade">Dificuldade(Fácil, Médio, Dificil)</label>
+                    <br>
+                    <input type="text" id="dificuldade" name="dificuldade" required size="20">
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="ingredientes">Ingredientes(separados por ENTER eg leite,500,ml ENTER manteiga,50,g)</label>
+                    <br>
+                    <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 90%; height: 30vh"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
+                    <br>
+                    <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 90%; height: 30vh"></textarea>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row" >
+                <div class="col-md-12" style="text-align: center">
+                    <label for="imagem">Imagem(insira link da imagem que pretende)</label>
+                    <br>
+                    <input type="text" id="imagem" name="imagem" required size="50">
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-12" style="text-align: center">
+                    <input type="submit">
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    </div>
+
+<script>
+	if(screen.width <= 1900){
+		document.getElementById("top").innerHTML = "            \n" +
+            "        <div >\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                <label for=\"name\">Nome receita:</label>\n" +
+            "                <br>\n" +
+            "                <input type=\"text\" id=\"name\" name=\"name\" required size=\"40\">\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                <label for=\"cat\">Categorias(inserir categorias separadas por vírgulas):</label>\n" +
+            "                <br>\n" +
+            "                <input type=\"text\" id=\"cat\" name=\"cat\" required size=\"40\">\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                <label for=\"data\">Data(dd-mm-yyyy):</label>\n" +
+            "                <br>\n" +
+            "                <input type=\"text\" id=\"data\" name=\"data\" required size=\"20\">\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "                <div class=\"col-md-12\" style=\"text-align: center\">    \n" +
+            "                    <label for=\"tipo\">Tipos(inserir tipos separadas por vírgulas):</label>\n" +
+            "                    <br>\n" +
+            "                    <input type=\"text\" id=\"tipo\" name=\"tipo\" required size=\"40\">\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "            <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
+            "                <label for=\"aut\">Autores(inserir autores separados por vírgulas)</label>\n" +
+            "                <br>\n" +
+            "                <input type=\"text\" id=\"aut\" name=\"aut\" required size=\"40\">\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "            <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
+            "                <label for=\"dificuldade\">Dificuldade(Fácil, Médio, Dificil)</label>\n" +
+            "                <br>\n" +
+            "                <input type=\"text\" id=\"dificuldade\" name=\"dificuldade\" required size=\"20\">\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "               <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
+            "                    <label for=\"ingredientes\">Ingredientes(separados por ENTER eg leite,500,ml,\n" +
+            "                         ENTER manteiga,50,g) <br> Por favor nao insira ingredientes repetidos</label>\n" +
+            "                    <br>\n" +
+            "                    <textarea type=\"text\" id=\"ingredientes\" name=\"ingredientes\" required style= \"resize:none;width: 80%; height: 20vh\"></textarea>\n" +
+            "            </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <div class=\"row\" style=\"text-align: center\">\n" +
+            "                 <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                    <label for=\"Passos\">Passos(inserir passos separados por parágrafos)</label>\n" +
+            "                    <br>\n" +
+            "                    <textarea type=\"text\" id=\"passos\" name=\"passos\" required style= \"resize:none;width: 80%; height: 20vh\"></textarea>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "\n" +
+            "            <div class=\"row\" >\n" +
+            "                <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                    <label for=\"imagem\">Imagem(insira link da imagem que pretende)</label>\n" +
+            "                    <br>\n" +
+            "                    <input type=\"text\" id=\"imagem\" name=\"imagem\" required size=\"50\">\n" +
+            "                </div>\n" +
+            "\n" +
+            "                <br>\n" +
+            "                <br>\n" +
+            "                <br>\n" +
+            "                <br>\n" +
+            "                <div class=\"col-md-12\" style=\"text-align: center\">\n" +
+            "                    <input type=\"submit\">\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "        </div>";
+	}
+</script>
+<script type="text/javascript">
+    function get_recipe(){
+
+
+
+        var element = document.getElementById("receitas");
+        var selected_recipe = element.options[element.selectedIndex].value;
+        if (selected_recipe == "vazio"){
+
+            document.getElementById("name").value ="";
+          document.getElementById("cat").value = "";
+          document.getElementById("data").value = "";
+          document.getElementById("tipo").value = "";
+          document.getElementById("aut").value = "";
+          document.getElementById("dificuldade").value = "";
+          document.getElementById("ingredientes").value = "";
+          document.getElementById("passos").value = "";
+          document.getElementById("imagem").value = "";
+            return;
+        }
+
+
+
+        data_to_send = {selected_recipe: selected_recipe};
+        url = "{% url 'edit_recipe' %}";
+        $.post(url, data_to_send,function (data) {
+            console.log(data)
+          document.getElementById("name").value = data["receita"][0];
+          document.getElementById("cat").value = data["receita"][1];
+          document.getElementById("data").value = data["receita"][2];
+          document.getElementById("tipo").value = data["receita"][3];
+          document.getElementById("aut").value = data["receita"][4];
+          document.getElementById("dificuldade").value = data["receita"][5];
+          document.getElementById("ingredientes").value = data["receita"][6].toString();
+          document.getElementById("passos").value = data["receita"][7].toString();
+          document.getElementById("imagem").value = data["receita"][8];
+
+        });
+
+    }
+
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+    <div style="text-align: center">
+    {% for key,value in info.items %}
+              <div style="float: left; height: 80vh; display: inline " class="col-sm-6" data-aos="fade-up" data-aos-delay="">
+                     <img src="{{value.0}}" style="text-align: center" alt="Image" class="img-fluid">
+                  <div class="media-92812">
+                     <div class="text" style="height: 30vh">
+                        <span class="caption">{{ value.1 }}</span>
+                        <h3><a href="#">{{ key }}</a></h3>
+                        <p class="my-5"><a href="/showrec/{{key}}/" target="_blank" class="more-39291">Ver Mais</a></p>
+                    </div>
+
+
+
+                </div>
+              </div>
+
+
+    {% endfor %}
+    </div>
+
+
+
+{% endblock content %}
