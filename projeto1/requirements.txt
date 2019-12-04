@@ -1,0 +1,7 @@
+BaseXClient==8.4.4
+Django==2.2.5
+feedparser==5.2.1
+lxml==4.4.1
+pytz==2019.3
+sqlparse==0.3.0
+xmltodict==0.11.0

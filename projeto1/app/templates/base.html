@@ -1,0 +1,109 @@
+{%  load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Recipe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "fonts/icomoon/style.css"%}">
+
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.min.css"%}">
+    <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css"%}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css"%}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css"%}">
+    <link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css"%}">
+    <link rel="stylesheet" href="{% static "css/aos.css"%}">
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+    <header class="site-navbar site-navbar-target"   role="banner">
+
+        <div class="container" style= "height: 10vh">
+          <div class="row  position-relative">
+
+            <div class="col-lg-8">
+              <nav class="site-navigation ml-auto " role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                    <li style="background-color: white; border-radius:25px"><a href="/" class="nav-link" >Home</a></li>
+                    <li style=" display: inline-block;background-color: white; border-radius:25px;"><a href="/list" style="color:black !important;">Lista de Receitas</a></li>
+                    <li style=" display: inline-block;background-color: white; border-radius:25px;"><a href="/validatexml" style="color:black !important;">Validar XML</a></li>
+
+                </ul>
+              </nav>
+            </div>
+
+
+            <div class="col-lg-4" >
+
+              <nav class="site-navigation text-left mr-auto " role="navigation" >
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block" style="float: right">
+                    <div class="row">
+                        <li class="btn" style=" color: black;display: inline-block;background-color: white; border-radius:25px; position: relative; right:5%"><a href="/feed" >Mais Receitas</a></li>
+
+                        <div class="dropdown">
+                              <li class="btn btn-default dropdown-toggle" data-toggle="dropdown" style=" color: black;display: inline-block;background-color: white; border-radius:25px;">Opções</li>
+                              <ul class="dropdown-menu" style = "color: black">
+                                    <li><a href="/add">Adicionar receita</a></li>
+                                    <li><a href="/edit">Editar receita</a></li>
+                                    <li><a href="/delete">Apagar receita</a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                </ul>
+              </nav>
+            </div>
+
+
+          </div>
+        </div>
+
+      </header>
+
+
+    {% block content %}{% endblock content %}
+
+
+    </div>
+
+    <script src="{% static "js/jquery-3.3.1.min.js"%}"></script>
+    <script src="{% static "js/popper.min.js"%}"></script>
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+    <script src="{% static "js/owl.carousel.min.js"%}"></script>
+    <script src="{% static "js/jquery.sticky.js"%}"></script>
+    <script src="{% static "js/jquery.waypoints.min.js"%}"></script>
+    <script src="{% static "js/jquery.animateNumber.min.js"%}"></script>
+    <script src="{% static "js/jquery.fancybox.min.js"%}"></script>
+    <script src="{% static "js/jquery.easing.1.3.js"%}"></script>
+    <script src="{% static "js/aos.js"%}"></script>
+
+    <script src="{% static "js/main.js"%}"></script>
+
+  </body>
+
+</html>
+
+</html>

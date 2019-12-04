@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{% autoescape off %}
+    {{xslt_to_html}}
+{% endautoescape %}
+
+
+{% endblock %}
