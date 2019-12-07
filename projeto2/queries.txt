@@ -84,6 +84,22 @@ PREFIX ing:<http://receita/ingrediente/pred/>
     
 #}
 
+#Delete ingredientes receita
+#Delete {?id_i ?p ?i} Where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#    ?r predRec:ingrediente ?id_i.
+#	 ?id_i ?p ?i
+#}
+
+#Delete receita geral
+#Delete {?id_r ?p ?o} Where{
+#    ?id_r predRec:nome "Minchi com Ovo Estrelado".
+#    ?id_r ?p ?o.
+#}
+
+
+
+
 
 
 
@@ -96,3 +112,4 @@ PREFIX ing:<http://receita/ingrediente/pred/>
 
 
  
+
