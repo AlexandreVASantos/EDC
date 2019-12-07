@@ -1,0 +1,98 @@
+PREFIX aut:<http://receita/autores/pred/nome>
+PREFIX cat:<http://receita/categorias/pred/nome>
+PREFIX tip:<http://receita/tipos/pred/nome>
+PREFIX dif:<http://receita/dificuldades/pred/nome>
+PREFIX predRec:<http://receita/pred/>
+PREFIX ing:<http://receita/ingrediente/pred/>
+
+#Get autores
+#Select ?n_autor where{
+#    ?n aut: ?n_autor. 
+#}
+
+#Get categorias
+#Select ?n_cat where{
+#    ?cat cat: ?n_cat. 
+#}
+
+#Get tipos
+#Select ?n_tip where{
+#    ?tipo tip: ?n_tip. 
+#}
+
+#Get dificuldades
+#Select ?n_dif where{
+#    ?dif dif: ?n_dif. 
+#}
+
+#Get nomes receitas
+#Select ?n_receita where{
+#    ?r predRec:nome ?n_receita
+#}
+
+#Get receitas detail
+#Select ?data ?imagem ?dificuldade where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#    ?r predRec:data ?data.
+#    ?r predRec:imagem ?imagem.
+#	?r predRec:dificuldade ?id_d.
+#    ?id_d dif: ?dificuldade.
+
+#}
+
+#Get tipos receita
+#Select ?tipo where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#	 ?r predRec:tipo ?tip.
+#    ?tip tip: ?tipo.
+
+#}
+
+
+#Get autores receita
+#Select ?autor where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#    ?r predRec:autor ?id_a.
+#    ?id_a aut: ?autor.
+    
+#}
+
+
+#Get categorias receita
+#Select ?categoria where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#	 ?r predRec:categoria ?id_c.
+#    ?id_c cat: ?categoria.
+#    	
+#}
+
+
+
+#Get passos receita
+#Select ?passo where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#    ?r predRec:passo ?passo.
+#}
+
+#Get ingredientes receita
+#Select ?nome_i ?quantidade ?unidade where{
+#    ?r predRec:nome "Minchi com Ovo Estrelado".
+#    ?r predRec:ingrediente ?i.
+#    ?i ing:nome ?nome_i.
+#    ?i ing:quantidade ?quantidade.
+#    OPTIONAL{?i ing:unidade ?unidade.}
+    
+#}
+
+
+
+
+
+
+
+
+
+
+
+
+ 

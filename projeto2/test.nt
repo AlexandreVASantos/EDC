@@ -33,48 +33,48 @@
 <http://receita/id/1> <http://receita/pred/tipo> <http://receita/tipos/2> .
 <http://receita/id/1> <http://receita/pred/autor> <http://receita/autores/1> .
 <http://receita/id/1> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/1. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/1>.
 <http://receita/ingrediente/1> <http://receita/ingrediente/pred/nome> "Carne de vaca picada" .
 <http://receita/ingrediente/1> <http://receita/ingrediente/pred/quantidade> "400" .
 <http://receita/ingrediente/1> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/2. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/2>.
 <http://receita/ingrediente/2> <http://receita/ingrediente/pred/nome> "Carne de porco picada" .
 <http://receita/ingrediente/2> <http://receita/ingrediente/pred/quantidade> "400" .
 <http://receita/ingrediente/2> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/3. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/3>.
 <http://receita/ingrediente/3> <http://receita/ingrediente/pred/nome> "Cebola grande picada" .
 <http://receita/ingrediente/3> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/3> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/4. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/4>.
 <http://receita/ingrediente/4> <http://receita/ingrediente/pred/nome> "Dentes de alho picados" .
 <http://receita/ingrediente/4> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/4> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/5. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/5>.
 <http://receita/ingrediente/5> <http://receita/ingrediente/pred/nome> "Molho de soja" .
 <http://receita/ingrediente/5> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/5> <http://receita/ingrediente/pred/unidade> "Colheres de sopa" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/6. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/6>.
 <http://receita/ingrediente/6> <http://receita/ingrediente/pred/nome> "Louro" .
 <http://receita/ingrediente/6> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/6> <http://receita/ingrediente/pred/unidade> "folha" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/7. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/7>.
 <http://receita/ingrediente/7> <http://receita/ingrediente/pred/nome> "Açucar" .
 <http://receita/ingrediente/7> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/7> <http://receita/ingrediente/pred/unidade> "Colher de chá" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/8. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/8>.
 <http://receita/ingrediente/8> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/8> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/8> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/9. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/9>.
 <http://receita/ingrediente/9> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/9> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/10. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/10>.
 <http://receita/ingrediente/10> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/10> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/11. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/11>.
 <http://receita/ingrediente/11> <http://receita/ingrediente/pred/nome> "Pimenta" .
 <http://receita/ingrediente/11> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/12. 
+<http://receita/id/1> <http://receita/pred/ingrediente> <http://receita/ingrediente/12>.
 <http://receita/ingrediente/12> <http://receita/ingrediente/pred/nome> "Batata frita aos cubos" .
 <http://receita/ingrediente/12> <http://receita/ingrediente/pred/quantidade> "400" .
 <http://receita/ingrediente/12> <http://receita/ingrediente/pred/unidade> "g" .
@@ -90,39 +90,39 @@
 <http://receita/id/2> <http://receita/pred/tipo> <http://receita/tipos/4> .
 <http://receita/id/2> <http://receita/pred/autor> <http://receita/autores/2> .
 <http://receita/id/2> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/13. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/13>.
 <http://receita/ingrediente/13> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/13> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/13> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/14. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/14>.
 <http://receita/ingrediente/14> <http://receita/ingrediente/pred/nome> "Mel" .
 <http://receita/ingrediente/14> <http://receita/ingrediente/pred/quantidade> "65" .
 <http://receita/ingrediente/14> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/15. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/15>.
 <http://receita/ingrediente/15> <http://receita/ingrediente/pred/nome> "Farinha" .
 <http://receita/ingrediente/15> <http://receita/ingrediente/pred/quantidade> "125" .
 <http://receita/ingrediente/15> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/16. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/16>.
 <http://receita/ingrediente/16> <http://receita/ingrediente/pred/nome> "Açúcar em pó" .
 <http://receita/ingrediente/16> <http://receita/ingrediente/pred/quantidade> "60" .
 <http://receita/ingrediente/16> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/17. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/17>.
 <http://receita/ingrediente/17> <http://receita/ingrediente/pred/nome> "Fermento em pó" .
 <http://receita/ingrediente/17> <http://receita/ingrediente/pred/quantidade> "5" .
 <http://receita/ingrediente/17> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/18. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/18>.
 <http://receita/ingrediente/18> <http://receita/ingrediente/pred/nome> "Sal fino" .
 <http://receita/ingrediente/18> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/18> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/19. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/19>.
 <http://receita/ingrediente/19> <http://receita/ingrediente/pred/nome> "Baunilha" .
 <http://receita/ingrediente/19> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/19> <http://receita/ingrediente/pred/unidade> "vagem" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/20. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/20>.
 <http://receita/ingrediente/20> <http://receita/ingrediente/pred/nome> "Leite meio gordo" .
 <http://receita/ingrediente/20> <http://receita/ingrediente/pred/quantidade> "25" .
 <http://receita/ingrediente/20> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/21. 
+<http://receita/id/2> <http://receita/pred/ingrediente> <http://receita/ingrediente/21>.
 <http://receita/ingrediente/21> <http://receita/ingrediente/pred/nome> "Manteiga sem sal derretida" .
 <http://receita/ingrediente/21> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/21> <http://receita/ingrediente/pred/unidade> "g" .
@@ -140,31 +140,31 @@
 <http://receita/id/3> <http://receita/pred/tipo> <http://receita/tipos/5> .
 <http://receita/id/3> <http://receita/pred/autor> <http://receita/autores/1> .
 <http://receita/id/3> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/22. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/22>.
 <http://receita/ingrediente/22> <http://receita/ingrediente/pred/nome> "Amido de milho" .
 <http://receita/ingrediente/22> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/22> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/23. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/23>.
 <http://receita/ingrediente/23> <http://receita/ingrediente/pred/nome> "Leite frio" .
 <http://receita/ingrediente/23> <http://receita/ingrediente/pred/quantidade> "750" .
 <http://receita/ingrediente/23> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/24. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/24>.
 <http://receita/ingrediente/24> <http://receita/ingrediente/pred/nome> "Leite de coco" .
 <http://receita/ingrediente/24> <http://receita/ingrediente/pred/quantidade> "700" .
 <http://receita/ingrediente/24> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/25. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/25>.
 <http://receita/ingrediente/25> <http://receita/ingrediente/pred/nome> "Açúcar" .
 <http://receita/ingrediente/25> <http://receita/ingrediente/pred/quantidade> "360" .
 <http://receita/ingrediente/25> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/26. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/26>.
 <http://receita/ingrediente/26> <http://receita/ingrediente/pred/nome> "Gemas de ovos" .
 <http://receita/ingrediente/26> <http://receita/ingrediente/pred/quantidade> "6" .
 <http://receita/ingrediente/26> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/27. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/27>.
 <http://receita/ingrediente/27> <http://receita/ingrediente/pred/nome> "Limão" .
 <http://receita/ingrediente/27> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/27> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/28. 
+<http://receita/id/3> <http://receita/pred/ingrediente> <http://receita/ingrediente/28>.
 <http://receita/ingrediente/28> <http://receita/ingrediente/pred/nome> "Manteiga para untar" .
 <http://receita/ingrediente/28> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/3> <http://receita/pred/passo> "Num tacho misture 750ml de leite com 100g de amido de milho. Acrescente 700ml de leite de coco, 360g de açúcar, casca de limão e deixe ferver. Desligue o lume.".
@@ -179,27 +179,27 @@
 <http://receita/id/4> <http://receita/pred/tipo> <http://receita/tipos/6> .
 <http://receita/id/4> <http://receita/pred/autor> <http://receita/autores/2> .
 <http://receita/id/4> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/29. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/29>.
 <http://receita/ingrediente/29> <http://receita/ingrediente/pred/nome> "Açúcar" .
 <http://receita/ingrediente/29> <http://receita/ingrediente/pred/quantidade> "360" .
 <http://receita/ingrediente/29> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/30. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/30>.
 <http://receita/ingrediente/30> <http://receita/ingrediente/pred/nome> "Leite meio gordo" .
 <http://receita/ingrediente/30> <http://receita/ingrediente/pred/quantidade> "500" .
 <http://receita/ingrediente/30> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/31. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/31>.
 <http://receita/ingrediente/31> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/31> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/31> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/32. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/32>.
 <http://receita/ingrediente/32> <http://receita/ingrediente/pred/nome> "Gemas de ovos" .
 <http://receita/ingrediente/32> <http://receita/ingrediente/pred/quantidade> "6" .
 <http://receita/ingrediente/32> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/33. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/33>.
 <http://receita/ingrediente/33> <http://receita/ingrediente/pred/nome> "Baunilha" .
 <http://receita/ingrediente/33> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/33> <http://receita/ingrediente/pred/unidade> "vagem" .
-<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/34. 
+<http://receita/id/4> <http://receita/pred/ingrediente> <http://receita/ingrediente/34>.
 <http://receita/ingrediente/34> <http://receita/ingrediente/pred/nome> "Água quente" .
 <http://receita/ingrediente/34> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/4> <http://receita/pred/passo> "Ferva 500g de leite meio-gordo com 120g de açúcar, desligue o lume e faça uma infusão com sementes e a vagem de baunilha.".
@@ -214,59 +214,59 @@
 <http://receita/id/5> <http://receita/pred/tipo> <http://receita/tipos/6> .
 <http://receita/id/5> <http://receita/pred/autor> <http://receita/autores/2> .
 <http://receita/id/5> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/35. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/35>.
 <http://receita/ingrediente/35> <http://receita/ingrediente/pred/nome> "Água" .
 <http://receita/ingrediente/35> <http://receita/ingrediente/pred/quantidade> "550" .
 <http://receita/ingrediente/35> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/36. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/36>.
 <http://receita/ingrediente/36> <http://receita/ingrediente/pred/nome> "Açúcar" .
 <http://receita/ingrediente/36> <http://receita/ingrediente/pred/quantidade> "155" .
 <http://receita/ingrediente/36> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/37. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/37>.
 <http://receita/ingrediente/37> <http://receita/ingrediente/pred/nome> "Run Branco" .
 <http://receita/ingrediente/37> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/37> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/38. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/38>.
 <http://receita/ingrediente/38> <http://receita/ingrediente/pred/nome> "Hortelã" .
 <http://receita/ingrediente/38> <http://receita/ingrediente/pred/quantidade> "25" .
 <http://receita/ingrediente/38> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/39. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/39>.
 <http://receita/ingrediente/39> <http://receita/ingrediente/pred/nome> "Sumo de tangerina" .
 <http://receita/ingrediente/39> <http://receita/ingrediente/pred/quantidade> "250" .
 <http://receita/ingrediente/39> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/40. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/40>.
 <http://receita/ingrediente/40> <http://receita/ingrediente/pred/nome> "Ágar-Ágar" .
 <http://receita/ingrediente/40> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/40> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/41. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/41>.
 <http://receita/ingrediente/41> <http://receita/ingrediente/pred/nome> "Canela" .
 <http://receita/ingrediente/41> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/41> <http://receita/ingrediente/pred/unidade> "pau" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/42. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/42>.
 <http://receita/ingrediente/42> <http://receita/ingrediente/pred/nome> "Baunilha" .
 <http://receita/ingrediente/42> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/42> <http://receita/ingrediente/pred/unidade> "vagem" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/43. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/43>.
 <http://receita/ingrediente/43> <http://receita/ingrediente/pred/nome> "Kiwi" .
 <http://receita/ingrediente/43> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/43> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/44. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/44>.
 <http://receita/ingrediente/44> <http://receita/ingrediente/pred/nome> "Manga" .
 <http://receita/ingrediente/44> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/44> <http://receita/ingrediente/pred/unidade> "metade" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/45. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/45>.
 <http://receita/ingrediente/45> <http://receita/ingrediente/pred/nome> "Ananás" .
 <http://receita/ingrediente/45> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/45> <http://receita/ingrediente/pred/unidade> "metade" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/46. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/46>.
 <http://receita/ingrediente/46> <http://receita/ingrediente/pred/nome> "Maçã pink lady" .
 <http://receita/ingrediente/46> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/46> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/47. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/47>.
 <http://receita/ingrediente/47> <http://receita/ingrediente/pred/nome> "Maracujá" .
 <http://receita/ingrediente/47> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/47> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/48. 
+<http://receita/id/5> <http://receita/pred/ingrediente> <http://receita/ingrediente/48>.
 <http://receita/ingrediente/48> <http://receita/ingrediente/pred/nome> "Folhas de hortelã" .
 <http://receita/ingrediente/48> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/5> <http://receita/pred/passo> "Salada de frutas:".
@@ -292,46 +292,46 @@
 <http://receita/id/6> <http://receita/pred/tipo> <http://receita/tipos/9> .
 <http://receita/id/6> <http://receita/pred/autor> <http://receita/autores/3> .
 <http://receita/id/6> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/49. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/49>.
 <http://receita/ingrediente/49> <http://receita/ingrediente/pred/nome> "Abacate maduro" .
 <http://receita/ingrediente/49> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/49> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/50. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/50>.
 <http://receita/ingrediente/50> <http://receita/ingrediente/pred/nome> "Limas" .
 <http://receita/ingrediente/50> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/50> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/51. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/51>.
 <http://receita/ingrediente/51> <http://receita/ingrediente/pred/nome> "Coentros frescos" .
 <http://receita/ingrediente/51> <http://receita/ingrediente/pred/quantidade> "15" .
 <http://receita/ingrediente/51> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/52. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/52>.
 <http://receita/ingrediente/52> <http://receita/ingrediente/pred/nome> "Iogurte natural" .
 <http://receita/ingrediente/52> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/52> <http://receita/ingrediente/pred/unidade> "Colheres de sopa" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/53. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/53>.
 <http://receita/ingrediente/53> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/53> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/54. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/54>.
 <http://receita/ingrediente/54> <http://receita/ingrediente/pred/nome> "Cebola" .
 <http://receita/ingrediente/54> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/54> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/55. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/55>.
 <http://receita/ingrediente/55> <http://receita/ingrediente/pred/nome> "Cenoura" .
 <http://receita/ingrediente/55> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/55> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/56. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/56>.
 <http://receita/ingrediente/56> <http://receita/ingrediente/pred/nome> "Alface branca" .
 <http://receita/ingrediente/56> <http://receita/ingrediente/pred/quantidade> "1/2" .
 <http://receita/ingrediente/56> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/57. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/57>.
 <http://receita/ingrediente/57> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/57> <http://receita/ingrediente/pred/quantidade> "8" .
 <http://receita/ingrediente/57> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/58. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/58>.
 <http://receita/ingrediente/58> <http://receita/ingrediente/pred/nome> "Queijo Cheddar" .
 <http://receita/ingrediente/58> <http://receita/ingrediente/pred/quantidade> "60" .
 <http://receita/ingrediente/58> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/59. 
+<http://receita/id/6> <http://receita/pred/ingrediente> <http://receita/ingrediente/59>.
 <http://receita/ingrediente/59> <http://receita/ingrediente/pred/nome> "Pimentão vermelho" .
 <http://receita/ingrediente/59> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/59> <http://receita/ingrediente/pred/unidade> "unidade" .
@@ -345,42 +345,42 @@
 <http://receita/id/7> <http://receita/pred/tipo> <http://receita/tipos/10> .
 <http://receita/id/7> <http://receita/pred/autor> <http://receita/autores/3> .
 <http://receita/id/7> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/60. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/60>.
 <http://receita/ingrediente/60> <http://receita/ingrediente/pred/nome> "Massa penne seca" .
 <http://receita/ingrediente/60> <http://receita/ingrediente/pred/quantidade> "320" .
 <http://receita/ingrediente/60> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/61. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/61>.
 <http://receita/ingrediente/61> <http://receita/ingrediente/pred/nome> "Cebola" .
 <http://receita/ingrediente/61> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/61> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/62. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/62>.
 <http://receita/ingrediente/62> <http://receita/ingrediente/pred/nome> "Abóbora" .
 <http://receita/ingrediente/62> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/62> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/63. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/63>.
 <http://receita/ingrediente/63> <http://receita/ingrediente/pred/nome> "Alecrim fresco" .
 <http://receita/ingrediente/63> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/63> <http://receita/ingrediente/pred/unidade> "ramos" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/64. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/64>.
 <http://receita/ingrediente/64> <http://receita/ingrediente/pred/nome> "Filetes de cavala fumada sem espinhas" .
 <http://receita/ingrediente/64> <http://receita/ingrediente/pred/quantidade> "130" .
 <http://receita/ingrediente/64> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/65. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/65>.
 <http://receita/ingrediente/65> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/65> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/66. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/66>.
 <http://receita/ingrediente/66> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/66> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/66> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/67. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/67>.
 <http://receita/ingrediente/67> <http://receita/ingrediente/pred/nome> "Leite semi-desnatado" .
 <http://receita/ingrediente/67> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/67> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/68. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/68>.
 <http://receita/ingrediente/68> <http://receita/ingrediente/pred/nome> "Queijo parmesão" .
 <http://receita/ingrediente/68> <http://receita/ingrediente/pred/quantidade> "40" .
 <http://receita/ingrediente/68> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/69. 
+<http://receita/id/7> <http://receita/pred/ingrediente> <http://receita/ingrediente/69>.
 <http://receita/ingrediente/69> <http://receita/ingrediente/pred/nome> "Limão" .
 <http://receita/ingrediente/69> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/69> <http://receita/ingrediente/pred/unidade> "unidade" .
@@ -395,58 +395,58 @@
 <http://receita/id/8> <http://receita/pred/tipo> <http://receita/tipos/11> .
 <http://receita/id/8> <http://receita/pred/autor> <http://receita/autores/3> .
 <http://receita/id/8> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/70. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/70>.
 <http://receita/ingrediente/70> <http://receita/ingrediente/pred/nome> "Cenoura" .
 <http://receita/ingrediente/70> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/70> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/71. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/71>.
 <http://receita/ingrediente/71> <http://receita/ingrediente/pred/nome> "Pepino" .
 <http://receita/ingrediente/71> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/71> <http://receita/ingrediente/pred/unidade> "quarto" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/72. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/72>.
 <http://receita/ingrediente/72> <http://receita/ingrediente/pred/nome> "Couve branca" .
 <http://receita/ingrediente/72> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/72> <http://receita/ingrediente/pred/unidade> "quarto" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/73. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/73>.
 <http://receita/ingrediente/73> <http://receita/ingrediente/pred/nome> "Açúcar amarelo" .
 <http://receita/ingrediente/73> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/73> <http://receita/ingrediente/pred/unidade> "colher de sopa" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/74. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/74>.
 <http://receita/ingrediente/74> <http://receita/ingrediente/pred/nome> "Vinagre de vinho branco" .
 <http://receita/ingrediente/74> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/74> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/75. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/75>.
 <http://receita/ingrediente/75> <http://receita/ingrediente/pred/nome> "Fígado de frango" .
 <http://receita/ingrediente/75> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/75> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/76. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/76>.
 <http://receita/ingrediente/76> <http://receita/ingrediente/pred/nome> "Cebolas" .
 <http://receita/ingrediente/76> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/76> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/77. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/77>.
 <http://receita/ingrediente/77> <http://receita/ingrediente/pred/nome> "Coentros frescos" .
 <http://receita/ingrediente/77> <http://receita/ingrediente/pred/quantidade> "15" .
 <http://receita/ingrediente/77> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/78. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/78>.
 <http://receita/ingrediente/78> <http://receita/ingrediente/pred/nome> "Baunilha" .
 <http://receita/ingrediente/78> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/78> <http://receita/ingrediente/pred/unidade> "vagem" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/79. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/79>.
 <http://receita/ingrediente/79> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/79> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/80. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/80>.
 <http://receita/ingrediente/80> <http://receita/ingrediente/pred/nome> "Carne de porco assada" .
 <http://receita/ingrediente/80> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/80> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/81. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/81>.
 <http://receita/ingrediente/81> <http://receita/ingrediente/pred/nome> "Molho picante" .
 <http://receita/ingrediente/81> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/81> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/82. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/82>.
 <http://receita/ingrediente/82> <http://receita/ingrediente/pred/nome> "Malagueta vermelha" .
 <http://receita/ingrediente/82> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/82> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/83. 
+<http://receita/id/8> <http://receita/pred/ingrediente> <http://receita/ingrediente/83>.
 <http://receita/ingrediente/83> <http://receita/ingrediente/pred/nome> "Baguetes" .
 <http://receita/ingrediente/83> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/83> <http://receita/ingrediente/pred/unidade> "unidades" .
@@ -464,43 +464,43 @@
 <http://receita/id/9> <http://receita/pred/tipo> <http://receita/tipos/13> .
 <http://receita/id/9> <http://receita/pred/autor> <http://receita/autores/4> .
 <http://receita/id/9> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/84. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/84>.
 <http://receita/ingrediente/84> <http://receita/ingrediente/pred/nome> "Farinha de trigo" .
 <http://receita/ingrediente/84> <http://receita/ingrediente/pred/quantidade> "150" .
 <http://receita/ingrediente/84> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/85. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/85>.
 <http://receita/ingrediente/85> <http://receita/ingrediente/pred/nome> "Água morna" .
 <http://receita/ingrediente/85> <http://receita/ingrediente/pred/quantidade> "80" .
 <http://receita/ingrediente/85> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/86. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/86>.
 <http://receita/ingrediente/86> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/86> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/86> <http://receita/ingrediente/pred/unidade> "colher de sopa" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/87. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/87>.
 <http://receita/ingrediente/87> <http://receita/ingrediente/pred/nome> "Molho basílico" .
 <http://receita/ingrediente/87> <http://receita/ingrediente/pred/quantidade> "1/2" .
 <http://receita/ingrediente/87> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/88. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/88>.
 <http://receita/ingrediente/88> <http://receita/ingrediente/pred/nome> "Queijo mozarella ralado" .
 <http://receita/ingrediente/88> <http://receita/ingrediente/pred/quantidade> "1/2" .
 <http://receita/ingrediente/88> <http://receita/ingrediente/pred/unidade> "chávena" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/89. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/89>.
 <http://receita/ingrediente/89> <http://receita/ingrediente/pred/nome> "Quejo azul" .
 <http://receita/ingrediente/89> <http://receita/ingrediente/pred/quantidade> "1/4" .
 <http://receita/ingrediente/89> <http://receita/ingrediente/pred/unidade> "chávena" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/90. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/90>.
 <http://receita/ingrediente/90> <http://receita/ingrediente/pred/nome> "Tomate" .
 <http://receita/ingrediente/90> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/90> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/91. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/91>.
 <http://receita/ingrediente/91> <http://receita/ingrediente/pred/nome> "Chourição" .
 <http://receita/ingrediente/91> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/91> <http://receita/ingrediente/pred/unidade> "rodelas" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/92. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/92>.
 <http://receita/ingrediente/92> <http://receita/ingrediente/pred/nome> "Azeitonas pretas fatiadas" .
 <http://receita/ingrediente/92> <http://receita/ingrediente/pred/quantidade> "1/4" .
 <http://receita/ingrediente/92> <http://receita/ingrediente/pred/unidade> "chávena" .
-<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/93. 
+<http://receita/id/9> <http://receita/pred/ingrediente> <http://receita/ingrediente/93>.
 <http://receita/ingrediente/93> <http://receita/ingrediente/pred/nome> "Oregãos" .
 <http://receita/ingrediente/93> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/9> <http://receita/pred/passo> "Numa taça junte 1 chávena de farinha de trigo, 1/3 de chávena de água morna, 1 colher de sopa de azeite, 1/2 colher de chá de sal e misture tudo.".
@@ -517,37 +517,37 @@
 <http://receita/id/10> <http://receita/pred/tipo> <http://receita/tipos/14> .
 <http://receita/id/10> <http://receita/pred/autor> <http://receita/autores/4> .
 <http://receita/id/10> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/94. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/94>.
 <http://receita/ingrediente/94> <http://receita/ingrediente/pred/nome> "Morangos desidratados secos" .
 <http://receita/ingrediente/94> <http://receita/ingrediente/pred/quantidade> "60" .
 <http://receita/ingrediente/94> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/95. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/95>.
 <http://receita/ingrediente/95> <http://receita/ingrediente/pred/nome> "Côco ralado seco" .
 <http://receita/ingrediente/95> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/95> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/96. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/96>.
 <http://receita/ingrediente/96> <http://receita/ingrediente/pred/nome> "Côco ralado fresco" .
 <http://receita/ingrediente/96> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/96> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/97. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/97>.
 <http://receita/ingrediente/97> <http://receita/ingrediente/pred/nome> "Leite de côco" .
 <http://receita/ingrediente/97> <http://receita/ingrediente/pred/quantidade> "60" .
 <http://receita/ingrediente/97> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/98. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/98>.
 <http://receita/ingrediente/98> <http://receita/ingrediente/pred/nome> "Raspa de Lima" .
 <http://receita/ingrediente/98> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/99. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/99>.
 <http://receita/ingrediente/99> <http://receita/ingrediente/pred/nome> "Sumo de lima" .
 <http://receita/ingrediente/99> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/100. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/100>.
 <http://receita/ingrediente/100> <http://receita/ingrediente/pred/nome> "Xarope de agave" .
 <http://receita/ingrediente/100> <http://receita/ingrediente/pred/quantidade> "10" .
 <http://receita/ingrediente/100> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/101. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/101>.
 <http://receita/ingrediente/101> <http://receita/ingrediente/pred/nome> "Manteiga de cacau" .
 <http://receita/ingrediente/101> <http://receita/ingrediente/pred/quantidade> "150" .
 <http://receita/ingrediente/101> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/102. 
+<http://receita/id/10> <http://receita/pred/ingrediente> <http://receita/ingrediente/102>.
 <http://receita/ingrediente/102> <http://receita/ingrediente/pred/nome> "Cacau orgânico em pó" .
 <http://receita/ingrediente/102> <http://receita/ingrediente/pred/quantidade> "8" .
 <http://receita/ingrediente/102> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
@@ -571,29 +571,29 @@
 <http://receita/id/11> <http://receita/pred/tipo> <http://receita/tipos/3> .
 <http://receita/id/11> <http://receita/pred/autor> <http://receita/autores/4> .
 <http://receita/id/11> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/103. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/103>.
 <http://receita/ingrediente/103> <http://receita/ingrediente/pred/nome> "Manteiga à temperatura ambiente" .
 <http://receita/ingrediente/103> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/103> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/104. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/104>.
 <http://receita/ingrediente/104> <http://receita/ingrediente/pred/nome> "Açúcar" .
 <http://receita/ingrediente/104> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/104> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/105. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/105>.
 <http://receita/ingrediente/105> <http://receita/ingrediente/pred/nome> "Ovo" .
 <http://receita/ingrediente/105> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/105> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/106. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/106>.
 <http://receita/ingrediente/106> <http://receita/ingrediente/pred/nome> "Raspa de Limão" .
 <http://receita/ingrediente/106> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/107. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/107>.
 <http://receita/ingrediente/107> <http://receita/ingrediente/pred/nome> "Farinha" .
 <http://receita/ingrediente/107> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/107> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/108. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/108>.
 <http://receita/ingrediente/108> <http://receita/ingrediente/pred/nome> "Mirtilos" .
 <http://receita/ingrediente/108> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/109. 
+<http://receita/id/11> <http://receita/pred/ingrediente> <http://receita/ingrediente/109>.
 <http://receita/ingrediente/109> <http://receita/ingrediente/pred/nome> "Queijo da ilha ralado" .
 <http://receita/ingrediente/109> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/109> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
@@ -610,45 +610,45 @@
 <http://receita/id/12> <http://receita/pred/tipo> <http://receita/tipos/15> .
 <http://receita/id/12> <http://receita/pred/autor> <http://receita/autores/5> .
 <http://receita/id/12> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/110. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/110>.
 <http://receita/ingrediente/110> <http://receita/ingrediente/pred/nome> "Cebolas" .
 <http://receita/ingrediente/110> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/110> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/111. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/111>.
 <http://receita/ingrediente/111> <http://receita/ingrediente/pred/nome> "Alho" .
 <http://receita/ingrediente/111> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/111> <http://receita/ingrediente/pred/unidade> "dentes" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/112. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/112>.
 <http://receita/ingrediente/112> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/112> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/113. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/113>.
 <http://receita/ingrediente/113> <http://receita/ingrediente/pred/nome> "Vinho Branco" .
 <http://receita/ingrediente/113> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/113> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/114. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/114>.
 <http://receita/ingrediente/114> <http://receita/ingrediente/pred/nome> "Natas" .
 <http://receita/ingrediente/114> <http://receita/ingrediente/pred/quantidade> "250" .
 <http://receita/ingrediente/114> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/115. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/115>.
 <http://receita/ingrediente/115> <http://receita/ingrediente/pred/nome> "Caldo de legumes" .
 <http://receita/ingrediente/115> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/115> <http://receita/ingrediente/pred/unidade> "cubo" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/116. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/116>.
 <http://receita/ingrediente/116> <http://receita/ingrediente/pred/nome> "Couve Lombarda" .
 <http://receita/ingrediente/116> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/116> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/117. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/117>.
 <http://receita/ingrediente/117> <http://receita/ingrediente/pred/nome> "Massa gnochi" .
 <http://receita/ingrediente/117> <http://receita/ingrediente/pred/quantidade> "450" .
 <http://receita/ingrediente/117> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/118. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/118>.
 <http://receita/ingrediente/118> <http://receita/ingrediente/pred/nome> "Queijo Parmesão ralado" .
 <http://receita/ingrediente/118> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/118> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/119. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/119>.
 <http://receita/ingrediente/119> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/119> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/120. 
+<http://receita/id/12> <http://receita/pred/ingrediente> <http://receita/ingrediente/120>.
 <http://receita/ingrediente/120> <http://receita/ingrediente/pred/nome> "Pimenta moída" .
 <http://receita/ingrediente/120> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/12> <http://receita/pred/passo> "Molho de cebola:".
@@ -676,65 +676,65 @@
 <http://receita/id/13> <http://receita/pred/tipo> <http://receita/tipos/16> .
 <http://receita/id/13> <http://receita/pred/autor> <http://receita/autores/5> .
 <http://receita/id/13> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/121. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/121>.
 <http://receita/ingrediente/121> <http://receita/ingrediente/pred/nome> "Carne vaca picada" .
 <http://receita/ingrediente/121> <http://receita/ingrediente/pred/quantidade> "400" .
 <http://receita/ingrediente/121> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/122. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/122>.
 <http://receita/ingrediente/122> <http://receita/ingrediente/pred/nome> "Pimentão em pó" .
 <http://receita/ingrediente/122> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/122> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/123. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/123>.
 <http://receita/ingrediente/123> <http://receita/ingrediente/pred/nome> "Caril em pó" .
 <http://receita/ingrediente/123> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/123> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/124. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/124>.
 <http://receita/ingrediente/124> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/124> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/125. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/125>.
 <http://receita/ingrediente/125> <http://receita/ingrediente/pred/nome> "Pimenta moída" .
 <http://receita/ingrediente/125> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/126. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/126>.
 <http://receita/ingrediente/126> <http://receita/ingrediente/pred/nome> "Pão ralado" .
 <http://receita/ingrediente/126> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/126> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/127. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/127>.
 <http://receita/ingrediente/127> <http://receita/ingrediente/pred/nome> "Queijo semi-amadurecido" .
 <http://receita/ingrediente/127> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/127> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/128. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/128>.
 <http://receita/ingrediente/128> <http://receita/ingrediente/pred/nome> "Batata para fritar" .
 <http://receita/ingrediente/128> <http://receita/ingrediente/pred/quantidade> "450" .
 <http://receita/ingrediente/128> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/129. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/129>.
 <http://receita/ingrediente/129> <http://receita/ingrediente/pred/nome> "Pãezinhos de hamburguer" .
 <http://receita/ingrediente/129> <http://receita/ingrediente/pred/quantidade> "12" .
 <http://receita/ingrediente/129> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/130. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/130>.
 <http://receita/ingrediente/130> <http://receita/ingrediente/pred/nome> "Alface" .
 <http://receita/ingrediente/130> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/130> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/131. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/131>.
 <http://receita/ingrediente/131> <http://receita/ingrediente/pred/nome> "Tomates" .
 <http://receita/ingrediente/131> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/131> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/132. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/132>.
 <http://receita/ingrediente/132> <http://receita/ingrediente/pred/nome> "Cornichons" .
 <http://receita/ingrediente/132> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/132> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/133. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/133>.
 <http://receita/ingrediente/133> <http://receita/ingrediente/pred/nome> "Banana" .
 <http://receita/ingrediente/133> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/133> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/134. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/134>.
 <http://receita/ingrediente/134> <http://receita/ingrediente/pred/nome> "Sumo de Laranja" .
 <http://receita/ingrediente/134> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/134> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/135. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/135>.
 <http://receita/ingrediente/135> <http://receita/ingrediente/pred/nome> "Leite magro" .
 <http://receita/ingrediente/135> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/135> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/136. 
+<http://receita/id/13> <http://receita/pred/ingrediente> <http://receita/ingrediente/136>.
 <http://receita/ingrediente/136> <http://receita/ingrediente/pred/nome> "Gelado de baunilha" .
 <http://receita/ingrediente/136> <http://receita/ingrediente/pred/quantidade> "250" .
 <http://receita/ingrediente/136> <http://receita/ingrediente/pred/unidade> "ml" .
@@ -770,84 +770,84 @@
 <http://receita/id/14> <http://receita/pred/tipo> <http://receita/tipos/17> .
 <http://receita/id/14> <http://receita/pred/autor> <http://receita/autores/5> .
 <http://receita/id/14> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/137. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/137>.
 <http://receita/ingrediente/137> <http://receita/ingrediente/pred/nome> "Cebolas" .
 <http://receita/ingrediente/137> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/137> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/138. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/138>.
 <http://receita/ingrediente/138> <http://receita/ingrediente/pred/nome> "Alho" .
 <http://receita/ingrediente/138> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/138> <http://receita/ingrediente/pred/unidade> "dente" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/139. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/139>.
 <http://receita/ingrediente/139> <http://receita/ingrediente/pred/nome> "Biscoitos temperados(spekulaas)" .
 <http://receita/ingrediente/139> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/139> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/140. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/140>.
 <http://receita/ingrediente/140> <http://receita/ingrediente/pred/nome> "Óleo de girassol" .
 <http://receita/ingrediente/140> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/141. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/141>.
 <http://receita/ingrediente/141> <http://receita/ingrediente/pred/nome> "Carne vaca picada" .
 <http://receita/ingrediente/141> <http://receita/ingrediente/pred/quantidade> "400" .
 <http://receita/ingrediente/141> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/142. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/142>.
 <http://receita/ingrediente/142> <http://receita/ingrediente/pred/nome> "Especiarias para carne picada" .
 <http://receita/ingrediente/142> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/142> <http://receita/ingrediente/pred/unidade> "colheres de chá" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/143. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/143>.
 <http://receita/ingrediente/143> <http://receita/ingrediente/pred/nome> "Tomate" .
 <http://receita/ingrediente/143> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/143> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/144. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/144>.
 <http://receita/ingrediente/144> <http://receita/ingrediente/pred/nome> "Batatatinhas" .
 <http://receita/ingrediente/144> <http://receita/ingrediente/pred/quantidade> "700" .
 <http://receita/ingrediente/144> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/145. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/145>.
 <http://receita/ingrediente/145> <http://receita/ingrediente/pred/nome> "Maçãs Elstar" .
 <http://receita/ingrediente/145> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/145> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/146. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/146>.
 <http://receita/ingrediente/146> <http://receita/ingrediente/pred/nome> "Queijo ralado" .
 <http://receita/ingrediente/146> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/146> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/147. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/147>.
 <http://receita/ingrediente/147> <http://receita/ingrediente/pred/nome> "Cebolinho" .
 <http://receita/ingrediente/147> <http://receita/ingrediente/pred/quantidade> "1/4" .
 <http://receita/ingrediente/147> <http://receita/ingrediente/pred/unidade> "Molho" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/148. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/148>.
 <http://receita/ingrediente/148> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/148> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/149. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/149>.
 <http://receita/ingrediente/149> <http://receita/ingrediente/pred/nome> "Pimenta moída" .
 <http://receita/ingrediente/149> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/150. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/150>.
 <http://receita/ingrediente/150> <http://receita/ingrediente/pred/nome> "Ervilhas" .
 <http://receita/ingrediente/150> <http://receita/ingrediente/pred/quantidade> "250" .
 <http://receita/ingrediente/150> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/151. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/151>.
 <http://receita/ingrediente/151> <http://receita/ingrediente/pred/nome> "Couve Roxa" .
 <http://receita/ingrediente/151> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/151> <http://receita/ingrediente/pred/unidade> "cabeças" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/152. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/152>.
 <http://receita/ingrediente/152> <http://receita/ingrediente/pred/nome> "Queijo Feta" .
 <http://receita/ingrediente/152> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/152> <http://receita/ingrediente/pred/unidade> "gr" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/153. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/153>.
 <http://receita/ingrediente/153> <http://receita/ingrediente/pred/nome> "Leite magro" .
 <http://receita/ingrediente/153> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/153> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/154. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/154>.
 <http://receita/ingrediente/154> <http://receita/ingrediente/pred/nome> "Azeite virgem extra" .
 <http://receita/ingrediente/154> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/154> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/155. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/155>.
 <http://receita/ingrediente/155> <http://receita/ingrediente/pred/nome> "Azeite virgem extra" .
 <http://receita/ingrediente/155> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/155> <http://receita/ingrediente/pred/unidade> "colheres de sopa" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/156. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/156>.
 <http://receita/ingrediente/156> <http://receita/ingrediente/pred/nome> "Vinagre de vinho tinto" .
 <http://receita/ingrediente/156> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/156> <http://receita/ingrediente/pred/unidade> "colher de sopa" .
-<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/157. 
+<http://receita/id/14> <http://receita/pred/ingrediente> <http://receita/ingrediente/157>.
 <http://receita/ingrediente/157> <http://receita/ingrediente/pred/nome> "Mostarda" .
 <http://receita/ingrediente/157> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/157> <http://receita/ingrediente/pred/unidade> "colher de chá" .
@@ -886,75 +886,75 @@
 <http://receita/id/15> <http://receita/pred/tipo> <http://receita/tipos/17> .
 <http://receita/id/15> <http://receita/pred/autor> <http://receita/autores/5> .
 <http://receita/id/15> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/158. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/158>.
 <http://receita/ingrediente/158> <http://receita/ingrediente/pred/nome> "Batatas" .
 <http://receita/ingrediente/158> <http://receita/ingrediente/pred/quantidade> "500" .
 <http://receita/ingrediente/158> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/159. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/159>.
 <http://receita/ingrediente/159> <http://receita/ingrediente/pred/nome> "Azeite" .
 <http://receita/ingrediente/159> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/160. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/160>.
 <http://receita/ingrediente/160> <http://receita/ingrediente/pred/nome> "Paprika em pó" .
 <http://receita/ingrediente/160> <http://receita/ingrediente/pred/quantidade> "1/2" .
 <http://receita/ingrediente/160> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/161. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/161>.
 <http://receita/ingrediente/161> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/161> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/162. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/162>.
 <http://receita/ingrediente/162> <http://receita/ingrediente/pred/nome> "Pimenta moída" .
 <http://receita/ingrediente/162> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/163. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/163>.
 <http://receita/ingrediente/163> <http://receita/ingrediente/pred/nome> "Bacalhau" .
 <http://receita/ingrediente/163> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/163> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/164. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/164>.
 <http://receita/ingrediente/164> <http://receita/ingrediente/pred/nome> "Salmão" .
 <http://receita/ingrediente/164> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/164> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/165. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/165>.
 <http://receita/ingrediente/165> <http://receita/ingrediente/pred/nome> "Ovos" .
 <http://receita/ingrediente/165> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/165> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/166. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/166>.
 <http://receita/ingrediente/166> <http://receita/ingrediente/pred/nome> "Pão ralado" .
 <http://receita/ingrediente/166> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/166> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/167. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/167>.
 <http://receita/ingrediente/167> <http://receita/ingrediente/pred/nome> "Óleo de girassol" .
 <http://receita/ingrediente/167> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/168. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/168>.
 <http://receita/ingrediente/168> <http://receita/ingrediente/pred/nome> "Salsa" .
 <http://receita/ingrediente/168> <http://receita/ingrediente/pred/quantidade> "5" .
 <http://receita/ingrediente/168> <http://receita/ingrediente/pred/unidade> "raminhos" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/169. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/169>.
 <http://receita/ingrediente/169> <http://receita/ingrediente/pred/nome> "Cebolinho" .
 <http://receita/ingrediente/169> <http://receita/ingrediente/pred/quantidade> "1/4" .
 <http://receita/ingrediente/169> <http://receita/ingrediente/pred/unidade> "Molho" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/170. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/170>.
 <http://receita/ingrediente/170> <http://receita/ingrediente/pred/nome> "Pickle" .
 <http://receita/ingrediente/170> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/170> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/171. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/171>.
 <http://receita/ingrediente/171> <http://receita/ingrediente/pred/nome> "Alcaparras" .
 <http://receita/ingrediente/171> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/171> <http://receita/ingrediente/pred/unidade> "colher de sopa" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/172. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/172>.
 <http://receita/ingrediente/172> <http://receita/ingrediente/pred/nome> "Maionese light" .
 <http://receita/ingrediente/172> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/172> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/173. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/173>.
 <http://receita/ingrediente/173> <http://receita/ingrediente/pred/nome> "Iogurte magro" .
 <http://receita/ingrediente/173> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/173> <http://receita/ingrediente/pred/unidade> "ml" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/174. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/174>.
 <http://receita/ingrediente/174> <http://receita/ingrediente/pred/nome> "Alface romana" .
 <http://receita/ingrediente/174> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/174> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/175. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/175>.
 <http://receita/ingrediente/175> <http://receita/ingrediente/pred/nome> "Tomates" .
 <http://receita/ingrediente/175> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/175> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/176. 
+<http://receita/id/15> <http://receita/pred/ingrediente> <http://receita/ingrediente/176>.
 <http://receita/ingrediente/176> <http://receita/ingrediente/pred/nome> "Rolos de sésamo duros" .
 <http://receita/ingrediente/176> <http://receita/ingrediente/pred/quantidade> "4" .
 <http://receita/ingrediente/176> <http://receita/ingrediente/pred/unidade> "unidades" .
@@ -988,23 +988,23 @@
 <http://receita/id/16> <http://receita/pred/tipo> <http://receita/tipos/7> .
 <http://receita/id/16> <http://receita/pred/autor> <http://receita/autores/6> .
 <http://receita/id/16> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/177. 
+<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/177>.
 <http://receita/ingrediente/177> <http://receita/ingrediente/pred/nome> "Gelatina de morango" .
 <http://receita/ingrediente/177> <http://receita/ingrediente/pred/quantidade> "2" .
 <http://receita/ingrediente/177> <http://receita/ingrediente/pred/unidade> "saquetas" .
-<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/178. 
+<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/178>.
 <http://receita/ingrediente/178> <http://receita/ingrediente/pred/nome> "Água" .
 <http://receita/ingrediente/178> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/178> <http://receita/ingrediente/pred/unidade> "L" .
-<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/179. 
+<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/179>.
 <http://receita/ingrediente/179> <http://receita/ingrediente/pred/nome> "Kiwis" .
 <http://receita/ingrediente/179> <http://receita/ingrediente/pred/quantidade> "3" .
 <http://receita/ingrediente/179> <http://receita/ingrediente/pred/unidade> "unidades" .
-<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/180. 
+<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/180>.
 <http://receita/ingrediente/180> <http://receita/ingrediente/pred/nome> "Mirtilos" .
 <http://receita/ingrediente/180> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/180> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/181. 
+<http://receita/id/16> <http://receita/pred/ingrediente> <http://receita/ingrediente/181>.
 <http://receita/ingrediente/181> <http://receita/ingrediente/pred/nome> "Groselhas" .
 <http://receita/ingrediente/181> <http://receita/ingrediente/pred/quantidade> "125" .
 <http://receita/ingrediente/181> <http://receita/ingrediente/pred/unidade> "g" .
@@ -1022,26 +1022,26 @@
 <http://receita/id/17> <http://receita/pred/tipo> <http://receita/tipos/3> .
 <http://receita/id/17> <http://receita/pred/autor> <http://receita/autores/6> .
 <http://receita/id/17> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/182. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/182>.
 <http://receita/ingrediente/182> <http://receita/ingrediente/pred/nome> "Chocolate Belga" .
 <http://receita/ingrediente/182> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/182> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/183. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/183>.
 <http://receita/ingrediente/183> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/183> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/184. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/184>.
 <http://receita/ingrediente/184> <http://receita/ingrediente/pred/nome> "Pistachos" .
 <http://receita/ingrediente/184> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/185. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/185>.
 <http://receita/ingrediente/185> <http://receita/ingrediente/pred/nome> "Amendoins" .
 <http://receita/ingrediente/185> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/186. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/186>.
 <http://receita/ingrediente/186> <http://receita/ingrediente/pred/nome> "Amendoas" .
 <http://receita/ingrediente/186> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/187. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/187>.
 <http://receita/ingrediente/187> <http://receita/ingrediente/pred/nome> "Avelãs" .
 <http://receita/ingrediente/187> <http://receita/ingrediente/pred/quantidade> "q.b." .
-<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/188. 
+<http://receita/id/17> <http://receita/pred/ingrediente> <http://receita/ingrediente/188>.
 <http://receita/ingrediente/188> <http://receita/ingrediente/pred/nome> "Papaia seca" .
 <http://receita/ingrediente/188> <http://receita/ingrediente/pred/quantidade> "q.b." .
 <http://receita/id/17> <http://receita/pred/passo> "Derreta 200g de chocolate belga em banho-maria.".
@@ -1057,43 +1057,43 @@
 <http://receita/id/18> <http://receita/pred/tipo> <http://receita/tipos/16> .
 <http://receita/id/18> <http://receita/pred/autor> <http://receita/autores/6> .
 <http://receita/id/18> <http://receita/pred/dificuldade> <http://receita/dificuldades/1> .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/189. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/189>.
 <http://receita/ingrediente/189> <http://receita/ingrediente/pred/nome> "Farinha de trigo" .
 <http://receita/ingrediente/189> <http://receita/ingrediente/pred/quantidade> "200" .
 <http://receita/ingrediente/189> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/190. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/190>.
 <http://receita/ingrediente/190> <http://receita/ingrediente/pred/nome> "Bicarbonato de sódio" .
 <http://receita/ingrediente/190> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/190> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/191. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/191>.
 <http://receita/ingrediente/191> <http://receita/ingrediente/pred/nome> "Sal" .
 <http://receita/ingrediente/191> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/191> <http://receita/ingrediente/pred/unidade> "colher de chá" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/192. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/192>.
 <http://receita/ingrediente/192> <http://receita/ingrediente/pred/nome> "Manteiga" .
 <http://receita/ingrediente/192> <http://receita/ingrediente/pred/quantidade> "150" .
 <http://receita/ingrediente/192> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/193. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/193>.
 <http://receita/ingrediente/193> <http://receita/ingrediente/pred/nome> "Açúcar branco" .
 <http://receita/ingrediente/193> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/193> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/194. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/194>.
 <http://receita/ingrediente/194> <http://receita/ingrediente/pred/nome> "Açúcar mascavado" .
 <http://receita/ingrediente/194> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/194> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/195. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/195>.
 <http://receita/ingrediente/195> <http://receita/ingrediente/pred/nome> "Ovo" .
 <http://receita/ingrediente/195> <http://receita/ingrediente/pred/quantidade> "1" .
 <http://receita/ingrediente/195> <http://receita/ingrediente/pred/unidade> "unidade" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/196. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/196>.
 <http://receita/ingrediente/196> <http://receita/ingrediente/pred/nome> "Chocolate" .
 <http://receita/ingrediente/196> <http://receita/ingrediente/pred/quantidade> "100" .
 <http://receita/ingrediente/196> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/197. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/197>.
 <http://receita/ingrediente/197> <http://receita/ingrediente/pred/nome> "Nozes" .
 <http://receita/ingrediente/197> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/197> <http://receita/ingrediente/pred/unidade> "g" .
-<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/198. 
+<http://receita/id/18> <http://receita/pred/ingrediente> <http://receita/ingrediente/198>.
 <http://receita/ingrediente/198> <http://receita/ingrediente/pred/nome> "Chips de banana" .
 <http://receita/ingrediente/198> <http://receita/ingrediente/pred/quantidade> "50" .
 <http://receita/ingrediente/198> <http://receita/ingrediente/pred/unidade> "g" .

@@ -117,7 +117,7 @@ def main():
 
             for x in receita['ingredientes']['ingrediente']:
                 count_ing +=1
-                strreceitas += id + receita_pred + 'ingrediente> ' + ingrediente_id + str(count_ing) + '. \n'
+                strreceitas += id + receita_pred + 'ingrediente> ' + ingrediente_id + str(count_ing) + '>.\n'
                 strreceitas += ingrediente_id + str(count_ing) + "> " + ingrediente_pred + 'nome> "' + x["nome_i"]+ '" .\n'
                 strreceitas += ingrediente_id + str(count_ing) + "> " + ingrediente_pred + 'quantidade> "' + x["quantidade"] + '" .\n'
                 if len(x) == 3:
