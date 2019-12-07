@@ -11,6 +11,7 @@
                 Autores:
                 <br>
                 <select name= "authors" class="form-control" >
+                    <option value= "None" selected></option>
                     {% for auth in autores %}
                         <option value="{{ auth }}"  >{{ auth }}</option>
                     {% endfor %}
@@ -22,6 +23,7 @@
                 Categoria:
                 <br>
                 <select name= "categorias" class="form-control">
+                    <option value= "None" selected></option>
                     {% for cat in categorias %}
                         <option value= "{{ cat }}" >{{ cat }}</option>
                     {% endfor %}
@@ -33,6 +35,7 @@
                 Tags:
                 <br>
                  <select name= "tags" class="form-control" >
+                    <option value= "None" selected></option>
                     {% for tag in tags %}
                         <option value= "{{ tag }}" >{{ tag }}</option>
                     {% endfor %}
@@ -45,6 +48,7 @@
                 Dificuldade:
                 <br>
                  <select name= "dificuldade" class="form-control" >
+                    <option value= "None" selected></option>
                     {% for d in dificuldade %}
                         <option value="{{ d }}">{{ d }}</option>
                     {% endfor %}
