@@ -96,12 +96,139 @@ def edit_recipe(request):
     return None
 
 
+@csrf_exempt
 def edit_receita(request):
-    print(getAutores())
-    print(getDificuldades())
-    print(getTipos())
-    print(getCategorias())
-    return render(request, 'edit.html')
+
+    if request.method == 'POST':
+        if request.is_ajax():
+            rec = request.POST.get("selected_recipe")
+
+            print(rec)
+            endpoint = "http://localhost:7200"
+            repo_name = "receitas"
+            client = ApiClient(endpoint=endpoint)
+            accessor = GraphDBApi(client)
+            receitas_info = {}
+
+            receitas_info["receita"] = []
+            receitas_info["receita"].append(rec)
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
+                    'Select ?imagem ?data ?dificuldade where{' \
+                    ' ?r predRec:nome "' + rec + '".' \
+                                                 ' ?r predRec:imagem ?imagem. ' \
+                                                 ' ?r predRec:data ?data.' \
+                                                 ' ?r predRec:dificuldade ?d_id.' \
+                                                 ' ?d_id dif: ?dificuldade.' \
+                                                 '}'
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+
+            receitas_info["receita"].append(res["results"]["bindings"][0]["imagem"]["value"])
+            receitas_info["receita"].append(res["results"]["bindings"][0]["data"]["value"])
+            receitas_info["receita"].append(res["results"]["bindings"][0]["dificuldade"]["value"])
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'PREFIX aut:<http://receita/autores/pred/nome>' \
+                    'Select ?autor where{' \
+                    '?r predRec:nome "' + rec + '".' \
+                                                '?r predRec:autor ?id_a.' \
+                                                '?id_a aut: ?autor.' \
+                                                '}'
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            autores_rec = ""
+
+            for autor in res["results"]["bindings"]:
+                autores_rec += autor["autor"]["value"] + ','
+
+            receitas_info["receita"].append(autores_rec)
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'PREFIX cat:<http://receita/categorias/pred/nome>' \
+                    'Select ?categoria where{' \
+                    '?r predRec:nome "' + rec + '".' \
+                    '?r predRec:categoria ?id_c.' \
+                    '?id_c cat: ?categoria.' \
+                    '}'
+
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            autores_rec = []
+            categorias_rec = ""
+
+            for categoria in res["results"]["bindings"]:
+                categorias_rec += categoria["categoria"]["value"]
+
+            receitas_info["receita"].append(categorias_rec)
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'PREFIX tip:<http://receita/tipos/pred/nome>' \
+                    'Select ?tipo where{' \
+                    '?r predRec:nome "' + rec + '".' \
+                    '?r predRec:tipo ?id_t.' \
+                    '?id_t tip: ?tipo.' \
+                    '}'
+
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            tipo_rec = ""
+
+            for tipo in res["results"]["bindings"]:
+                tipo_rec += tipo["tipo"]["value"] + ","
+
+            receitas_info["receita"].append(tipo_rec)
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'Select ?passo where{' \
+                    '?r predRec:nome "' + rec + '".' \
+                    '?r predRec:passo ?passo.' \
+                    '}'
+
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            passo_rec = ""
+
+            for passo in res["results"]["bindings"]:
+                passo_rec += passo["passo"]["value"] + ",\n"
+
+            receitas_info["receita"].append(passo_rec)
+
+            query = 'PREFIX predRec:<http://receita/pred/>' \
+                    'PREFIX ing:<http://receita/ingrediente/pred/>' \
+                    'Select ?nome ?quantidade ?unidade where{' \
+                    '?r predRec:nome "' + rec + '".' \
+                    '?r predRec:ingrediente ?id_i.' \
+                    '?id_i ing:nome ?nome.' \
+                    '?id_i ing:quantidade ?quantidade.' \
+                    'OPTIONAL{?id_i ing:unidade ?unidade.}' \
+                    '}'
+
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            ing_rec = ""
+
+            for ing in res["results"]["bindings"]:
+                ing_rec += ing["nome"]["value"] + ","
+                ing_rec += ing["quantidade"]["value"] + ","
+
+                if "unidade" in ing.keys():
+                    ing_rec += ing["unidade"]["value"] + ","
+
+                ing_rec += "\n"
+
+            receitas_info["receita"].append(ing_rec)
+
+            return JsonResponse({"receita":receitas_info["receita"]})
+
+    return render(request, 'edit.html', {"receitas": getNomesReceitas()})
 
 
 def add_recipe(request):

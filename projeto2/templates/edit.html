@@ -244,18 +244,20 @@
 
 
         data_to_send = {selected_recipe: selected_recipe};
-        url = "{% url 'edit_recipe' %}";
+        url = "{% url 'edit_receita' %}";
         $.post(url, data_to_send,function (data) {
             console.log(data)
-          document.getElementById("name").value = data["receita"][0];
-          document.getElementById("cat").value = data["receita"][1];
-          document.getElementById("data").value = data["receita"][2];
-          document.getElementById("tipo").value = data["receita"][3];
-          document.getElementById("aut").value = data["receita"][4];
-          document.getElementById("dificuldade").value = data["receita"][5];
-          document.getElementById("ingredientes").value = data["receita"][6].toString();
-          document.getElementById("passos").value = data["receita"][7].toString();
-          document.getElementById("imagem").value = data["receita"][8];
+            document.getElementById("name").value = data["receita"][0];
+            document.getElementById("imagem").value = data["receita"][1];
+            document.getElementById("data").value = data["receita"][2];
+            document.getElementById("dificuldade").value = data["receita"][3];
+            document.getElementById("aut").value = data["receita"][4];
+
+            document.getElementById("cat").value = data["receita"][5];
+            document.getElementById("tipo").value = data["receita"][6];
+            document.getElementById("passos").value = data["receita"][7].toString();
+            document.getElementById("ingredientes").value = data["receita"][8].toString();
+
 
         });
 
