@@ -143,8 +143,9 @@ def edit_receita(request):
             autores_rec = ""
 
             for autor in res["results"]["bindings"]:
-                autores_rec += autor["autor"]["value"] + ','
-
+                autores_rec += autor["autor"]["value"]
+                if autor != res["results"]["bindings"][-1]:
+                    autores_rec += ','
             receitas_info["receita"].append(autores_rec)
 
             query = 'PREFIX predRec:<http://receita/pred/>' \
@@ -163,6 +164,8 @@ def edit_receita(request):
 
             for categoria in res["results"]["bindings"]:
                 categorias_rec += categoria["categoria"]["value"]
+                if categoria != res["results"]["bindings"][-1]:
+                    categorias_rec += ','
 
             receitas_info["receita"].append(categorias_rec)
 
@@ -180,7 +183,9 @@ def edit_receita(request):
             tipo_rec = ""
 
             for tipo in res["results"]["bindings"]:
-                tipo_rec += tipo["tipo"]["value"] + ","
+                tipo_rec += tipo["tipo"]["value"]
+                if tipo != res["results"]["bindings"][-1]:
+                    tipo_rec += ","
 
             receitas_info["receita"].append(tipo_rec)
 
@@ -196,7 +201,9 @@ def edit_receita(request):
             passo_rec = ""
 
             for passo in res["results"]["bindings"]:
-                passo_rec += passo["passo"]["value"] + ",\n"
+                passo_rec += passo["passo"]["value"]
+                if passo != res["results"]["bindings"][-1]:
+                    passo_rec +=  '\n'
 
             receitas_info["receita"].append(passo_rec)
 
@@ -217,12 +224,12 @@ def edit_receita(request):
 
             for ing in res["results"]["bindings"]:
                 ing_rec += ing["nome"]["value"] + ","
-                ing_rec += ing["quantidade"]["value"] + ","
+                ing_rec += ing["quantidade"]["value"]
 
                 if "unidade" in ing.keys():
-                    ing_rec += ing["unidade"]["value"] + ","
-
-                ing_rec += "\n"
+                    ing_rec += ',' + ing["unidade"]["value"]
+                if ing != res["results"]["bindings"][-1]:
+                    ing_rec += ",\n"
 
             receitas_info["receita"].append(ing_rec)
 
