@@ -93,7 +93,9 @@ def add_receita(request):
 
 @csrf_exempt
 def edit_recipe(request):
-    return None
+    error1 = del_recipe(request,True)
+    error2 = add_recipe(request,True)
+    return render(request, "edit.html",{"edit_occurs" : True, "error" : error1 and error2, "receitas": getNomesReceitas() })
 
 
 @csrf_exempt
@@ -117,15 +119,15 @@ def edit_receita(request):
                     'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
                     'Select ?imagem ?data ?dificuldade where{' \
                     ' ?r predRec:nome "' + rec + '".' \
-                                                 ' ?r predRec:imagem ?imagem. ' \
-                                                 ' ?r predRec:data ?data.' \
-                                                 ' ?r predRec:dificuldade ?d_id.' \
-                                                 ' ?d_id dif: ?dificuldade.' \
-                                                 '}'
+                     ' ?r predRec:imagem ?imagem. ' \
+                     ' ?r predRec:data ?data.' \
+                     ' ?r predRec:dificuldade ?d_id.' \
+                     ' ?d_id dif: ?dificuldade.' \
+                     '}'
             payload_query = {"query": query}
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
-
+            print(res)
             receitas_info["receita"].append(res["results"]["bindings"][0]["imagem"]["value"])
             receitas_info["receita"].append(res["results"]["bindings"][0]["data"]["value"])
             receitas_info["receita"].append(res["results"]["bindings"][0]["dificuldade"]["value"])
@@ -159,7 +161,7 @@ def edit_receita(request):
             payload_query = {"query": query}
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
-            autores_rec = []
+
             categorias_rec = ""
 
             for categoria in res["results"]["bindings"]:
@@ -229,7 +231,7 @@ def edit_receita(request):
                 if "unidade" in ing.keys():
                     ing_rec += ',' + ing["unidade"]["value"]
                 if ing != res["results"]["bindings"][-1]:
-                    ing_rec += ",\n"
+                    ing_rec += "\n"
 
             receitas_info["receita"].append(ing_rec)
 
@@ -238,21 +240,18 @@ def edit_receita(request):
     return render(request, 'edit.html', {"receitas": getNomesReceitas()})
 
 
-def add_recipe(request):
+def add_recipe(request, not_http = False):
 
 
     catIds = list()
     tipoIds = list()
     ingIds = list()
     autIds = list()
-
+    print(request.POST)
     dados = request.POST
 
-    try:
-        flag = dados["flag"]
-    except KeyError:
-        flag = None
-        
+
+
 
     nome = dados["name"]
     categ = dados["cat"].split(",")
@@ -285,7 +284,6 @@ def add_recipe(request):
     #CATEGORIA
     if len(categ) > 1 and type(categ) is not str:
         for cat in categ:
-            cat = (str(cat).strip("[]")).strip("")
             query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                     'ask{' \
                      f'?cat cat: "{cat}"' \
@@ -325,12 +323,12 @@ def add_recipe(request):
                 res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
                 res = json.loads(res)
                 CatId = res["results"]["bindings"]
-                temp = CatId[0]["maxId"]["value"].split("/")
+                temp = CatId[0]["id"]["value"].split("/")
                 temp = str(temp[-1]).strip(">")
                 CatId = int(temp)
                 catIds.append(CatId)
     else:
-        categ = (str(categ).strip("[]")).strip("")
+        categ = categ[0]
         query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                 'ask{' \
                 f'?cat cat: "{categ}"' \
@@ -449,10 +447,12 @@ def add_recipe(request):
             TipoId = int(temp) + 1
             tipoIds.append(TipoId)
 
+            tipos = tipos[0]
+
             query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                     'PREFIX tipID:<http://receita/tipos/>' \
                     'insert data{' \
-                    f'tipID:{TipoId} ' + 'tip: ' + f"{tipos}" \
+                    f'tipID:{TipoId} ' + 'tip: ' + f'"{tipos}"' \
                                              '}'
             payload_query = {"update": query}
             res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
@@ -466,7 +466,7 @@ def add_recipe(request):
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
             TipoId = res["results"]["bindings"]
-            temp = TipoId[0]["maxId"]["value"].split("/")
+            temp = TipoId[0]["id"]["value"].split("/")
             temp = str(temp[-1]).strip(">")
             TipoId = int(temp)
             tipoIds.append(TipoId)
@@ -514,12 +514,12 @@ def add_recipe(request):
                 res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
                 res = json.loads(res)
                 AutId = res["results"]["bindings"]
-                temp = AutId[0]["maxId"]["value"].split("/")
+                temp = AutId[0]["id"]["value"].split("/")
                 temp = str(temp[-1]).strip(">")
                 AutId = int(temp)
                 autIds.append(AutId)
     else:
-        autores = str(autores).strip("[]")
+        autores = autores[0]
         query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                 'ask{' \
                 f'?id aut: "{autores}"' \
@@ -565,6 +565,9 @@ def add_recipe(request):
             temp = str(temp[-1]).strip(">")
             AutId = int(temp)
             autIds.append(AutId)
+
+
+    print(autIds)
 
 
     # DIFICULDADE
@@ -622,6 +625,7 @@ def add_recipe(request):
             except ValueError:
                 ing, quant = ingred.split(",")
                 uni = None
+                pass
 
             query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
@@ -708,6 +712,15 @@ def add_recipe(request):
     res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
     print(query)
 
+    query = 'PREFIX predRec:<http://receita/pred/>' \
+            'PREFIX recID:<http://receita/id/>' \
+            'PREFIX dif:<http://receita/dificuldades/>'\
+            'insert data' \
+            '{' \
+            f'recID:{newRecId} ' + 'predRec:dificuldade ' + f'dif:{DifId}' \
+                                                     '}'
+    payload_query = {"update": query}
+    res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
     query = 'PREFIX predRec:<http://receita/pred/>' \
             'PREFIX recID:<http://receita/id/>' \
@@ -770,15 +783,17 @@ def add_recipe(request):
         payload_query = {"update": query}
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
-
-    return render(request,"add.html")
+    if not_http is True:
+        return False
+    else:
+        return render(request,"add.html")
 
 
 def delete(request):
     receitas = getNomesReceitas()
     return render(request,"del.html", {"receitas":receitas,"delete_occurs" : False})
 
-def del_recipe(request):
+def del_recipe(request, not_http = False):
     try:
         delete_occurs=True
         error = False
@@ -790,9 +805,14 @@ def del_recipe(request):
 
 
         query = 'PREFIX predRec:<http://receita/pred/>' \
-                ' Delete {?id_r ?p ?o} where{' \
+                'PREFIX ing:<http://receita/ingrediente/pred/>'\
+                ' Delete {?id_r ?p ?o. ?id_r ?p2 ?o5. ?o ing:nome ?o2. ?o ing:quantidade ?o3.  ?o ing:unidade ?o4.  } where{' \
                 '?id_r predRec:nome "' + str(receita) +'".' \
                 '?id_r ?p ?o.'\
+                '?id_r ?p2 ?o5.'\
+                '?o ing:nome ?o2.' \
+                '?o ing:quantidade ?o3.' \
+                'OPTIONAL{?o ing:unidade ?o4.}'\
                 '}'
         payload_query = {"update": query}
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
@@ -802,7 +822,10 @@ def del_recipe(request):
 
     receitas = getNomesReceitas()
 
-    return render(request, "del.html", {"receitas":receitas,"delete_occurs":delete_occurs, "error":error})
+    if not_http is True:
+        return error
+    else:
+        return render(request, "del.html", {"receitas":receitas,"delete_occurs":delete_occurs, "error":error})
 
 def show_recipe(request, recipe):
     return None
