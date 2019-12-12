@@ -239,12 +239,20 @@ def edit_receita(request):
 
 
 def add_recipe(request):
+
+
     catIds = list()
     tipoIds = list()
     ingIds = list()
     autIds = list()
 
     dados = request.POST
+
+    try:
+        flag = dados["flag"]
+    except KeyError:
+        flag = None
+        
 
     nome = dados["name"]
     categ = dados["cat"].split(",")
