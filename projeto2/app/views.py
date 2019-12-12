@@ -252,8 +252,8 @@ def add_recipe(request):
     tipos = dados["tipo"].split(",")
     autores = dados["aut"].split(",")
     dificuldade = dados["dificuldade"]
-    ingredientes = dados["ingredientes"].split("\n")
-    passos = dados["passos"].split("\n")
+    ingredientes = dados["ingredientes"].split("\r\n")
+    passos = dados["passos"].split("\r\n")
     imagem = dados["imagem"]
 
     endpoint = "http://localhost:7200"
@@ -276,7 +276,7 @@ def add_recipe(request):
     if len(categ) > 1 and type(categ) is not str:
         for cat in categ:
             cat = (str(cat).strip("[]")).strip("")
-            query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+            query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                     'ask{' \
                      f'?cat cat: "{cat}"' \
                     '}'
@@ -284,7 +284,7 @@ def add_recipe(request):
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
             if not res["boolean"]:
-                query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+                query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id cat: ?name' \
@@ -296,7 +296,7 @@ def add_recipe(request):
                 CatId = int(CatId[0]["maxId"]["value"]) + 1
                 catIds.append(CatId)
 
-                query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+                query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                         'PREFIX catID:<http://receita/categorias/>' \
                         'insert data{' \
                          f'catID:{CatId} ' + 'cat: ' + f'"{cat}"' \
@@ -304,7 +304,7 @@ def add_recipe(request):
                 payload_query = {"update": query}
                 res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
             else:
-                query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+                query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id cat: ' + f'"{cat}"' \
@@ -317,7 +317,7 @@ def add_recipe(request):
                 catIds.append(CatId)
     else:
         categ = (str(categ).strip("[]")).strip("")
-        query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+        query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                 'ask{' \
                 f'?cat cat: "{categ}"' \
                 '}'
@@ -325,7 +325,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
         res = json.loads(res)
         if not res["boolean"]:
-            query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+            query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id cat: ?name' \
@@ -337,7 +337,7 @@ def add_recipe(request):
             CatId = int(CatId[0]["maxId"]["value"]) + 1
             catIds.append(CatId)
 
-            query = 'PREFIX cat:<http://receita/categorias/pred/nome/> ' \
+            query = 'PREFIX cat:<http://receita/categorias/pred/nome> ' \
                     'PREFIX catID:<http://receita/categorias/> ' \
                     'insert data{ ' \
                     f'catID:{CatId} ' + 'cat: ' + f'"{categ}"' \
@@ -348,7 +348,7 @@ def add_recipe(request):
             print("CatId",CatId)
             print("morreu",res)
         else:
-            query = 'PREFIX cat:<http://receita/categorias/pred/nome/>' \
+            query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id cat: ' + f'"{categ}"' \
@@ -363,7 +363,7 @@ def add_recipe(request):
     #TIPO
     if len(tipos) > 1 and type(tipos) is not str:
         for tipo in tipos:
-            query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+            query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                     'ask{' \
                     f'?tip tip: "{tipo}"' \
                     '}'
@@ -371,7 +371,7 @@ def add_recipe(request):
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
             if not res["boolean"]:
-                query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+                query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id tip: ?name' \
@@ -383,7 +383,7 @@ def add_recipe(request):
                 TipoId = int(TipoId[0]["maxId"]["value"]) + 1
                 tipoIds.append(TipoId)
 
-                query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+                query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                         'PREFIX tipId:<http://receita/tipos/>' \
                         'insert data{' \
                         f'tipId:{TipoId} ' + 'tip: ' + f'"{tipo}"' \
@@ -393,7 +393,7 @@ def add_recipe(request):
                 print(query)
                 print("morreu:",res)
             else:
-                query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+                query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id tip: ' + f'"{tipo}"' \
@@ -405,7 +405,7 @@ def add_recipe(request):
                 TipoId = int(TipoId[0]["maxId"]["value"])
                 tipoIds.append(TipoId)
     else:
-        query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+        query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                 'ask{' \
                 f'?tip tip: "{tipos}"' \
                 '}'
@@ -413,7 +413,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
         res = json.loads(res)
         if not res["boolean"]:
-            query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+            query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id tip: ?name' \
@@ -425,7 +425,7 @@ def add_recipe(request):
             TipoId = int(TipoId[0]["maxId"]["value"]) + 1
             tipoIds.append(TipoId)
 
-            query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+            query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                     'PREFIX tipID:<http://receita/tipos/>' \
                     'insert data{' \
                     f'tipID:{TipoId} ' + 'tip: ' + f"{tipos}" \
@@ -433,7 +433,7 @@ def add_recipe(request):
             payload_query = {"update": query}
             res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
         else:
-            query = 'PREFIX tip:<http://receita/tipos/pred/nome/>' \
+            query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id tip: ' + f'"{tipos}"' \
@@ -449,7 +449,7 @@ def add_recipe(request):
     #AUTORES
     if len(autores) > 1 and type(autores) is not str:
         for aut in autores:
-            query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                     'ask{' \
                     f'?id aut: "{aut}"' \
                     '}'
@@ -457,7 +457,7 @@ def add_recipe(request):
             res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
             res = json.loads(res)
             if not res["boolean"]:
-                query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id aut: ?name' \
@@ -469,7 +469,7 @@ def add_recipe(request):
                 AutId = int(AutId[0]["maxId"]["value"]) + 1
                 autIds.append(AutId)
 
-                query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                         'PREFIX autID:<http://receita/autores/>' \
                         'insert data{' \
                         f'autID:{AutId} ' + 'aut: ' + f'"{aut}"' \
@@ -477,7 +477,7 @@ def add_recipe(request):
                 payload_query = {"update": query}
                 res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
             else:
-                query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                         'select (count(?id) as ?maxId)' \
                         'where{' \
                         '?id aut: ' + f'"{aut}"' \
@@ -490,7 +490,7 @@ def add_recipe(request):
                 autIds.append(AutId)
     else:
         autores = str(autores).strip("[]")
-        query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+        query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                 'ask{' \
                 f'?id aut: "{autores}"' \
                 '}'
@@ -498,7 +498,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
         res = json.loads(res)
         if not res["boolean"]:
-            query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id aut: ?name' \
@@ -510,7 +510,7 @@ def add_recipe(request):
             AutId = int(AutId[0]["maxId"]["value"]) + 1
             autIds.append(AutId)
 
-            query = 'PREFIX aut:<http://receita/autores/pred/nome/> ' \
+            query = 'PREFIX aut:<http://receita/autores/pred/nome> ' \
                     'PREFIX autId:<http://receita/autores/> ' \
                     'insert data{' \
                     f'autId:{AutId} ' + 'aut: ' + f'"{autores}"' \
@@ -520,7 +520,7 @@ def add_recipe(request):
             print(query)
             print("morreu",res)
         else:
-            query = 'PREFIX aut:<http://receita/autores/pred/nome/>' \
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
                     'select (count(?id) as ?maxId)' \
                     'where{' \
                     '?id aut: ' + f'"{autores}"' \
@@ -534,7 +534,7 @@ def add_recipe(request):
 
 
     # DIFICULDADE
-    query = 'PREFIX dif:<http://receita/dificuldades/pred/nome/>' \
+    query = 'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
             'ask{' \
             f'?id dif: "{dificuldade}"' \
             '}'
@@ -542,7 +542,7 @@ def add_recipe(request):
     res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
     res = json.loads(res)
     if not res["boolean"]:
-        query = 'PREFIX dif:<http://receita/dificuldades/pred/nome/>' \
+        query = 'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
                 'select (count(?id) as ?maxId)' \
                 'where{' \
                 '?id dif: ?name' \
@@ -553,7 +553,7 @@ def add_recipe(request):
         DifId = res["results"]["bindings"]
         DifId = int(DifId[0]["maxId"]["value"]) + 1
 
-        query = 'PREFIX dif:<http://receita/dificuldades/pred/nome/>' \
+        query = 'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
                 'PREFIX difID:<http://receita/dificuldades/>' \
                 'insert data{' \
                 f'difID:{DifId} ' + 'dif: ' + f'"{dificuldade}"' \
@@ -562,7 +562,7 @@ def add_recipe(request):
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
     else:
-        query = 'PREFIX dif:<http://receita/pred/dificuldades/pred/nome/>' \
+        query = 'PREFIX dif:<http://receita/pred/dificuldades/pred/nome>' \
                 'select (count(?id) as ?maxId)' \
                 'where{' \
                 '?id dif: ' + f'"{dificuldade}"' \
@@ -595,7 +595,7 @@ def add_recipe(request):
             IngId = int(IngId[0]["maxId"]["value"]) + 1
             ingIds.append(IngId)
 
-            query = 'PREFIX ing:<http://receita/ingrediente/pred/nome/>' \
+            query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
                     'PREFIX ingId:<http://receita/ingrediente/>' \
                     'insert data{' \
                     f'ingId:{IngId} ' + 'ing: ' + f'"{ing}"' \
@@ -605,7 +605,7 @@ def add_recipe(request):
             print(query)
             print("morreu",res)
 
-            query = 'PREFIX ing:<http://receita/ingrediente/pred/quantidade/>' \
+            query = 'PREFIX ing:<http://receita/ingrediente/pred/quantidade>' \
                     'PREFIX ingId:<http://receita/ingrediente/>' \
                     'insert data {' \
                     f' ingId:{IngId} ' + 'ing: ' + f'"{quant}"' \
@@ -613,19 +613,22 @@ def add_recipe(request):
             payload_query = {"update": query}
             res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
-            query = 'PREFIX ing:<http://receita/ingrediente/pred/unidade/>' \
-                    'PREFIX ingId:<http://receita/ingrediente/>' \
-                    'insert data{' \
-                    f'ingId:{IngId} ' + 'ing: ' + f'"{uni}"' \
-                    '}'
-            payload_query = {"update": query}
-            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            if uni != None:
+                query = 'PREFIX ing:<http://receita/ingrediente/pred/unidade>' \
+                        'PREFIX ingId:<http://receita/ingrediente/>' \
+                        'insert data{' \
+                        f'ingId:{IngId} ' + 'ing: ' + f'"{uni}"' \
+                        '}'
+                payload_query = {"update": query}
+                res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            IngId = IngId + 1
             print(query)
+
 
     # PASSOS
     if len(passos) > 1 and type(passos) is not str:
         for passo in passos:
-            query = 'PREFIX pass:<http://receita/pred/passo/>' \
+            query = 'PREFIX pass:<http://receita/pred/passo>' \
                     'PREFIX recID:<http://receita/id/>' \
                     'insert data{' \
                     f'recID:{newRecId} ' + 'pass: ' + f"{passo}" \
@@ -635,7 +638,7 @@ def add_recipe(request):
             print(query)
 
     else:
-        query = 'PREFIX pass:<http://receita/pred/passo/>' \
+        query = 'PREFIX pass:<http://receita/pred/passo>' \
                 'PREFIX recID:<http://receita/id/>' \
                 'insert data{' \
                 f'recID:{newRecId}' + 'pass:' + f"{passos}" \
@@ -644,7 +647,7 @@ def add_recipe(request):
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
     # IMAGEM
-    query = 'PREFIX pass:<http://receita/pred/imagem/>' \
+    query = 'PREFIX pass:<http://receita/pred/imagem>' \
             'PREFIX recID:<http://receita/id/>' \
             'insert data{' \
             f'recID:{newRecId} ' + 'pass: ' + f"{imagem}" \
@@ -654,7 +657,7 @@ def add_recipe(request):
     print(query)
 
     #DATA
-    query = 'PREFIX pass:<http://receita/pred/data/>' \
+    query = 'PREFIX pass:<http://receita/pred/data>' \
             'PREFIX recID:<http://receita/id/>' \
             'insert data{' \
             f'recID:{newRecId} ' + 'pass: ' + f'"{data}"' \
@@ -688,7 +691,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
 
     for id in tipoIds:
-        query = 'PREFIX predRec:<http://receita/pred/tipo/>' \
+        query = 'PREFIX predRec:<http://receita/pred/tipo>' \
                 'PREFIX recID:<http://receita/id/>' \
                 'insert data' \
                 '{' \
@@ -698,7 +701,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
 
     for id in ingIds:
-        query = 'PREFIX predRec:<http://receita/ingrediente/pred/nome/>' \
+        query = 'PREFIX predRec:<http://receita/ingrediente/pred/nome>' \
                 'PREFIX recID:<http://receita/id/>' \
                 'insert data' \
                 '{' \
@@ -708,7 +711,7 @@ def add_recipe(request):
         res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
 
     for id in autIds:
-        query = 'PREFIX predRec:<http://receita/pred/autor/>' \
+        query = 'PREFIX predRec:<http://receita/pred/autor>' \
                 'PREFIX recID:<http://receita/id/>' \
                 'insert data' \
                 '{' \
