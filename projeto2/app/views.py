@@ -93,9 +93,259 @@ def add_receita(request):
 
 @csrf_exempt
 def edit_recipe(request):
-    error1 = del_recipe(request,True)
-    error2 = add_recipe(request,True)
-    return render(request, "edit.html",{"edit_occurs" : True, "error" : error1 and error2, "receitas": getNomesReceitas() })
+
+    error = False
+    endpoint = "http://localhost:7200"
+    repo_name = "receitas"
+    client = ApiClient(endpoint=endpoint)
+    accessor = GraphDBApi(client)
+    #Delete ingredientes, passos e autores
+    query = 'PREFIX predRec:<http://receita/pred/>' \
+            'PREFIX ing:<http://receita/ingrediente/pred/>' \
+            'Delete{ ?id_r predRec:passo ?o.' \
+                    '?i ing:nome ?o2.'\
+                    '?i ing:quantidade ?o3.'\
+                    '?i ing:unidade ?o4. '\
+                    '?id_r predRec:autor ?id_a.'\
+                    '?id_r predRec:ingrediente ?i.'\
+            '} where{'\
+                    f'?id_r predRec:nome "{request.POST.get("receitas")}".'\
+                    '?id_r predRec:ingrediente ?i.'\
+                    '?id_r predRec:passo ?o. '\
+                    '?id_r predRec:autor ?id_a.'\
+                    '?i ing:nome ?o2. '\
+                    '?i ing:quantidade ?o3.'\
+                    'OPTIONAL{?i ing:unidade ?o4.}'\
+            '}'
+    payload_query = {"update": query}
+    res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+
+    query = 'PREFIX predRec:<http://receita/pred/>'\
+            'Select ?id where {' \
+            f'?id predRec:nome "{request.POST.get("receitas")}".' \
+            '}'
+
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res= json.loads(res)
+
+    newRecId = (res["results"]["bindings"][0]["id"]["value"]).split('/')[-1].strip(">")
+
+    autores = request.POST.get("aut")
+    autores = autores.split(',')
+
+    print(autores)
+
+    autIds = []
+
+    if len(autores) > 1 and type(autores) is not str:
+        for aut in autores:
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                    'ask{' \
+                    f'?id aut: "{aut}"' \
+                    '}'
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            if not res["boolean"]:
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                        'select (count(?id) as ?maxId)' \
+                        'where{' \
+                        '?id aut: ?name' \
+                        '}'
+                payload_query = {"query": query}
+                res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+                res = json.loads(res)
+                AutId = res["results"]["bindings"]
+                temp = AutId[0]["maxId"]["value"].split("/")
+                temp = str(temp[-1]).strip(">")
+                AutId = int(temp) + 1
+                autIds.append(AutId)
+
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                        'PREFIX autID:<http://receita/autores/>' \
+                        'insert data{' \
+                        f'autID:{AutId} ' + 'aut: ' + f'"{aut}"' \
+                                                      '}'
+                payload_query = {"update": query}
+                res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            else:
+                query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                        'select ?id ' \
+                        'where{' \
+                        '?id aut: ' + f'"{aut}"' \
+                                      '}'
+                payload_query = {"query": query}
+                res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+                res = json.loads(res)
+                AutId = res["results"]["bindings"]
+                temp = AutId[0]["id"]["value"].split("/")
+                temp = str(temp[-1]).strip(">")
+                AutId = int(temp)
+                autIds.append(AutId)
+    else:
+        autores = autores[0]
+        query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                'ask{' \
+                f'?id aut: "{autores}"' \
+                '}'
+        payload_query = {"query": query}
+        res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+        res = json.loads(res)
+        if not res["boolean"]:
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                    'select (count(?id) as ?maxId)' \
+                    'where{' \
+                    '?id aut: ?name' \
+                    '}'
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            AutId = res["results"]["bindings"]
+            temp = AutId[0]["maxId"]["value"].split("/")
+            temp = str(temp[-1]).strip(">")
+            AutId = int(temp) + 1
+            autIds.append(AutId)
+
+            query = 'PREFIX aut:<http://receita/autores/pred/nome> ' \
+                    'PREFIX autId:<http://receita/autores/> ' \
+                    'insert data{' \
+                    f'autId:{AutId} ' + 'aut: ' + f'"{autores}"' \
+                                                  '}'
+            payload_query = {"update": query}
+            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            print(query)
+            print("morreu", res)
+        else:
+            query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
+                    'select ?id ' \
+                    'where{' \
+                    '?id aut: ' + f'"{autores}"' \
+                                  '}'
+            payload_query = {"query": query}
+            res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+            res = json.loads(res)
+            AutId = res["results"]["bindings"]
+            temp = AutId[0]["id"]["value"].split("/")
+            temp = str(temp[-1]).strip(">")
+            AutId = int(temp)
+            autIds.append(AutId)
+
+
+    ingredientes = request.POST.get("ingredientes")
+    ingredientes = ingredientes.split("\r\n")
+    if '' in ingredientes:
+        ingredientes.remove('')
+    ingIds = []
+
+    if len(ingredientes) > 1 and type(ingredientes) is not str:
+        query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
+                'select ?id ' \
+                'where{' \
+                '?id ing: ?name' \
+                '}'
+        payload_query = {"query": query}
+        res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+        res = json.loads(res)
+        IngId = res["results"]["bindings"]
+        temp = IngId[-1]["id"]["value"].split("/")
+        temp = str(temp[-1]).strip(">")
+        IngId = int(temp) + 1
+
+        for ingred in ingredientes:
+            try:
+                ing, quant, uni = ingred.split(",")
+            except ValueError:
+                ing, quant = ingred.split(",")
+                uni = None
+                pass
+
+
+            ingIds.append(IngId)
+
+            query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
+                    'PREFIX ingId:<http://receita/ingrediente/>' \
+                    'insert data{' \
+                    f'ingId:{IngId} ' + 'ing: ' + f'"{ing}"' \
+                                                  '}'
+            payload_query = {"update": query}
+            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+
+            query = 'PREFIX ing:<http://receita/ingrediente/pred/quantidade>' \
+                    'PREFIX ingId:<http://receita/ingrediente/>' \
+                    'insert data {' \
+                    f' ingId:{IngId} ' + 'ing: ' + f'"{quant}"' \
+                                                   '}'
+            payload_query = {"update": query}
+            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+            if uni != None:
+                query = 'PREFIX ing:<http://receita/ingrediente/pred/unidade>' \
+                        'PREFIX ingId:<http://receita/ingrediente/>' \
+                        'insert data{' \
+                        f'ingId:{IngId} ' + 'ing: ' + f'"{uni}"' \
+                                                      '}'
+                payload_query = {"update": query}
+                res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            IngId = IngId + 1
+            print(query)
+
+
+
+    passos = request.POST.get("passos")
+    passos = passos.split("\r\n")
+    if '' in passos:
+        passos.remove('')
+    # PASSOS
+    if len(passos) > 1 and type(passos) is not str:
+        for passo in passos:
+            query = 'PREFIX pass:<http://receita/pred/passo>' \
+                    'PREFIX recID:<http://receita/id/>' \
+                    'insert data{' \
+                    f'recID:{newRecId} ' + 'pass: ' + f'"{passo}"' \
+                                                      '}'
+            payload_query = {"update": query}
+            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+            print(query)
+
+    else:
+        query = 'PREFIX pass:<http://receita/pred/passo>' \
+                'PREFIX recID:<http://receita/id/>' \
+                'insert data{' \
+                f'recID:{newRecId}' + 'pass: ' + f'"{passos}"' \
+                                                '}'
+        payload_query = {"update": query}
+        res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+    for id in ingIds:
+        query = 'PREFIX predRec:<http://receita/pred/ingrediente>' \
+                'PREFIX ingID:<http://receita/ingrediente/>' \
+                'PREFIX recID:<http://receita/id/>' \
+                'insert data' \
+                '{' \
+                f'recID:{newRecId} ' + 'predRec: ' + f'ingID:{id}' \
+                                                     '}'
+        print(query)
+        payload_query = {"update": query}
+        res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+    for id in autIds:
+        query = 'PREFIX predRec:<http://receita/pred/autor>' \
+                'PREFIX recID:<http://receita/id/>' \
+                'PREFIX autID:<http://receita/autores/>' \
+                'insert data' \
+                '{' \
+                f'recID:{newRecId} ' + 'predRec: ' + f'autID:{id}' \
+                                                     '}'
+        print(query)
+        payload_query = {"update": query}
+        res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+
+
+    return render(request, "edit.html",{"edit_occurs" : True, "error" : error, "receitas": getNomesReceitas() })
 
 
 @csrf_exempt
@@ -240,7 +490,7 @@ def edit_receita(request):
     return render(request, 'edit.html', {"receitas": getNomesReceitas()})
 
 
-def add_recipe(request, not_http = False):
+def add_recipe(request):
 
 
     catIds = list()
@@ -783,17 +1033,15 @@ def add_recipe(request, not_http = False):
         payload_query = {"update": query}
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
-    if not_http is True:
-        return False
-    else:
-        return render(request,"add.html")
+
+    return render(request,"add.html")
 
 
 def delete(request):
     receitas = getNomesReceitas()
     return render(request,"del.html", {"receitas":receitas,"delete_occurs" : False})
 
-def del_recipe(request, not_http = False):
+def del_recipe(request):
     try:
         delete_occurs=True
         error = False
@@ -822,10 +1070,7 @@ def del_recipe(request, not_http = False):
 
     receitas = getNomesReceitas()
 
-    if not_http is True:
-        return error
-    else:
-        return render(request, "del.html", {"receitas":receitas,"delete_occurs":delete_occurs, "error":error})
+    return render(request, "del.html", {"receitas":receitas,"delete_occurs":delete_occurs, "error":error})
 
 def show_recipe(request, recipe):
     return None
