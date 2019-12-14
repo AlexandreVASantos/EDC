@@ -88,7 +88,67 @@ def check_if_in_list_ahead(item_list):
 
 
 def add_receita(request):
-    return render(request, 'add.html')
+    autores = list()
+    categorias = list()
+    tipos = list()
+    dificuldades = list()
+
+    endpoint = "http://localhost:7200"
+    repo_name = "receitas"
+    client = ApiClient(endpoint=endpoint)
+    accessor = GraphDBApi(client)
+
+
+
+    query = 'PREFIX aut:<http://receita/autores/pred/nome>'\
+            'SELECT ?nome{'\
+            '?id aut: ?nome'\
+            '}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+    temp = res["results"]["bindings"]
+    for item in temp:
+        autores.append(item["nome"]["value"])
+    #print(autores)
+
+    query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
+            'SELECT ?cat{' \
+            '?id cat: ?cat' \
+            '}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+    temp = res["results"]["bindings"]
+    for item in temp:
+        categorias.append(item["cat"]["value"])
+    print(categorias)
+
+    query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
+            'SELECT ?tip{' \
+            '?id tip: ?tip' \
+            '}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+    temp = res["results"]["bindings"]
+    for item in temp:
+        tipos.append(item["tip"]["value"])
+    print(tipos)
+
+    query = 'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
+            'SELECT ?dif{' \
+            '?id dif: ?dif' \
+            '}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+    temp = res["results"]["bindings"]
+    for item in temp:
+        dificuldades.append(item["dif"]["value"])
+    print(dificuldades)
+
+    return render(request, 'add.html',{"autores":autores, "categorias":categorias, "tipos":tipos, "dificuldades":dificuldades})
 
 
 @csrf_exempt
@@ -518,7 +578,7 @@ def add_recipe(request):
     client = ApiClient(endpoint=endpoint)
     accessor = GraphDBApi(client)
     query = 'PREFIX predRec:<http://receita/pred/>' \
-            'select (count(?id) as ?maxId)' \
+            'select (max(?id) as ?maxId)' \
             'where{' \
             '?id predRec:nome ?name' \
             '}'
@@ -543,7 +603,7 @@ def add_recipe(request):
             res = json.loads(res)
             if not res["boolean"]:
                 query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
-                        'select (count(?id) as ?maxId)' \
+                        'select (max(?id) as ?maxId)' \
                         'where{' \
                         '?id cat: ?name' \
                         '}'
@@ -588,7 +648,7 @@ def add_recipe(request):
         res = json.loads(res)
         if not res["boolean"]:
             query = 'PREFIX cat:<http://receita/categorias/pred/nome>' \
-                    'select (count(?id) as ?maxId)' \
+                    'select (max(?id) as ?maxId)' \
                     'where{' \
                     '?id cat: ?name' \
                     '}'
@@ -638,7 +698,7 @@ def add_recipe(request):
             res = json.loads(res)
             if not res["boolean"]:
                 query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
-                        'select (count(?id) as ?maxId)' \
+                        'select (max(?id) as ?maxId)' \
                         'where{' \
                         '?id tip: ?name' \
                         '}'
@@ -684,7 +744,7 @@ def add_recipe(request):
         res = json.loads(res)
         if not res["boolean"]:
             query = 'PREFIX tip:<http://receita/tipos/pred/nome>' \
-                    'select (count(?id) as ?maxId) ' \
+                    'select (max(?id) as ?maxId) ' \
                     'where{' \
                     '?id tip: ?name' \
                     '}'
@@ -734,7 +794,7 @@ def add_recipe(request):
             res = json.loads(res)
             if not res["boolean"]:
                 query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
-                        'select (count(?id) as ?maxId)' \
+                        'select (max(?id) as ?maxId)' \
                         'where{' \
                         '?id aut: ?name' \
                         '}'
@@ -779,7 +839,7 @@ def add_recipe(request):
         res = json.loads(res)
         if not res["boolean"]:
             query = 'PREFIX aut:<http://receita/autores/pred/nome>' \
-                    'select (count(?id) as ?maxId)' \
+                    'select (max(?id) as ?maxId)' \
                     'where{' \
                     '?id aut: ?name' \
                     '}'
@@ -830,7 +890,7 @@ def add_recipe(request):
     res = json.loads(res)
     if not res["boolean"]:
         query = 'PREFIX dif:<http://receita/dificuldades/pred/nome>' \
-                'select (count(?id) as ?maxId)' \
+                'select (max(?id) as ?maxId)' \
                 'where{' \
                 '?id dif: ?name' \
                 '}'
@@ -878,7 +938,7 @@ def add_recipe(request):
                 pass
 
             query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
-                    'select (count(?id) as ?maxId)' \
+                    'select (max(?id) as ?maxId)' \
                     'where{' \
                     '?id ing: ?name' \
                     '}'
@@ -1185,7 +1245,7 @@ def getCategorias():
 def getInfoReceita():
     receitas = getNomesReceitas()
 
-   
+
     endpoint = "http://localhost:7200"
     repo_name = "receitas"
     client = ApiClient(endpoint=endpoint)
