@@ -1133,7 +1133,64 @@ def del_recipe(request):
     return render(request, "del.html", {"receitas":receitas,"delete_occurs":delete_occurs, "error":error})
 
 def show_recipe(request, recipe):
-    return None
+    endpoint = "http://localhost:7200"
+    repo_name = "receitas"
+    client = ApiClient(endpoint=endpoint)
+    accessor = GraphDBApi(client)
+
+    query=' PREFIX predRec:<http://receita/pred/> Select * where{ ?s ?p "'+ recipe +'". ?s predRec:data ?data. ?s predRec:imagem ?imagem. ?s predRec:passo ?passos.}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+
+    print(res)
+
+    nome=recipe
+    data = res["results"]["bindings"][0]["data"]["value"]
+    imagem=res["results"]["bindings"][0]["imagem"]["value"]
+    passos = []
+    for p in res["results"]["bindings"]:
+        passos.append(p["passos"]["value"])
+
+
+
+    ingredientes = []
+
+    query = ' PREFIX predRec:<http://receita/pred/> PREFIX ing:<http://receita/ingrediente/pred/> Select * where{ ?s ?p "' + recipe + '". ?s predRec:ingrediente ?id_i. ?id_i ing:nome ?nome. ?id_i ing:quantidade ?quantidade. OPTIONAL{?id_i ing:unidade ?unidade.}}'
+    payload_query = {"query": query}
+    res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+    res = json.loads(res)
+
+
+    for i in res["results"]["bindings"]:
+        nome_i = i["nome"]["value"]
+        quantidade=i["quantidade"]["value"]
+        if "unidade" in i.keys():
+            unidade = i["unidade"]["value"]
+            tup = nome_i,quantidade,unidade
+        else:
+            tup = nome_i,quantidade
+
+        ingredientes.append(tup)
+
+
+
+
+    autores =[]
+
+
+
+    for a in res[]:
+
+
+    tipos=[]
+    categorias = []
+
+
+
+
+
+    return render(request, "show_rec.xhtml", {"nome":nome, "data":data, "imagem":imagem, "passos":passos, "ingredientes":ingredientes})
 
 
 def getNomesReceitas():
