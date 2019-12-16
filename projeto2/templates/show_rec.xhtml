@@ -1,3 +1,4 @@
+{% load static %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -5,58 +6,118 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>Recipe</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{% static "fonts/icomoon/style.css"%}"/>
+
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/animate.min.css"%}"/>
+    <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css"%}"/>
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css"%}"/>
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css"%}"/>
+    <link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css"%}"/>
+    <link rel="stylesheet" href="{% static "css/aos.css"%}"/>
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static "css/style.css"%}"/>
+
 </head>
 <body>
 
 
-<div xmlns:predRec="http://receita/pred/">
-    <h2><span property="predRec:nome">{{ nome }}</span></h2>
-    <br> </br>
-    <p><span property="predRec:data">{{ data }}</span></p>
-    <br> </br>
-    <img property="predRec:imagem" src="{{ imagem }}"></img>
-    <br></br>
-    <div xmlns:autor="http://receita/autores/pred/nome">
-        {% for a in authors %}
-            <p><span property="autor:">{{ a }}</span></p>
-        {% endfor %}
-    </div>
-    <div xmlns:categoria="http://receita/categorias/pred/nome">
-        {% for c in categorias %}
-            <p><span property="categoria:">{{ c }}</span></p>
-        {% endfor %}
-    </div>
-    <div xmlns:tipo="http://receita/tipos/pred/nome">
-        {% for t in tipos %}
-            <p><span property="tipos:">{{ t }}</span></p>
-        {% endfor %}
-    </div>
-    <ul>
-        {% for x in passos %}
-            <li> <span property="predRec:passo">{{ x }}</span></li>
-        {% endfor %}
-    </ul>
+    <div xmlns:predRec="http://receita/pred/" style=" padding-right: 5%;padding-left: 5%; padding-top: 5%">
+        <div class="row">
+            <h1><span property="predRec:nome">{{ nome }}</span></h1>
 
-    <div xmlns:ing="http://receita/ingrediente/pred">
-        <table style="border:1px solid black">
-            {% for i in ingredientes %}
-                <tr>
-                    <th>Nome</th>
-                    <th>Quantidade</th>
-                    <th>Unidade</th>
-                </tr>
-                <tr>
-                    <td style = "text-align: center"><span property="ing:nome">{{ i.0 }}</span></td>
-                    <td style = "text-align: center"><span property="ing:quantidade">{{ i.1 }}</span></td>
-                    {% if i|length > 2  %}
-                        <td style = "text-align: center"> <span property="ing:unidade">{{ i.2 }}</span></td>
-                    {% endif %}
-                </tr>
+        </div>
+        <br> </br>
+        <div class = "row">
+            <div xmlns:categoria="http://receita/categorias/pred/nome">
+                {% for c in categorias %}
+                    <h2><span property="categoria:">{{ c }}</span></h2>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div xmlns:autor="http://receita/autores/pred/nome">
+                {% for a in autores %}
+                    <h3><span property="autor:">{{ a }}</span></h3>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div xmlns:tipo="http://receita/tipos/pred/nome">
+                {% for t in tipos %}
+                    <h4><span property="tipos:">{{ t }}</span></h4>
+                {% endfor %}
+            </div>
+        </div>
+        <br></br>
+        <div class="row">
 
-            {% endfor %}
-        </table>
+
+            <h4><span property="predRec:data">{{ data }}</span></h4>
+            <br> </br>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <img property="predRec:imagem" src="{{ imagem }}" style="width: 100%"></img>
+                <br></br>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+           <div class="col-md-9">
+                <table >
+
+                    <tr>
+                        <th><h3>Passos:</h3></th>
+                    </tr>
+
+                        {% for x in passos %}
+                            <tr>
+                            <td> <span property="predRec:passo">{{ x }}<br></br></span></td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                </table>
+            </div>
+           <div class="col-md-3">
+                <h3>Ingredientes:</h3>
+                <br/>
+                <div xmlns:ing="http://receita/ingrediente/pred">
+                    <table class="table table-striped" >
+                        <tr>
+                                <th>Nome</th>
+                                <th>Quantidade</th>
+                                <th>Unidade</th>
+                            </tr>
+                        {% for i in ingredientes %}
+
+                            <tr>
+                                <td style = "text-align: center"><span property="ing:nome">{{ i.0 }}</span></td>
+                                <td style = "text-align: center"><span property="ing:quantidade">{{ i.1 }}</span></td>
+                                {% if i|length > 2  %}
+                                    <td style = "text-align: center"> <span property="ing:unidade">{{ i.2 }}</span></td>
+                                {% else %}
+                                    <td style = "text-align: center"> </td>
+                                {% endif %}
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+                </div>
+           </div>
+        </div>
     </div>
-
-</div>
 </body>
 </html>
