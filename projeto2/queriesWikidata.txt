@@ -1,0 +1,9 @@
+ask {?s ?p "Rudofsph van Veen"}
+
+
+SELECT * WHERE
+{
+  ?i wdt:P373 "Rudolph van Veen".
+  ?1item ?p ?i.
+  FILTER regex(str(?item),"https://en.wikipedia.org/wiki/")
+}
