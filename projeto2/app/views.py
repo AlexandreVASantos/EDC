@@ -299,6 +299,9 @@ def edit_recipe(request):
         ingredientes.remove('')
     ingIds = []
 
+
+
+
     if len(ingredientes) > 1 and type(ingredientes) is not str:
         query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
                 'select ?id ' \
@@ -351,7 +354,49 @@ def edit_recipe(request):
                 res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
             IngId = IngId + 1
             print(query)
+    else:
+        query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
+                'select ?id ' \
+                'where{' \
+                '?id ing: ?name' \
+                '}'
+        payload_query = {"query": query}
+        res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
+        res = json.loads(res)
+        IngId = res["results"]["bindings"]
+        temp = IngId[-1]["id"]["value"].split("/")
+        temp = str(temp[-1]).strip(">")
+        IngId = int(temp) + 1
 
+
+        ingIds.append(IngId)
+
+        ingredientes= ingredientes[0].split(",")
+
+        query = 'PREFIX ing:<http://receita/ingrediente/pred/nome>' \
+                'PREFIX ingId:<http://receita/ingrediente/>' \
+                'insert data{' \
+                f'ingId:{IngId} ' + 'ing: ' + f'"{ingredientes[0]}"' \
+                                              '}'
+        payload_query = {"update": query}
+        res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+        query = 'PREFIX ing:<http://receita/ingrediente/pred/quantidade>' \
+                'PREFIX ingId:<http://receita/ingrediente/>' \
+                'insert data {' \
+                f' ingId:{IngId} ' + 'ing: ' + f'"{ingredientes[1]}"' \
+                                               '}'
+        payload_query = {"update": query}
+        res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
+
+        if len(ingredientes) == 3:
+            query = 'PREFIX ing:<http://receita/ingrediente/pred/unidade>' \
+                    'PREFIX ingId:<http://receita/ingrediente/>' \
+                    'insert data{' \
+                    f'ingId:{IngId} ' + 'ing: ' + f'"{ingredientes[2]}"' \
+                                                  '}'
+            payload_query = {"update": query}
+            res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
 
 
     passos = request.POST.get("passos")
@@ -374,7 +419,7 @@ def edit_recipe(request):
         query = 'PREFIX pass:<http://receita/pred/passo>' \
                 'PREFIX recID:<http://receita/id/>' \
                 'insert data{' \
-                f'recID:{newRecId}' + 'pass: ' + f'"{passos}"' \
+                f'recID:{newRecId} ' + 'pass: ' + f'"{passos[0]}"' \
                                                 '}'
         payload_query = {"update": query}
         res = accessor.sparql_update(body=payload_query, repo_name=repo_name)
@@ -1144,8 +1189,9 @@ def show_recipe(request, recipe):
     res = json.loads(res)
 
     print(res)
-
-    nome=recipe
+    nome = []
+    nome.append(recipe)
+    nome.append(res["results"]["bindings"][0]["s"]["value"])
     data = res["results"]["bindings"][0]["data"]["value"]
     imagem=res["results"]["bindings"][0]["imagem"]["value"]
     passos = []
@@ -1167,16 +1213,16 @@ def show_recipe(request, recipe):
             quantidade=i["quantidade"]["value"]
             if "unidade" in i.keys():
                 unidade = i["unidade"]["value"]
-                tup = nome_i,quantidade,unidade
+                tup = nome_i,quantidade, i["id_i"]["value"],unidade
             else:
-                tup = nome_i,quantidade
+                tup = nome_i,quantidade,i["id_i"]["value"]
 
             ingredientes.append(tup)
     else:
         if len(res["results"]["bindings"][0]) == 3:
-            tup = res["results"]["bindings"][0]["nome"]["value"],res["results"]["bindings"][0]["quantidade"]["value"], res["results"]["bindings"][0]["unidade"]["value"]
+            tup = res["results"]["bindings"][0]["nome"]["value"],res["results"]["bindings"][0]["quantidade"]["value"], res["results"]["bindings"][0]["id_i"]["value"],res["results"]["bindings"][0]["unidade"]["value"]
         else:
-            tup = res["results"]["bindings"][0]["nome"]["value"],res["results"]["bindings"][0]["quantidade"]["value"]
+            tup = res["results"]["bindings"][0]["nome"]["value"],res["results"]["bindings"][0]["quantidade"]["value"],res["results"]["bindings"][0]["id_i"]["value"]
         ingredientes.append(tup)
 
     query = ' PREFIX predRec:<http://receita/pred/> PREFIX aut:<http://receita/autores/pred/nome> Select * where{ ?s ?p "' + recipe + '". ?s predRec:autor ?id_a. ?id_a aut: ?nome. }'
@@ -1189,9 +1235,11 @@ def show_recipe(request, recipe):
     if isinstance(res["results"]["bindings"],list):
 
         for a in res["results"]["bindings"]:
-            autores.append(a["nome"]["value"])
+            tup = a["nome"]["value"],a["id_a"]["value"]
+            autores.append(tup )
     else:
-        autores.append(res["results"]["bindings"]["nome"]["value"])
+        tup = res["results"]["bindings"]["nome"]["value"],res["results"]["bindings"]["id_a"]["value"]
+        autores.append(tup)
 
 
 
@@ -1204,9 +1252,10 @@ def show_recipe(request, recipe):
 
     if isinstance(res["results"]["bindings"],list):
         for t in res["results"]["bindings"]:
-            tipos.append(t["nome"]["value"])
+            tup = t["nome"]["value"], t["id_t"]["value"]
+            tipos.append(tup)
     else:
-        tipos.append(res["results"]["bindings"]["nome"]["value"])
+        tipos.append((res["results"]["bindings"]["nome"]["value"],res["results"]["bindings"]["id_t"]["value"] ))
 
     categorias = []
 
@@ -1217,9 +1266,9 @@ def show_recipe(request, recipe):
 
     if isinstance(res["results"]["bindings"],list):
         for c in res["results"]["bindings"]:
-            categorias.append(c["nome"]["value"])
+            categorias.append((c["nome"]["value"],c["id_c"]["value"]))
     else:
-        categorias.append(res["results"]["bindings"]["nome"]["value"])
+        categorias.append((res["results"]["bindings"]["nome"]["value"],res["results"]["bindings"]["id_c"]["value"]))
 
 
 
