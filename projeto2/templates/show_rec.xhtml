@@ -1,9 +1,7 @@
 {% load static %}
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html prefix= "predRec: http://receita/pred/ categoria: http://receita/categorias/pred/nome autor: http://receita/autores/pred/nome tipo: http://receita/tipos/pred/nome ing: http://receita/ingrediente/pred"  xml:lang="en" lang="en">
 <head>
     <title>Recipe</title>
 
@@ -29,27 +27,27 @@
 <body>
 
 
-    <div xmlns:predRec="http://receita/pred/" about="{{ nome.1 }}" style=" padding-right: 5%;padding-left: 5%; padding-top: 5%">
+    <div about="{{ nome.1 }}" style=" padding-right: 5%;padding-left: 5%; padding-top: 5%">
         <div class="row">
             <h1><span property="predRec:nome">{{ nome.0 }}</span></h1>
 
         </div>
         <br/>
         <div class = "row">
-            <div xmlns:categoria="http://receita/categorias/pred/nome">
+            <div>
                 {% for c in categorias %}
                     <h2><span about="{{ c.1 }}" property="categoria:">{{ c.0 }}</span></h2>
                 {% endfor %}
             </div>
         </div>
         <div class="row">
-            <div xmlns:autor="http://receita/autores/pred/nome">
+            <div>
                 {% for a in autores %}
                     {% if a|length == 4 %}
-                        <h3><a href="{{ a.2 }}"><span about = "{{ a.1 }}" property="autor:">{{ a.0 }}</span></a></h3>
+                        <h3><a href="{{ a.2 }}"><span about="{{ a.1 }}" property="autor:">{{ a.0 }}</span></a></h3>
                         <img alt="author" style= "width:10%" src="{{ a.3 }}"/>
                     {% else %}
-                        <h3><span about = "{{ a.1 }}" property="autor:">{{ a.0 }}</span></h3>
+                        <h3><span about="{{ a.1 }}" property="autor:">{{ a.0 }}</span></h3>
                     {% endif %}
 
                 {% endfor %}
@@ -57,7 +55,7 @@
         </div>
         <br/>
         <div class="row">
-            <div xmlns:tipo="http://receita/tipos/pred/nome">
+            <div>
                 {% for t in tipos %}
                     <h4><span about="{{ t.1 }}" property="tipo:">{{ t.0 }}</span></h4>
                 {% endfor %}
@@ -103,7 +101,7 @@
            <div class="col-md-3">
                 <h3>Ingredientes:</h3>
                 <br/>
-                <div xmlns:ing="http://receita/ingrediente/pred">
+                <div>
                     <table class="table table-striped" >
                         <tr>
                                 <th>Nome</th>
