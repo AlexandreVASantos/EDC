@@ -1435,6 +1435,17 @@ def getInfoReceita():
     return receitas_info
 
 
+def wikidata(author):
 
+    sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
+    sparql.setQuery('ask {?s ?p "' + author + '"}')
 
+    sparql.setReturnFormat(JSON)
+    result = sparql.query().convert()
+    if(result=="false"):
+        return None
 
+    sparql.setQuery('SELECT * WHERE{ ?i wdt:P373 "'+ author + '". ?1item ?p ?i. FILTER regex(str(?item),"https://en.wikipedia.org/wiki/") }')
+    sparql.setReturnFormat(JSON)
+    result = sparql.query().convert()
+    return result
