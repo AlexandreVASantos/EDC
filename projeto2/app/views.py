@@ -1235,8 +1235,17 @@ def show_recipe(request, recipe):
     if isinstance(res["results"]["bindings"],list):
 
         for a in res["results"]["bindings"]:
-            tup = a["nome"]["value"],a["id_a"]["value"]
-            autores.append(tup )
+
+            autor_data = wikidata(a["nome"]["value"])
+            print(autor_data)
+            if autor_data != None:
+                for a1 in autor_data["results"]["bindings"]:
+                    tup = a["nome"]["value"], a["id_a"]["value"], a1["item"]["value"], a1["i2"]["value"]
+                    autores.append(tup)
+            else:
+                tup = a["nome"]["value"], a["id_a"]["value"]
+                print(tup)
+                autores.append(tup)
     else:
         tup = res["results"]["bindings"]["nome"]["value"],res["results"]["bindings"]["id_a"]["value"]
         autores.append(tup)
@@ -1436,16 +1445,24 @@ def getInfoReceita():
 
 
 def wikidata(author):
+    try:
+        sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
+        sparql.setQuery('ask {?s ?p "' + author + '"}')
 
-    sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
-    sparql.setQuery('ask {?s ?p "' + author + '"}')
+        sparql.setReturnFormat(JSON)
+        result = sparql.query().convert()
 
-    sparql.setReturnFormat(JSON)
-    result = sparql.query().convert()
-    if(result=="false"):
+        print(result)
+        if(result["boolean"]== False):
+
+            return None
+
+        sparql.setQuery('SELECT * WHERE{ ?i wdt:P373 "'+ author + '". ?item ?p ?i. OPTIONAL{?i wdt:P18 ?i2. } FILTER regex(str(?item),"https://en.wikipedia.org/wiki/"). SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }.  }')
+        sparql.setReturnFormat(JSON)
+        result = sparql.query().convert()
+
+        if result["results"]["bindings"] == []:
+            return None
+        return result
+    except:
         return None
-
-    sparql.setQuery('SELECT * WHERE{ ?i wdt:P373 "'+ author + '". ?1item ?p ?i. FILTER regex(str(?item),"https://en.wikipedia.org/wiki/") }')
-    sparql.setReturnFormat(JSON)
-    result = sparql.query().convert()
-    return result
