@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-{% autoescape off %}
     <div style = "text-align:center; padding-top: 12vh">
         <h2>Adicionar Receita</h2>
     </div>
@@ -32,138 +31,132 @@
     {% endif %}
 {% endif %}
 
-	{% if window.screen.width <= 1900 %}
+    <br>
+    <br>
 
-        {% block fix %}
+    <form action="/add_recipe/" autocomplete="off" method="POST">
+        {% csrf_token %}
+            <div id="screen" >
 
-            <form action="/add_recipe/" autocomplete="off" method="POST">
-                {% csrf_token %}
-                    <div>
-                                <div class="row" style="text-align: center">
-                                <div class="col-md-12" style="text-align: center">
-                                    <label for="name"> Nome receita: </label>
-                                    <br>
-                                    <input type="text" id="cat" name="name" required size="40">
-                                </div>
-                                </div>
+                        <div class="row" style="text-align: center">
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="name"> Nome receita: </label>
                                 <br>
-                                <div class="row" style="text-align: center">
-                                <div class="col-md-12" style="text-align: center">
-                                    <label for="cat"> Categorias(inserir categorias separadas por vírgulas): </label>
-                                    <br>
-                                    <input type="text" id="cat" name="cat" list="CategoryList" required size="40">
-                                    <datalist id="CategoryList">
-                                        {% for cat in categorias %}
-                                            <option value="{{ cat }}">
-                                        {% endfor %}
-                                    </datalist>
-                                </div>
-                                </div>
-                                <br>
-                                <div class="row" style="text-align: center">
-                                <div class="col-md-12" style="text-align: center">
-                                    <label for="data">Data(dd-mm-yyyy):</label>
-                                    <br>
-                                    <input type="text" id="data" name="data" onload="date();" required size="20">
-                                    <script type="text/javascript">
-                                        function date() {
-                                            const n = new Date();
-                                            const y = n.getFullYear();
-                                            const m = n.getMonth() + 1;
-                                            const d = n.getDate();
-                                            const today = d + "-" + m + "-" + y;
-                                            document.getElementById("data").value = today;
-                                        }
-                                    </script>
-                                </div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row" style="text-align: center">
-                                    <div class="col-md-12" style="text-align: center">
-                                        <label for="tipo">Tipos(inserir tipos separadas por vírgulas):</label>
-                                        <br>
-                                        <input type="text" id="tipo" name="tipo" list="TypeList" required size="40">
-                                        <datalist id="TypeList">
-                                            {% for tip in tipos %}
-                                                <option label="{{ tip }}" value="{{ tip }}">
-                                            {% endfor %}
-                                        </datalist>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row" style="text-align: center">
-                                <div class="col-md-12" style="text-align: center">
-                                    <label for="aut">Autores(inserir autores separados por vírgulas)</label>
-                                    <br>
-                                    <input type="text" id="aut" name="aut" list="AuthorList" required size="40">
-                                    <datalist id="AuthorList">
-                                        {% for aut in autores %}
-                                            <option value="{{ aut }}">
-                                        {% endfor %}
-                                    </datalist>
-                                </div>
-                                </div>
-                                <br>
-                                <div class="row" style="text-align: center">
-                                <div class="col-md-12" style="text-align: center">
-                                    <label for="dificuldade">Dificuldade(Fácil, Médio, Dificil)</label>
-                                    <br>
-                                    <input type="text" id="dificuldade" name="dificuldade" list="DifficultyList" required size="20">
-                                    <datalist id="DifficultyList">
-                                        {% for dif in dificuldades %}
-                                            <option value="{{ dif }}">
-                                        {% endfor %}
-                                    </datalist>
+                                <input type="text" id="cat" name="name" required size="40">
+                            </div>
 
-                                </div>
-                                </div>
+                            <br>
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="cat"> Categorias(inserir categorias separadas por vírgulas): </label>
+                                <br>
+                                <input type="text" id="cat" name="cat" list="CategoryList" required size="40">
+                                <datalist id="CategoryList">
+                                    {% for cat in categorias %}
+                                        <option value="{{ cat }}">
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                            <br>
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="data">Data(dd-mm-yyyy):</label>
+                                <br>
+                                <input type="text" id="data" name="data" onload="date();" required size="20">
+                                <script type="text/javascript">
+                                    function date() {
+                                        const n = new Date();
+                                        const y = n.getFullYear();
+                                        const m = n.getMonth() + 1;
+                                        const d = n.getDate();
+                                        const today = d + "-" + m + "-" + y;
+                                        document.getElementById("data").value = today;
+                                    }
+                                </script>
+                        </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row" style="text-align: center">
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="tipo">Tipos(inserir tipos separadas por vírgulas):</label>
+                                <br>
+                                <input type="text" id="tipo" name="tipo" list="TypeList" required size="40">
+                                <datalist id="TypeList">
+                                    {% for tip in tipos %}
+                                        <option label="{{ tip }}" value="{{ tip }}">
+                                    {% endfor %}
+                                </datalist>
+                            </div>
 
+                        <br>
+
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="aut">Autores(inserir autores separados por vírgulas)</label>
                                 <br>
+                                <input type="text" id="aut" name="aut" list="AuthorList" required size="40">
+                                <datalist id="AuthorList">
+                                    {% for aut in autores %}
+                                        <option value="{{ aut }}">
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+
+                            <br>
+
+                            <div class="col-md-4" style="text-align: center">
+                                <label for="dificuldade">Dificuldade(Fácil, Médio, Dificil)</label>
                                 <br>
-                                <div class="row" style="text-align: center">
-                                   <div class="col-md-12" style="text-align: center"> \
-                                        <label for=\"ingredientes\">Ingredientes(separados por ENTER eg leite,500,mlENTER manteiga,50,g) <br> Por favor nao insira ingredientes repetidos</label>
-                                        <br>
-                                        <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 20vh"></textarea>
-                                </div>
-                                </div>
-                                <br>
-                                <div class="row" style="text-align: center">
-                                     <div class="col-md-12" style="text-align: center">
-                                        <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
-                                        <br>
-                                        <textarea type="text" id="passos" name="passos" required style="resize:none;width: 80%; height: 20vh"></textarea>
-                                    </div>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-12" style="text-align: center">
-                                        <label for="imagem">Imagem(insira link da imagem que pretende)</label>
-                                        <br>
-                                        <input type="text" id="imagem" name="imagem" required size="50">
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div class="col-md-12" style="text-align: center">
-                                        <input type="submit">
-                                    </div>
-                                </div>
+                                <input type="text" id="dificuldade" name="dificuldade" list="DifficultyList" required size="20">
+                                <datalist id="DifficultyList">
+                                    {% for dif in dificuldades %}
+                                        <option value="{{ dif }}">
+                                    {% endfor %}
+                                </datalist>
+
                             </div>
                         </div>
-                </form>
 
-	    {% endblock fix %}
-    {% else %}
+                        <br>
+                        <br>
+                        <div class="row" style="text-align: center">
+                           <div class="col-md-6" style="text-align: center">
+                                <label for=\"ingredientes\">Ingredientes(separados por ENTER eg leite,500,mlENTER manteiga,50,g) <br> Por favor nao insira ingredientes repetidos</label>
+                                <br>
+                                <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 20vh"></textarea>
+                        </div>
+                        <br>
+                             <div class="col-md-6" style="text-align: center">
+                                <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
+                                <br>
+                                <textarea type="text" id="passos" name="passos" required style="resize:none;width: 80%; height: 20vh"></textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center">
+                                <label for="imagem">Imagem(insira link da imagem que pretende)</label>
+                                <br>
+                                <input type="text" id="imagem" name="imagem" required size="50">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center">
+                                <input type="submit">
+                            </div>
+                        </div>
+                </div>
+        </form>
 
-        {% block fix2 %}
+ <script>
+ if (window.screen.width <= 1900) {
 
-         <form action="/add_recipe/" autocomplete="off" method="POST">
-            <div >
-                 <div class="row" style="text-align: center">
+     document.getElementById("screen").innerHTML =
+         `
+                    <div class="row" style="text-align: center">
                  <div class="col-md-12" style="text-align: center">
                      <label for="name">Nome receita:</label>
                      <br>
@@ -189,16 +182,7 @@
                      <label for="data">Data(dd-mm-yyyy):</label>
                      <br>
                      <input type="text" id="data" name="data" onload="date();" required size="20">
-                     <script type="text/javascript">
-                        function date() {
-                            const n = new Date();
-                            const y = n.getFullYear();
-                            const m = n.getMonth() + 1;
-                            const d = n.getDate();
-                            const today = d + "-" + m + "-" + y;
-                            document.getElementById("data").value = today;
-                        }
-                    </script>
+
                  </div>
                  </div>
                  <br>
@@ -276,12 +260,22 @@
                      </div>
                  </div>
              </div>
-         </form>
-        {% endblock fix2 %}
-    {% endif %}
+
+             <script>
+
+          </form>
+         `;
+ }
+
+ </script>
+<script type="text/javascript">
+    function date() {
+        const n = new Date();
+        const y = n.getFullYear();
+        const m = n.getMonth() + 1;
+        const d = n.getDate();
+        const today = d + "-" + m + "-" + y;
+        document.getElementById("data").value = today;
     }
-
-
-
-{% endautoescape %}
+</script>
 {% endblock %}
