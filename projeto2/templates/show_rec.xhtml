@@ -44,7 +44,7 @@
             <div>
                 {% for a in autores %}
                     {% if a|length == 4 %}
-                        <h3><a href="{{ a.2 }}"><span about="{{ a.1 }}" property="autor:">{{ a.0 }}</span></a></h3>
+                        <h3><a target="_blank" href="{{ a.2 }}"><span about="{{ a.1 }}" property="autor:">{{ a.0 }}</span></a></h3>
                         <img alt="author" style= "width:10%" src="{{ a.3 }}"/>
                     {% else %}
                         <h3><span about="{{ a.1 }}" property="autor:">{{ a.0 }}</span></h3>

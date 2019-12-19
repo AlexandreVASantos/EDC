@@ -71,14 +71,14 @@
     <div style="text-align: center">
     {% for key,value in info.items %}
               <div style="float: left; height: 80vh; display: inline " class="col-sm-6" data-aos="fade-up" data-aos-delay="">
-                  <a href="/showrec/{{key}}/"><img src="{{value.0}}" style="text-align: center" alt="Image" class="img-fluid"> </a>
+                  <a target="_blank" href="/showrec/{{key}}/"><img src="{{value.0}}" style="text-align: center" alt="Image" class="img-fluid"> </a>
                   <div class="media-92812">
                      <div class="text" style="height: 30vh">
                          {% for a in value.1 %}
                             <span class="caption">{{ a }}</span>
                          {% endfor %}
                          <br>
-                         <h3 style = "height: 10vh"><a href="/showrec/{{key}}/">{{ key }}</a></h3>
+                         <h3 style = "height: 10vh"><a target="_blank" href="/showrec/{{key}}/">{{ key }}</a></h3>
 
                     </div>
 

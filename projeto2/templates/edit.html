@@ -128,97 +128,101 @@
     </div>
 
 <script>
-	if(screen.width <= 1900){
-		document.getElementById("top").innerHTML = "            \n" +
-            "        <div >\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                <label for=\"name\">Nome receita:</label>\n" +
-            "                <br>\n" +
-            "                <input type=\"text\" id=\"name\" name=\"name\" required size=\"40\">\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                <label for=\"cat\">Categorias(inserir categorias separadas por vírgulas):</label>\n" +
-            "                <br>\n" +
-            "                <input type=\"text\" id=\"cat\" name=\"cat\" required size=\"40\">\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "            <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                <label for=\"data\">Data(dd-mm-yyyy):</label>\n" +
-            "                <br>\n" +
-            "                <input type=\"text\" id=\"data\" name=\"data\" required size=\"20\">\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "\n" +
-            "            <br>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "                <div class=\"col-md-12\" style=\"text-align: center\">    \n" +
-            "                    <label for=\"tipo\">Tipos(inserir tipos separadas por vírgulas):</label>\n" +
-            "                    <br>\n" +
-            "                    <input type=\"text\" id=\"tipo\" name=\"tipo\" required size=\"40\">\n" +
-            "                </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "            <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
-            "                <label for=\"aut\">Autores(inserir autores separados por vírgulas)</label>\n" +
-            "                <br>\n" +
-            "                <input type=\"text\" id=\"aut\" name=\"aut\" required size=\"40\">\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "            <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
-            "                <label for=\"dificuldade\">Dificuldade(Fácil, Médio, Dificil)</label>\n" +
-            "                <br>\n" +
-            "                <input type=\"text\" id=\"dificuldade\" name=\"dificuldade\" required size=\"20\">\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "\n" +
-            "            <br>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "               <div class=\"col-md-12\" style=\"text-align: center\"> \n" +
-            "                    <label for=\"ingredientes\">Ingredientes(separados por ENTER eg leite,500,ml,\n" +
-            "                         ENTER manteiga,50,g) <br> Por favor nao insira ingredientes repetidos</label>\n" +
-            "                    <br>\n" +
-            "                    <textarea type=\"text\" id=\"ingredientes\" name=\"ingredientes\" required style= \"resize:none;width: 80%; height: 20vh\"></textarea>\n" +
-            "            </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <div class=\"row\" style=\"text-align: center\">\n" +
-            "                 <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                    <label for=\"Passos\">Passos(inserir passos separados por parágrafos)</label>\n" +
-            "                    <br>\n" +
-            "                    <textarea type=\"text\" id=\"passos\" name=\"passos\" required style= \"resize:none;width: 80%; height: 20vh\"></textarea>\n" +
-            "                </div>\n" +
-            "            </div>\n" +
-            "            <br>\n" +
-            "            <br>\n" +
-            "\n" +
-            "            <div class=\"row\" >\n" +
-            "                <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                    <label for=\"imagem\">Imagem(insira link da imagem que pretende)</label>\n" +
-            "                    <br>\n" +
-            "                    <input type=\"text\" id=\"imagem\" name=\"imagem\" required size=\"50\">\n" +
-            "                </div>\n" +
-            "\n" +
-            "                <br>\n" +
-            "                <br>\n" +
-            "                <br>\n" +
-            "                <br>\n" +
-            "                <div class=\"col-md-12\" style=\"text-align: center\">\n" +
-            "                    <input type=\"submit\">\n" +
-            "                </div>\n" +
-            "            </div>\n" +
-            "        </div>";
-	}
+	if(screen.width <= 1900) {
+        document.getElementById("top").innerHTML =
+            `
+                    <div>
+                        <div class="row" style="text-align: center">
+                        <div class="col-md-12" style="text-align: center">
+                            <label for="name">Nome receita:</label>
+                            <br>
+                            <input disabled type="text" id="name" name="name" required size="40">
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align: center">
+                        <div class="col-md-12" style="text-align: center">
+                            <label for="cat">Categorias(inserir categorias separadas por vírgulas):</label>
+                            <br>
+                            <input disabled type="text" id="cat" name="cat" required size="40">
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align: center">
+                        <div class="col-md-12" style="text-align: center">
+                            <label for="data">Data(dd-mm-yyyy):</label>
+                            <br>
+                            <input disabled type="text" id="data" name="data" required size="20">
+                        </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="row" style="text-align: center">
+                            <div class="col-md-12" style="text-align: center">
+                                <label for="tipo">Tipos(inserir tipos separadas por vírgulas):</label>
+                                <br>
+                                <input disabled type="text" id="tipo" name="tipo" required size="40">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align: center">
+                        <div class="col-md-12" style="text-align: center">
+                            <label for="aut">Autores(inserir autores separados por vírgulas)</label>
+                            <br>
+                            <input type="text" id="aut" name="aut" required size="40">
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align: center">
+                        <div class="col-md-12" style="text-align: center">
+                            <label for="dificuldade">Dificuldade(Fácil, Médio, Dificil)</label>
+                            <br>
+                            <input disabled type="text" id="dificuldade" name="dificuldade" required size="20">
+                        </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="row" style="text-align: center">
+                           <div class="col-md-12" style="text-align: center">
+                                <label for="ingredientes">Ingredientes(separados por ENTER eg leite,500,ml,
+                                     ENTER manteiga,50,g) <br> Por favor nao insira ingredientes repetidos</label>
+                                <br>
+                                <textarea type="text" id="ingredientes" name="ingredientes" required style= "resize:none;width: 80%; height: 20vh"></textarea>
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row" style="text-align: center">
+                             <div class="col-md-12" style="text-align: center">
+                                <label for="Passos">Passos(inserir passos separados por parágrafos)</label>
+                                <br>
+                                <textarea type="text" id="passos" name="passos" required style= "resize:none;width: 80%; height: 20vh"></textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="row" >
+                            <div class="col-md-12" style="text-align: center">
+                                <label for="imagem">Imagem(insira link da imagem que pretende)</label>
+                                <br>
+                                <input type="text" id="imagem" name="imagem" required size="50">
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-12" style="text-align: center">
+                                <input type="submit">
+                            </div>
+                        </div>
+                    </div>
+
+		`;
+    }
+
 </script>
 <script type="text/javascript">
     function get_recipe(){
